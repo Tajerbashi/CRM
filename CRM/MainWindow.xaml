@@ -1,10 +1,11 @@
-﻿<Window 
-        x:Class="CRM.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        x:Class="CRM.MainWindow"
         mc:Ignorable="d"
         x:Name="mainwindow"
         WindowStartupLocation="CenterScreen"
@@ -50,7 +51,7 @@
             <Image Grid.Column="11" Grid.ColumnSpan="1" Source="/Image/Icon.Png" Margin="10,10,10,10" Grid.RowSpan="2" Height="20"/>
             <Image Grid.Column="0" Grid.ColumnSpan="1" Source="/Image/ShutDown.Png" Margin="16,15,57,15" Height="30" Grid.RowSpan="2"/>
             <Image Grid.Column="0" Source="/Image/User.ico" Margin="54,15,16,15" Height="30"  Grid.RowSpan="2"/>
-            <!--<hc:SearchBar Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontFamily="IRANSansWeb" VerticalAlignment="Center" Width="295" />-->
+            <hc:SearchBar Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontFamily="IRANSansWeb" VerticalAlignment="Center" Width="295" />
             <Border Grid.ColumnSpan="3" Grid.Column="9" Grid.RowSpan="10" Grid.Row="2" BorderBrush="#00171F" BorderThickness="5" CornerRadius="10" Margin="10">
                 <Rectangle Fill="#00171F"  />
             </Border>
@@ -70,7 +71,16 @@
             <Border Grid.ColumnSpan="6" Grid.Column="0" Grid.RowSpan="7" Grid.Row="5" BorderBrush="#02115D" BorderThickness="5" CornerRadius="10" Margin="10">
                 <Rectangle Fill="#02115D"  />
             </Border>
+            <hc:PersianCalendar Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="3" Grid.RowSpan="6"/>
+            <Label x:Name="ClockLBL" Grid.RowSpan="1" Grid.Row="11" Grid.ColumnSpan="3" Margin="10"  Background="Transparent" Grid.Column="6" Content="Sample Text" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontFamily="IRANSansWeb" FontSize="20">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFED1212" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+
         </Grid>
-        
     </Border>
 </Window>
