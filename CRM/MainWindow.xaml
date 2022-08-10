@@ -68,19 +68,10 @@
             <Border Grid.ColumnSpan="3" Grid.Column="6" Grid.RowSpan="1" Grid.Row="11" BorderBrush="#FFFFFF" BorderThickness="5" CornerRadius="10" Margin="10">
                 <Rectangle Fill="#FFFFFF"  />
             </Border>
-            <Border Grid.ColumnSpan="6" Grid.Column="0" Grid.RowSpan="7" Grid.Row="5" BorderBrush="#02115D" BorderThickness="5" CornerRadius="10" Margin="10">
-                <Rectangle Fill="#02115D"  />
-            </Border>
+            <Border Grid.ColumnSpan="6" Grid.Column="0" Grid.RowSpan="7" Grid.Row="5" BorderBrush="#02115D" BorderThickness="5" CornerRadius="10" Margin="10"/>
             <hc:PersianCalendar Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="3" Grid.RowSpan="6"/>
-            <Label x:Name="ClockLBL" Grid.RowSpan="1" Grid.Row="11" Grid.ColumnSpan="3" Margin="10"  Background="Transparent" Grid.Column="6" Content="Sample Text" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontFamily="IRANSansWeb" FontSize="20">
-                <Label.Foreground>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black"/>
-                        <GradientStop Color="#FFED1212" Offset="1"/>
-                    </LinearGradientBrush>
-                </Label.Foreground>
-            </Label>
-
+            <local:ClockMainWindow  Grid.ColumnSpan="3" Grid.Column="6" Grid.Row="11"/>
+            
         </Grid>
     </Border>
 </Window>
