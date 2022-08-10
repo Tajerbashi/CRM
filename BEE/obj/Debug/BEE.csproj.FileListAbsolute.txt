@@ -1,0 +1,6 @@
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\BEE\bin\Debug\BEE.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\BEE\bin\Debug\BEE.pdb
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\BEE\obj\Debug\BEE.csproj.AssemblyReference.cache
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\BEE\obj\Debug\BEE.csproj.CoreCompileInputs.cache
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\BEE\obj\Debug\BEE.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\BEE\obj\Debug\BEE.pdb
