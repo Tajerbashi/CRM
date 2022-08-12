@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Windows.Forms;
+using System.Windows.Media.Effects;
 
 namespace CRM
 {
@@ -23,6 +25,29 @@ namespace CRM
         public MainWindow()
         {
             InitializeComponent();
+        }
+        public void OpenWindow(Form F)
+        {
+            Window g = this.FindName("Main") as Window;
+            BlurBitmapEffect blurBitmapEffect = new BlurBitmapEffect();
+            blurBitmapEffect.Radius = 20;
+
+            g.BitmapEffect = blurBitmapEffect;
+            F.ShowDialog();
+            blurBitmapEffect.Radius = 0;
+            g.BitmapEffect = blurBitmapEffect;
+        }
+
+        private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            WindowOne f = new WindowOne();
+            OpenWindow(f);
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            WindowOne f = new WindowOne();
+            OpenWindow(f);
         }
     }
 }

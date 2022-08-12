@@ -30,3 +30,4 @@ C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\HandyControl.pdb
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\ClockMainWindow.g.cs
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\ClockMainWindow.baml
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.WindowOne.resources

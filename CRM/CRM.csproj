@@ -37,6 +37,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Binassmax-Pry-Frente-Black-Special-2-Ok.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -50,6 +53,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -83,6 +88,12 @@
     <Compile Include="ClockMainWindow.xaml.cs">
       <DependentUpon>ClockMainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowOne.Designer.cs">
+      <DependentUpon>WindowOne.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -101,6 +112,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="WindowOne.resx">
+      <DependentUpon>WindowOne.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -152,6 +166,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Reminder icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Binassmax-Pry-Frente-Black-Special-2-Ok.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Activity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\invoce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\sell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\User1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
