@@ -15,6 +15,13 @@
                 <!-- Other merged dictionaries here -->
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
+            <Style x:Name="titleRow" TargetType="TextBlock" >
+                <Setter Property="FontFamily" Value="IRANSansWeb"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+            </Style>
         </ResourceDictionary>
+        
     </Application.Resources>
 </Application>

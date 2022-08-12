@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CRM"
              mc:Ignorable="d" 
-             d:DesignHeight="35" d:DesignWidth="278">
+             d:DesignHeight="35" d:DesignWidth="278" FontFamily="IRANSansWeb">
     <Grid>
-        <TextBlock x:Name="clockTime" Text="Sample Test" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="20" FontFamily="IRANSansWeb" >
+        <TextBlock x:Name="clockTime" Text="Sample Test" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="15" FontFamily="Consolas" >
             <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF003EFF"/>

@@ -35,7 +35,7 @@ namespace CRM
         private void Timer_Tick(object sender,EventArgs e)
         {
 
-            clockTime.Text = (DateTime.Now).ToString();
+            clockTime.Text = (DateTime.Now).ToString("F");
             //clockTime.Text = Functions.ConvertToPersian(DateTime.Now).ToString();
         }
     }
