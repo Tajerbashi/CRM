@@ -38,3 +38,5 @@ C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.ReminderForm.r
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\DevComponents.DotNetBar2.dll
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\XanderUI.dll
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\DevComponents.DotNetBar.Schedule.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\DevComponents.DotNetBar.Schedule.xml

@@ -38,16 +38,6 @@ namespace CRM
             g.BitmapEffect = blurBitmapEffect;
         }
 
-        private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
-
-        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            
-        }
-
         private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             InvoiceForm f = new InvoiceForm();
@@ -57,6 +47,18 @@ namespace CRM
         private void TextBlock_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
             CustomerForm f = new CustomerForm();
+            OpenWindow(f);
+        }
+
+        private void TextBlock_MouseLeftButtonDown_2(object sender, MouseButtonEventArgs e)
+        {
+            ProductForm f = new ProductForm();
+            OpenWindow(f);
+        }
+
+        private void TextBlock_MouseLeftButtonDown_3(object sender, MouseButtonEventArgs e)
+        {
+            ActivityForm f = new ActivityForm();
             OpenWindow(f);
         }
     }

@@ -63,6 +63,16 @@ namespace CRM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_back_to_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-back-to-96", resourceCulture);
@@ -86,6 +96,16 @@ namespace CRM.Properties {
         internal static System.Drawing.Bitmap icons8_checkmark_480 {
             get {
                 object obj = ResourceManager.GetObject("icons8-checkmark-480", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_send_to_printer_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-send-to-printer-96", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

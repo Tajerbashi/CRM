@@ -37,5 +37,10 @@ namespace CRM
         {
 
         }
+
+        private void xuiButton5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
