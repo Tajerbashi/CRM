@@ -30,4 +30,11 @@ C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\HandyControl.pdb
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\ClockMainWindow.g.cs
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\ClockMainWindow.baml
-C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.WindowOne.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.InvoiceForm.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.ActivityForm.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.CustomerForm.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.ProductForm.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.ReminderForm.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\XanderUI.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\DevComponents.DotNetBar2.xml

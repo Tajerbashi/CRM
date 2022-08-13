@@ -90,12 +90,12 @@
             <TextBlock Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="9" Text="مدیریت ارتباط با مشتریان " FontSize="25" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="0,36,0,0" Grid.RowSpan="2"/>
 
             <Image Cursor="Hand" Source="/Image/User1.png" Grid.Row="4" Grid.Column="11" Height="50" Width="50" Margin="9,9,47,6"/>
-            <TextBlock Cursor="Hand" Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="9" Text="مدیریت مشتریان" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="81,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="189"/>
+            <TextBlock Cursor="Hand" Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="9" Text="مدیریت مشتریان" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="81,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="189" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_1"/>
 
             <TextBlock Cursor="Hand" Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="10" Text="مدیریت کالا ها" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="1,3,0,0" HorizontalAlignment="Left" Width="152"/>
             <Image Cursor="Hand" Source="/Image/invoce.png" Grid.Row="5" Grid.Column="11" Height="30" Width="30" Margin="11,56,65,44" Grid.RowSpan="2"/>
 
-            <TextBlock Cursor="Hand" Grid.Row="5" Grid.ColumnSpan="3" Grid.Column="9" Text="لیست فاکتور ها " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="97,55,0,34" VerticalAlignment="Stretch" HorizontalAlignment="Left" Grid.RowSpan="2" Width="126"/>
+            <TextBlock Cursor="Hand" Grid.Row="5" Grid.ColumnSpan="3" Grid.Column="9" Text="لیست فاکتور ها " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="97,55,0,34" VerticalAlignment="Stretch" HorizontalAlignment="Left" Grid.RowSpan="2" Width="126" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"/>
             <Image Cursor="Hand" Source="/Image/Activity.png" Grid.Row="6" Grid.Column="10" Height="30" Width="30" Margin="101,43,81,57" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
             <TextBlock Cursor="Hand" Grid.Row="6" Grid.Column="10" Text="فعالیت ها " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="15,41,0,0" Grid.RowSpan="2" Width="87" HorizontalAlignment="Left"/>
@@ -112,6 +112,8 @@
 
             <TextBlock Cursor="Hand" Grid.Row="10" Grid.ColumnSpan="3" Grid.Column="9" Text="تنظیمات برنامه" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="99,38,0,0" Grid.RowSpan="2" Width="152" HorizontalAlignment="Left"/>
             <Image Cursor="Hand" Source="/Image/settings.png" Grid.Row="10" Grid.Column="11" Height="30" Width="30" Margin="7,38,69,62" Grid.RowSpan="2"/>
+            
+            
 
 
 

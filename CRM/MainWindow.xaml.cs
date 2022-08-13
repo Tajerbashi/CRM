@@ -40,13 +40,23 @@ namespace CRM
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            WindowOne f = new WindowOne();
-            OpenWindow(f);
+            
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            WindowOne f = new WindowOne();
+            
+        }
+
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            InvoiceForm f = new InvoiceForm();
+            OpenWindow(f);
+        }
+
+        private void TextBlock_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        {
+            CustomerForm f = new CustomerForm();
             OpenWindow(f);
         }
     }
