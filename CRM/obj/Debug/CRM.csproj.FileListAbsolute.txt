@@ -40,3 +40,8 @@ C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\XanderUI.dll
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\DevComponents.DotNetBar2.xml
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\DevComponents.DotNetBar.Schedule.dll
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\DevComponents.DotNetBar.Schedule.xml
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\DAL.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\DAL.pdb
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\DAL.dll.config
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.SMSForm.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.UserForm.resources

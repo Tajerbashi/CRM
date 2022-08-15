@@ -51,9 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL_Class.cs" />
+    <Compile Include="CustomerDAL.cs" />
     <Compile Include="DB_Class.cs" />
+    <Compile Include="InvoiceDAL.cs" />
+    <Compile Include="ProductDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -79,11 +79,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Functions.cs" />
     <Compile Include="ReminderForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReminderForm.Designer.cs">
       <DependentUpon>ReminderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMSForm.Designer.cs">
+      <DependentUpon>SMSForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
     <Page Include="ClockMainWindow.xaml">
       <SubType>Designer</SubType>
@@ -160,6 +173,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReminderForm.resx">
       <DependentUpon>ReminderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMSForm.resx">
+      <DependentUpon>SMSForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -250,6 +269,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-add-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-remove-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pencil-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-user-data-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\UserSetting.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

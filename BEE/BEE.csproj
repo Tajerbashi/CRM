@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Activity.cs" />
     <Compile Include="ActivityCategory.cs" />
-    <Compile Include="BEE_Class.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="InVoice.cs" />
     <Compile Include="Product.cs" />

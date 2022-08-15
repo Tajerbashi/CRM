@@ -4,16 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 using System.Windows.Forms;
 using System.Windows.Media.Effects;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace CRM
 {
@@ -60,6 +55,29 @@ namespace CRM
         {
             ActivityForm f = new ActivityForm();
             OpenWindow(f);
+        }
+
+        private void TextBlock_MouseLeftButtonDown_4(object sender, MouseButtonEventArgs e)
+        {
+            ReminderForm f = new ReminderForm();
+            OpenWindow(f);
+        }
+
+        private void TextBlock_MouseLeftButtonDown_5(object sender, MouseButtonEventArgs e)
+        {
+            SMSForm f = new SMSForm();
+            OpenWindow(f);
+        }
+
+        private void TextBlock_MouseLeftButtonDown_6(object sender, MouseButtonEventArgs e)
+        {
+            UserForm f = new UserForm();
+            OpenWindow(f);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -8,7 +8,7 @@ namespace BEE
 {
     public class Activity
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public String Title { get; set; }
         public String Info { get; set; }
         public DateTime RegDate { get; set; }

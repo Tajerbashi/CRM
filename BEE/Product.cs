@@ -8,10 +8,15 @@ namespace BEE
 {
     public class Product
     {
-        public int Id { get; set; }
+        public Product()
+        {
+            DeleteStatus = false;
+        }
+        public int ID { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
         public int Stock { get; set; }
+        public bool DeleteStatus { get; set; }
         public List<InVoice> InVoices { get; set; }=new List<InVoice>();
     }
 }
