@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using BEE;
+using System.Web;
 
 namespace DAL
 {
@@ -41,6 +42,10 @@ namespace DAL
         {
             return DB.users.Where(c => c.ID == id).FirstOrDefault();
         }
+        public User ReadByName(String Name)
+        {
+            return DB.users.Where(c => c.Name == Name).FirstOrDefault();
+        }
         public bool Update(User user, int id)
         {
             var q = DB.users.Where(c => c.ID == id).FirstOrDefault();
@@ -61,6 +66,9 @@ namespace DAL
             q.DeleteStatus = true;
             DB.SaveChanges();
         }
-
+        public List<string> ReadUserName()
+        {
+            return (DB.users.Select( i => i.Name).ToList());
+        } 
     }
 }

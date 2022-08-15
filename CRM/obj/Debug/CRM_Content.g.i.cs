@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/icons8-users-settings-64.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/icons8-information-gradient-96.png")]
 
 

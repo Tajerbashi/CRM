@@ -11,7 +11,10 @@ namespace BEE
         public Reminder()
         {
             DeleteStatus = false;
+            IsDone = false;
+            RegDate = DateTime.Now;
         }
+
         public int ID { get; set; }
         public string Title { get; set; }
         public string ReminderInfo { get; set; }
@@ -19,6 +22,7 @@ namespace BEE
         public DateTime ReminderDate { get; set; }
         public Nullable<bool> IsDone { get; set; }
         public bool DeleteStatus { get; set; }
-        public List<User> Users { get; set; } = new List<User>();
+        public User Users { get; set; }
+
     }
 }

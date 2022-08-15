@@ -35,6 +35,7 @@ namespace CRM
         }
         CustomerBLL bll = new CustomerBLL();
         Functions Fun = new Functions();
+        MSGClass MSG = new MSGClass();
         int ID = 0;
         bool sw = true;
         private void ShowDGV()
@@ -61,38 +62,51 @@ namespace CRM
         private void xuiButton2_Click(object sender, EventArgs e)
         {
             Customer c = new Customer();
-            if (sw)
+            if (NameTXT.Text.Trim().Length==0)
             {
-                c.Name = NameTXT.Text;
-                c.Phone = Fun.ChangeToEnglishNumber(PhoneTXT.Text);
-                c.RegDate = DateTime.Now;
-                if (bll.Create(c))
-                {
-                    MessageBox.Show("ثبت شد");
-                    ClearTextBox();
-                }
-                else
-                {
-                    MessageBox.Show("ثبت نام ناموفق");
-                }
+                MSG.ShowMSGBoxDialog("خطای فیلد خالی", "نام مشتری را وارد کنید", "", 3, 2);
+            }
+            else if (PhoneTXT.Text.Trim().Length==0)
+            {
+                MSG.ShowMSGBoxDialog("خطای فیلد خالی", "تلفن مشتری را وارد کنید", "", 3, 2);
             }
             else
             {
-                c.Name = NameTXT.Text;
-                c.Phone = Fun.ChangeToEnglishNumber(PhoneTXT.Text);
-                c.RegDate = DateTime.Now;
-                if (bll.Update(c,ID))
+                if (sw)
                 {
-                    MessageBox.Show("ویرایش شد");
-                    SaveBtn.ButtonText = "ثبت اطلاعات";
-                    ClearTextBox();
-                    sw = true;
+                    c.Name = NameTXT.Text;
+                    c.Phone = Fun.ChangeToEnglishNumber(PhoneTXT.Text);
+                    c.RegDate = DateTime.Now;
+                    if (bll.Create(c))
+                    {
+                        MSG.ShowMSGBoxDialog("ثبت اطلاعات", "مشتری جدید با موفقیت ذخیره شد", "", 1, 2);
+                        ClearTextBox();
+                    }
+                    else
+                    {
+                        MSG.ShowMSGBoxDialog("خطای در ثبت", "اطلاعات مشتری موجود است و ذخیره نشد", "", 3, 1);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("ویرایش ناموفق");
+                    c.Name = NameTXT.Text;
+                    c.Phone = Fun.ChangeToEnglishNumber(PhoneTXT.Text);
+                    c.RegDate = DateTime.Now;
+                    if (bll.Update(c, ID))
+                    {
+                        MSG.ShowMSGBoxDialog("ویرایش اطلاعات", "اطلاعات مشتری با موفقیت ویرایش شد", "", 1, 2);
+                        SaveBtn.ButtonText = "ثبت اطلاعات";
+                        ClearTextBox();
+                        sw = true;
+                    }
+                    else
+                    {
+                        MSG.ShowMSGBoxDialog("خطا در ویرایش", "اطلاعات مشتری ویرایش نشد", "", 3, 1);
+                    }
                 }
+
             }
+
             ShowDGV();
         }
 
@@ -135,7 +149,9 @@ namespace CRM
 
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes==MessageBox.Show("آیا از حذف مشتری مطمین هستید؟","تایید درخواست حذف",MessageBoxButtons.YesNo,MessageBoxIcon.Question))
+            DialogResult dr = MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید اطلاعات مشتری مورد نظر حذف شود؟", "", 2,1);
+
+            if (DialogResult.Yes == dr)
             {
                 bll.Delete(ID);
             }

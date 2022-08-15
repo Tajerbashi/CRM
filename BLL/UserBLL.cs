@@ -46,6 +46,14 @@ namespace BLL
         { 
             return dal.ReadByID(id);
         }
+        public User ReadByName(String Name)
+        {
+            return dal.ReadByName(Name);
+        }
+        public List<string> ReadUserName()
+        {
+            return (dal.ReadUserName()).ToList();
+        }
         public bool Update(User user, int id)
         {
             user.Password = Encode(user.Password);

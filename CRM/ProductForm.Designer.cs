@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,8 +50,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.StockTXT = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.xuiButton1 = new XanderUI.XUIButton();
             this.SaveBTN = new XanderUI.XUIButton();
+            this.xuiButton1 = new XanderUI.XUIButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ویرایشToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -253,7 +253,7 @@
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1220, 110);
             this.groupBox1.TabIndex = 0;
@@ -299,6 +299,27 @@
             this.StockTXT.TabIndex = 2;
             this.StockTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // SaveBTN
+            // 
+            this.SaveBTN.BackgroundColor = System.Drawing.Color.Transparent;
+            this.SaveBTN.ButtonImage = global::CRM.Properties.Resources.icons8_checkmark_480;
+            this.SaveBTN.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.SaveBTN.ButtonText = "ثبت اطلاعات";
+            this.SaveBTN.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.SaveBTN.ClickTextColor = System.Drawing.Color.Blue;
+            this.SaveBTN.CornerRadius = 5;
+            this.SaveBTN.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.SaveBTN.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.SaveBTN.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.SaveBTN.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.SaveBTN.Location = new System.Drawing.Point(16, 35);
+            this.SaveBTN.Name = "SaveBTN";
+            this.SaveBTN.Size = new System.Drawing.Size(155, 41);
+            this.SaveBTN.TabIndex = 3;
+            this.SaveBTN.TextColor = System.Drawing.Color.White;
+            this.SaveBTN.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.SaveBTN.Click += new System.EventHandler(this.SaveBTN_Click);
+            // 
             // xuiButton1
             // 
             this.xuiButton1.BackgroundColor = System.Drawing.Color.Transparent;
@@ -320,27 +341,6 @@
             this.xuiButton1.TextColor = System.Drawing.Color.White;
             this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.xuiButton1.Click += new System.EventHandler(this.xuiButton1_Click);
-            // 
-            // SaveBTN
-            // 
-            this.SaveBTN.BackgroundColor = System.Drawing.Color.Transparent;
-            this.SaveBTN.ButtonImage = global::CRM.Properties.Resources.icons8_checkmark_480;
-            this.SaveBTN.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
-            this.SaveBTN.ButtonText = "ثبت اطلاعات";
-            this.SaveBTN.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.SaveBTN.ClickTextColor = System.Drawing.Color.Blue;
-            this.SaveBTN.CornerRadius = 5;
-            this.SaveBTN.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.SaveBTN.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.SaveBTN.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.SaveBTN.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.SaveBTN.Location = new System.Drawing.Point(16, 35);
-            this.SaveBTN.Name = "SaveBTN";
-            this.SaveBTN.Size = new System.Drawing.Size(155, 41);
-            this.SaveBTN.TabIndex = 3;
-            this.SaveBTN.TextColor = System.Drawing.Color.White;
-            this.SaveBTN.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.SaveBTN.Click += new System.EventHandler(this.SaveBTN_Click);
             // 
             // contextMenuStrip1
             // 
@@ -374,37 +374,37 @@
             this.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV.BackgroundColor = System.Drawing.SystemColors.Window;
             this.DGV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("IRANSansWeb(FaNum)", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("IRANSansWeb(FaNum)", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV.Cursor = System.Windows.Forms.Cursors.PanWest;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("IRANSansWeb", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("IRANSansWeb", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.DGV.Location = new System.Drawing.Point(12, 215);
             this.DGV.Name = "DGV";
             this.DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV.RowHeadersVisible = false;
             this.DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

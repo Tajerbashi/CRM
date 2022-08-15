@@ -28,18 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.xuiButton2 = new XanderUI.XUIButton();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.SaveUserBtn = new XanderUI.XUIButton();
+            this.dateTXt = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.titleeTXT = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.SaveBtn = new XanderUI.XUIButton();
+            this.InfoTxt = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.UsernameTXT = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.DGV = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.checkBoxX2 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.checkBoxX1 = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -48,92 +52,186 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.xuiButton1 = new XanderUI.XUIButton();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ویرایشToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.تغییروضعیتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTXt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimeInput1);
-            this.groupBox1.Controls.Add(this.textBoxX3);
-            this.groupBox1.Controls.Add(this.xuiButton2);
-            this.groupBox1.Controls.Add(this.textBoxX1);
-            this.groupBox1.Controls.Add(this.textBoxX2);
+            this.groupBox1.Controls.Add(this.SaveUserBtn);
+            this.groupBox1.Controls.Add(this.dateTXt);
+            this.groupBox1.Controls.Add(this.titleeTXT);
+            this.groupBox1.Controls.Add(this.SaveBtn);
+            this.groupBox1.Controls.Add(this.InfoTxt);
+            this.groupBox1.Controls.Add(this.UsernameTXT);
             this.groupBox1.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1220, 144);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "افزودن یادآور جدید";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // xuiButton2
+            // SaveUserBtn
             // 
-            this.xuiButton2.BackgroundColor = System.Drawing.Color.Transparent;
-            this.xuiButton2.ButtonImage = global::CRM.Properties.Resources.icons8_checkmark_480;
-            this.xuiButton2.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
-            this.xuiButton2.ButtonText = "ثبت یادآور";
-            this.xuiButton2.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton2.ClickTextColor = System.Drawing.Color.Blue;
-            this.xuiButton2.CornerRadius = 5;
-            this.xuiButton2.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton2.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.xuiButton2.HoverTextColor = System.Drawing.Color.Black;
-            this.xuiButton2.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton2.Location = new System.Drawing.Point(16, 82);
-            this.xuiButton2.Name = "xuiButton2";
-            this.xuiButton2.Size = new System.Drawing.Size(155, 41);
-            this.xuiButton2.TabIndex = 2;
-            this.xuiButton2.TextColor = System.Drawing.Color.White;
-            this.xuiButton2.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.SaveUserBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.SaveUserBtn.ButtonImage = global::CRM.Properties.Resources.icons8_checkmark_480;
+            this.SaveUserBtn.ButtonStyle = XanderUI.XUIButton.Style.Material;
+            this.SaveUserBtn.ButtonText = "";
+            this.SaveUserBtn.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.SaveUserBtn.ClickTextColor = System.Drawing.Color.Blue;
+            this.SaveUserBtn.CornerRadius = 5;
+            this.SaveUserBtn.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.SaveUserBtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SaveUserBtn.HoverTextColor = System.Drawing.Color.Black;
+            this.SaveUserBtn.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.SaveUserBtn.Location = new System.Drawing.Point(812, 34);
+            this.SaveUserBtn.Name = "SaveUserBtn";
+            this.SaveUserBtn.Size = new System.Drawing.Size(40, 40);
+            this.SaveUserBtn.TabIndex = 5;
+            this.SaveUserBtn.TextColor = System.Drawing.Color.White;
+            this.SaveUserBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.SaveUserBtn.Click += new System.EventHandler(this.SaveUserBtn_Click);
             // 
-            // textBoxX1
-            // 
-            this.textBoxX1.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.textBoxX1.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX1.Location = new System.Drawing.Point(177, 33);
-            this.textBoxX1.Multiline = true;
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.Size = new System.Drawing.Size(614, 90);
-            this.textBoxX1.TabIndex = 1;
-            this.textBoxX1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxX1.WatermarkText = "جزییات یادآور";
-            // 
-            // textBoxX2
-            // 
-            this.textBoxX2.BackColor = System.Drawing.SystemColors.Window;
+            // dateTXt
             // 
             // 
             // 
-            this.textBoxX2.Border.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.textBoxX2.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX2.Location = new System.Drawing.Point(810, 33);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.PreventEnterBeep = true;
-            this.textBoxX2.Size = new System.Drawing.Size(391, 42);
-            this.textBoxX2.TabIndex = 0;
-            this.textBoxX2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxX2.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.textBoxX2.WatermarkText = "جستجو کاربر بر اساس نام";
             // 
-            // dataGridViewX1
+            this.dateTXt.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateTXt.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dateTXt.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dateTXt.ButtonDropDown.Visible = true;
+            this.dateTXt.ForeColor = System.Drawing.Color.Black;
+            this.dateTXt.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Center;
+            this.dateTXt.IsPopupCalendarOpen = false;
+            this.dateTXt.Location = new System.Drawing.Point(16, 33);
             // 
-            this.dataGridViewX1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            // 
+            // 
+            // 
+            // 
+            // 
+            this.dateTXt.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dateTXt.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dateTXt.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateTXt.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateTXt.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTXt.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateTXt.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateTXt.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateTXt.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateTXt.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dateTXt.MonthCalendar.DisplayMonth = new System.DateTime(2022, 8, 1, 0, 0, 0, 0);
+            // 
+            // 
+            // 
+            this.dateTXt.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateTXt.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTXt.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateTXt.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dateTXt.MonthCalendar.TodayButtonVisible = true;
+            this.dateTXt.Name = "dateTXt";
+            this.dateTXt.Size = new System.Drawing.Size(155, 34);
+            this.dateTXt.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dateTXt.TabIndex = 3;
+            this.dateTXt.WatermarkAlignment = DevComponents.Editors.eTextAlignment.Center;
+            // 
+            // titleeTXT
+            // 
+            this.titleeTXT.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.titleeTXT.Border.BackColor = System.Drawing.SystemColors.Window;
+            this.titleeTXT.Border.Class = "TextBoxBorder";
+            this.titleeTXT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.titleeTXT.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleeTXT.Location = new System.Drawing.Point(810, 81);
+            this.titleeTXT.Name = "titleeTXT";
+            this.titleeTXT.PreventEnterBeep = true;
+            this.titleeTXT.Size = new System.Drawing.Size(391, 42);
+            this.titleeTXT.TabIndex = 1;
+            this.titleeTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.titleeTXT.WatermarkText = "موضوع یادآور";
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.SaveBtn.ButtonImage = global::CRM.Properties.Resources.icons8_checkmark_480;
+            this.SaveBtn.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.SaveBtn.ButtonText = "ثبت یادآور";
+            this.SaveBtn.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.SaveBtn.ClickTextColor = System.Drawing.Color.Blue;
+            this.SaveBtn.CornerRadius = 5;
+            this.SaveBtn.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.SaveBtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SaveBtn.HoverTextColor = System.Drawing.Color.Black;
+            this.SaveBtn.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.SaveBtn.Location = new System.Drawing.Point(16, 82);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(155, 41);
+            this.SaveBtn.TabIndex = 4;
+            this.SaveBtn.TextColor = System.Drawing.Color.White;
+            this.SaveBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
+            // InfoTxt
+            // 
+            this.InfoTxt.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.InfoTxt.Border.BackColor = System.Drawing.SystemColors.Window;
+            this.InfoTxt.Border.Class = "TextBoxBorder";
+            this.InfoTxt.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.InfoTxt.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InfoTxt.Location = new System.Drawing.Point(177, 34);
+            this.InfoTxt.Multiline = true;
+            this.InfoTxt.Name = "InfoTxt";
+            this.InfoTxt.PreventEnterBeep = true;
+            this.InfoTxt.Size = new System.Drawing.Size(629, 90);
+            this.InfoTxt.TabIndex = 2;
+            this.InfoTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.InfoTxt.WatermarkText = "جزییات یادآور";
+            // 
+            // UsernameTXT
+            // 
+            this.UsernameTXT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.UsernameTXT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.UsernameTXT.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.UsernameTXT.Border.BackColor = System.Drawing.SystemColors.Window;
+            this.UsernameTXT.Border.Class = "TextBoxBorder";
+            this.UsernameTXT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.UsernameTXT.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameTXT.Location = new System.Drawing.Point(858, 33);
+            this.UsernameTXT.Name = "UsernameTXT";
+            this.UsernameTXT.PreventEnterBeep = true;
+            this.UsernameTXT.Size = new System.Drawing.Size(343, 42);
+            this.UsernameTXT.TabIndex = 0;
+            this.UsernameTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UsernameTXT.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UsernameTXT.WatermarkText = "جستجو کاربر بر اساس نام";
+            // 
+            // DGV
+            // 
+            this.DGV.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,28 +239,49 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(12, 252);
-            this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.Size = new System.Drawing.Size(1220, 350);
-            this.dataGridViewX1.TabIndex = 13;
+            this.DGV.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.DGV.Location = new System.Drawing.Point(12, 252);
+            this.DGV.Name = "DGV";
+            this.DGV.Size = new System.Drawing.Size(1220, 350);
+            this.DGV.TabIndex = 13;
+            this.DGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
+            this.DGV.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_CellMouseClick);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBoxX4);
             this.groupBox2.Controls.Add(this.checkBoxX2);
             this.groupBox2.Controls.Add(this.checkBoxX1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBoxX4);
             this.groupBox2.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(7, 152);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1220, 94);
-            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "افزودن مشتری جدید";
+            // 
+            // textBoxX4
+            // 
+            this.textBoxX4.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.textBoxX4.Border.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxX4.Border.Class = "TextBoxBorder";
+            this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.textBoxX4.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxX4.Location = new System.Drawing.Point(372, 33);
+            this.textBoxX4.Name = "textBoxX4";
+            this.textBoxX4.PreventEnterBeep = true;
+            this.textBoxX4.Size = new System.Drawing.Size(761, 42);
+            this.textBoxX4.TabIndex = 11;
+            this.textBoxX4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxX4.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.textBoxX4.WatermarkText = "جستجو کاربر بر اساس نام";
             // 
             // checkBoxX2
             // 
@@ -211,23 +330,6 @@
             this.label4.Size = new System.Drawing.Size(67, 30);
             this.label4.TabIndex = 5;
             this.label4.Text = "جستجو";
-            // 
-            // textBoxX4
-            // 
-            this.textBoxX4.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.textBoxX4.Border.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.textBoxX4.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX4.Location = new System.Drawing.Point(400, 35);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.PreventEnterBeep = true;
-            this.textBoxX4.Size = new System.Drawing.Size(733, 42);
-            this.textBoxX4.TabIndex = 0;
-            this.textBoxX4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
@@ -323,75 +425,43 @@
             this.xuiButton1.Location = new System.Drawing.Point(12, 608);
             this.xuiButton1.Name = "xuiButton1";
             this.xuiButton1.Size = new System.Drawing.Size(216, 41);
-            this.xuiButton1.TabIndex = 19;
+            this.xuiButton1.TabIndex = 2;
             this.xuiButton1.TextColor = System.Drawing.Color.White;
             this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.xuiButton1.Click += new System.EventHandler(this.xuiButton1_Click);
             // 
-            // textBoxX3
+            // contextMenuStrip1
             // 
-            this.textBoxX3.BackColor = System.Drawing.SystemColors.Window;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ویرایشToolStripMenuItem,
+            this.تغییروضعیتToolStripMenuItem,
+            this.حذفToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(160, 94);
             // 
+            // ویرایشToolStripMenuItem
             // 
+            this.ویرایشToolStripMenuItem.Font = new System.Drawing.Font("IRANSansWeb(FaNum)", 11F);
+            this.ویرایشToolStripMenuItem.Image = global::CRM.Properties.Resources.icons8_edit_16;
+            this.ویرایشToolStripMenuItem.Name = "ویرایشToolStripMenuItem";
+            this.ویرایشToolStripMenuItem.Size = new System.Drawing.Size(159, 30);
+            this.ویرایشToolStripMenuItem.Text = "ویرایش";
             // 
-            this.textBoxX3.Border.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.textBoxX3.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX3.Location = new System.Drawing.Point(810, 81);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.PreventEnterBeep = true;
-            this.textBoxX3.Size = new System.Drawing.Size(391, 42);
-            this.textBoxX3.TabIndex = 8;
-            this.textBoxX3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxX3.WatermarkText = "موضوع یادآور";
+            // تغییروضعیتToolStripMenuItem
             // 
-            // dateTimeInput1
+            this.تغییروضعیتToolStripMenuItem.Font = new System.Drawing.Font("IRANSansWeb(FaNum)", 11F);
+            this.تغییروضعیتToolStripMenuItem.Image = global::CRM.Properties.Resources.icons8_change_18__ldpi_;
+            this.تغییروضعیتToolStripMenuItem.Name = "تغییروضعیتToolStripMenuItem";
+            this.تغییروضعیتToolStripMenuItem.Size = new System.Drawing.Size(159, 30);
+            this.تغییروضعیتToolStripMenuItem.Text = "تغییر وضعیت";
             // 
+            // حذفToolStripMenuItem
             // 
-            // 
-            // 
-            this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.ForeColor = System.Drawing.Color.Black;
-            this.dateTimeInput1.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Center;
-            this.dateTimeInput1.IsPopupCalendarOpen = false;
-            this.dateTimeInput1.Location = new System.Drawing.Point(16, 33);
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dateTimeInput1.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2022, 8, 1, 0, 0, 0, 0);
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(155, 34);
-            this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput1.TabIndex = 9;
-            this.dateTimeInput1.WatermarkAlignment = DevComponents.Editors.eTextAlignment.Center;
+            this.حذفToolStripMenuItem.Font = new System.Drawing.Font("IRANSansWeb(FaNum)", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.حذفToolStripMenuItem.Image = global::CRM.Properties.Resources.icons8_delete_32;
+            this.حذفToolStripMenuItem.Name = "حذفToolStripMenuItem";
+            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(159, 30);
+            this.حذفToolStripMenuItem.Text = "حذف";
             // 
             // ReminderForm
             // 
@@ -407,7 +477,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.xuiButton1);
-            this.Controls.Add(this.dataGridViewX1);
+            this.Controls.Add(this.DGV);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -416,10 +486,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ReminderForm_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTXt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,18 +499,17 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private XanderUI.XUIButton xuiButton2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private XanderUI.XUIButton SaveBtn;
+        private DevComponents.DotNetBar.Controls.TextBoxX InfoTxt;
+        private DevComponents.DotNetBar.Controls.TextBoxX UsernameTXT;
+        private DevComponents.DotNetBar.Controls.DataGridViewX DGV;
         private System.Windows.Forms.GroupBox groupBox2;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX2;
         private DevComponents.DotNetBar.Controls.CheckBoxX checkBoxX1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTXt;
+        private DevComponents.DotNetBar.Controls.TextBoxX titleeTXT;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -448,5 +518,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private XanderUI.XUIButton xuiButton1;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ویرایشToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem تغییروضعیتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem;
+        private XanderUI.XUIButton SaveUserBtn;
     }
 }

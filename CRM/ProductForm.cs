@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using BLL;
 using BEE;
 using System.Globalization;
+using System.Windows.Interop;
 
 namespace CRM
 {
@@ -37,6 +38,7 @@ namespace CRM
         }
         ProductBLL bll = new ProductBLL();
         Functions Fun = new Functions();
+        MSGClass MSG = new MSGClass();
         bool sw = true;
         int ID = 0;
         public void ShowDGV()
@@ -67,18 +69,18 @@ namespace CRM
             Product product = new Product();
             if (ProductTXT.Text.Trim().Length==0)
             {
-                MessageBox.Show("نام محصول را بنویسید","خطای خالی بودن",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MSG.ShowMSGBoxDialog("خطای فیلد خالی", "نام محصول را وارد کنید", "", 3, 2);
                 ProductTXT.Focus();
             }
             else if (PriceTXT.Text.Trim().Length == 0)
             {
-                MessageBox.Show("قیمت محصول را بنویسید", "خطای خالی بودن", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MSG.ShowMSGBoxDialog("خطای فیلد خالی", "قیمت محصول را وارد کنید", "", 3, 2);
                 PriceTXT.Focus();
 
             }
             else if (StockTXT.Text.Trim().Length == 0)
             {
-                MessageBox.Show("موجودی محصول را بنویسید", "خطای خالی بودن", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MSG.ShowMSGBoxDialog("خطای فیلد خالی", "تعداد موجودی را وارد کنید", "", 3, 2);
                 StockTXT.Focus();
 
             }
@@ -91,26 +93,26 @@ namespace CRM
                 {
                     if (bll.Create(product))
                     {
-                        MessageBox.Show("محصول با موفقیت ذخیره شد", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        MSG.ShowMSGBoxDialog("ثبت اطلاعات", "محصول جدیدی ذخیره شد", "", 1, 2);
                         ClearTextBox();
                     }
                     else
                     {
-                        MessageBox.Show("محصول ذخیره نشد", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        MSG.ShowMSGBoxDialog("خطای ثبت", "اطلاعات محصول ذخیره نشد", "", 2, 1);
                     }
                 }
                 else
                 {
                     if (bll.Update(product, ID))
                     {
-                        MessageBox.Show("محصول با موفقیت ویرایش شد", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        MSG.ShowMSGBoxDialog("ویرایش اطلاعات", "اطلاعات محصول ویرایش شد", "", 1, 2);
                         sw = true;
                         ClearTextBox();
                         SaveBTN.ButtonText = "ثبت اطلاعات";
                     }
                     else
                     {
-                        MessageBox.Show("محصول ویرایش نشد", "تایید درخواست", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        MSG.ShowMSGBoxDialog("خطای ویرایش", "اطلاعات محصول ویرایش نشد", "", 2, 1);
                     }
                 }
                 ShowDGV();

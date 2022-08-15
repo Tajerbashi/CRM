@@ -75,9 +75,5 @@ namespace CRM
             OpenWindow(f);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

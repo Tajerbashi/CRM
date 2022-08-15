@@ -40,19 +40,19 @@
             this.xuiButton2 = new XanderUI.XUIButton();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.xuiButton3 = new XanderUI.XUIButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.xuiButton4 = new XanderUI.XUIButton();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.xuiButton3 = new XanderUI.XUIButton();
+            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
@@ -205,77 +205,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "افزودن یادآور جدید";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.xuiButton3);
-            this.groupBox2.Controls.Add(this.textBoxX5);
-            this.groupBox2.Controls.Add(this.textBoxX4);
-            this.groupBox2.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(831, 33);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(383, 316);
-            this.groupBox2.TabIndex = 28;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "افزودن یادآور جدید";
-            // 
-            // textBoxX4
-            // 
-            this.textBoxX4.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.textBoxX4.Border.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.textBoxX4.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX4.Location = new System.Drawing.Point(6, 33);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.PreventEnterBeep = true;
-            this.textBoxX4.Size = new System.Drawing.Size(371, 42);
-            this.textBoxX4.TabIndex = 9;
-            this.textBoxX4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxX4.WatermarkText = "شماره تماس";
-            // 
-            // textBoxX5
-            // 
-            this.textBoxX5.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this.textBoxX5.Border.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.textBoxX5.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX5.Location = new System.Drawing.Point(6, 81);
-            this.textBoxX5.Multiline = true;
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.PreventEnterBeep = true;
-            this.textBoxX5.Size = new System.Drawing.Size(371, 182);
-            this.textBoxX5.TabIndex = 10;
-            this.textBoxX5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxX5.WatermarkText = "جزییات یادآور";
-            // 
-            // xuiButton3
-            // 
-            this.xuiButton3.BackgroundColor = System.Drawing.Color.Transparent;
-            this.xuiButton3.ButtonImage = global::CRM.Properties.Resources.icons8_checkmark_480;
-            this.xuiButton3.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
-            this.xuiButton3.ButtonText = "ارسال پیام";
-            this.xuiButton3.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton3.ClickTextColor = System.Drawing.Color.Blue;
-            this.xuiButton3.CornerRadius = 5;
-            this.xuiButton3.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton3.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.xuiButton3.HoverTextColor = System.Drawing.Color.Black;
-            this.xuiButton3.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton3.Location = new System.Drawing.Point(6, 269);
-            this.xuiButton3.Name = "xuiButton3";
-            this.xuiButton3.Size = new System.Drawing.Size(155, 41);
-            this.xuiButton3.TabIndex = 29;
-            this.xuiButton3.TextColor = System.Drawing.Color.White;
-            this.xuiButton3.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.listBox1);
@@ -291,6 +220,15 @@
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "افزودن یادآور جدید";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 27;
+            this.listBox1.Location = new System.Drawing.Point(6, 81);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(256, 166);
+            this.listBox1.TabIndex = 30;
             // 
             // xuiButton4
             // 
@@ -349,14 +287,76 @@
             this.textBoxX2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxX2.WatermarkText = "شماره تماس";
             // 
-            // listBox1
+            // groupBox2
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 27;
-            this.listBox1.Location = new System.Drawing.Point(6, 81);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(256, 166);
-            this.listBox1.TabIndex = 30;
+            this.groupBox2.Controls.Add(this.xuiButton3);
+            this.groupBox2.Controls.Add(this.textBoxX5);
+            this.groupBox2.Controls.Add(this.textBoxX4);
+            this.groupBox2.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(831, 33);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(383, 316);
+            this.groupBox2.TabIndex = 28;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "افزودن یادآور جدید";
+            // 
+            // xuiButton3
+            // 
+            this.xuiButton3.BackgroundColor = System.Drawing.Color.Transparent;
+            this.xuiButton3.ButtonImage = global::CRM.Properties.Resources.icons8_checkmark_480;
+            this.xuiButton3.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.xuiButton3.ButtonText = "ارسال پیام";
+            this.xuiButton3.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton3.ClickTextColor = System.Drawing.Color.Blue;
+            this.xuiButton3.CornerRadius = 5;
+            this.xuiButton3.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton3.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.xuiButton3.HoverTextColor = System.Drawing.Color.Black;
+            this.xuiButton3.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton3.Location = new System.Drawing.Point(6, 269);
+            this.xuiButton3.Name = "xuiButton3";
+            this.xuiButton3.Size = new System.Drawing.Size(155, 41);
+            this.xuiButton3.TabIndex = 29;
+            this.xuiButton3.TextColor = System.Drawing.Color.White;
+            this.xuiButton3.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            // 
+            // textBoxX5
+            // 
+            this.textBoxX5.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.textBoxX5.Border.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxX5.Border.Class = "TextBoxBorder";
+            this.textBoxX5.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.textBoxX5.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxX5.Location = new System.Drawing.Point(6, 81);
+            this.textBoxX5.Multiline = true;
+            this.textBoxX5.Name = "textBoxX5";
+            this.textBoxX5.PreventEnterBeep = true;
+            this.textBoxX5.Size = new System.Drawing.Size(371, 182);
+            this.textBoxX5.TabIndex = 10;
+            this.textBoxX5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxX5.WatermarkText = "جزییات یادآور";
+            // 
+            // textBoxX4
+            // 
+            this.textBoxX4.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this.textBoxX4.Border.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxX4.Border.Class = "TextBoxBorder";
+            this.textBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.textBoxX4.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxX4.Location = new System.Drawing.Point(6, 33);
+            this.textBoxX4.Name = "textBoxX4";
+            this.textBoxX4.PreventEnterBeep = true;
+            this.textBoxX4.Size = new System.Drawing.Size(371, 42);
+            this.textBoxX4.TabIndex = 9;
+            this.textBoxX4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxX4.WatermarkText = "شماره تماس";
             // 
             // SMSForm
             // 
@@ -380,8 +380,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

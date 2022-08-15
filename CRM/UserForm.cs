@@ -25,6 +25,8 @@ namespace CRM
         UserBLL bll = new UserBLL();
         int ID=0;
         bool SW = true;
+        MSGClass MSG = new MSGClass();
+
         private string SavePic(String Name)
         {
             // محل که نرم افزار از آنجا اجرا میشود در متغییر ذخیره میکند
@@ -130,13 +132,13 @@ namespace CRM
 
                     if (bll.Create(u))
                     {
-                        MessageBox.Show("با موفقیت ثبت شد");
+                        MSG.ShowMSGBoxDialog("ثبت اطلاعات","کاربر جدیدی ذخیره شد","",1,2);
                         ClearAllText(this);
                         ShowDGV();
                     }
                     else
                     {
-                        MessageBox.Show("ثبت نشد");
+                        MSG.ShowMSGBoxDialog("خطای در ثبت", "اطلاعات کاربر ذخیره نشد", "", 3, 1);
                     }
                 }
                 else
@@ -144,7 +146,7 @@ namespace CRM
                     u.Picture=SavePic(UserNameTXT.Text);
                     if (bll.Update(u, ID))
                     {
-                        MessageBox.Show("با موفقیت ویرایش شد");
+                        MSG.ShowMSGBoxDialog("ویرایش اطلاعات", "اطلاعات کاربر ویرایش شد", "", 1, 2);
                         SW = true;
                         ClearAllText(this);
                         ShowDGV();
@@ -152,7 +154,7 @@ namespace CRM
                     }
                     else
                     {
-                        MessageBox.Show("ثبت نشد");
+                        MSG.ShowMSGBoxDialog("خطای در ویرایش", "اطلاعات کاربر ویرایش نشد", "", 3, 1);
                     }
                 }
                 #endregion

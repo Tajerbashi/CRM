@@ -80,6 +80,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Functions.cs" />
+    <Compile Include="MSGBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MSGBoxForm.Designer.cs">
+      <DependentUpon>MSGBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MSGClass.cs" />
     <Compile Include="ReminderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InvoiceForm.resx">
       <DependentUpon>InvoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MSGBoxForm.resx">
+      <DependentUpon>MSGBoxForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
@@ -287,6 +297,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\UserSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-change-18%28-ldpi%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-question-67 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-question-67.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-high-priority-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ok-1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\symbol-check-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-fire-exit-gradient-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-forward-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-message-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-information-gradient-96.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

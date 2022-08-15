@@ -54,8 +54,18 @@
     <Compile Include="CustomerDAL.cs" />
     <Compile Include="DB_Class.cs" />
     <Compile Include="InvoiceDAL.cs" />
+    <Compile Include="Migrations\202208142143524_InitialCreate.cs" />
+    <Compile Include="Migrations\202208142143524_InitialCreate.designer.cs">
+      <DependentUpon>202208142143524_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208151356007_ver1.cs" />
+    <Compile Include="Migrations\202208151356007_ver1.designer.cs">
+      <DependentUpon>202208151356007_ver1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProductDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReminderDAL.cs" />
     <Compile Include="UserDAL.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +77,14 @@
       <Project>{c668569f-b1d0-4510-84a4-633444207e57}</Project>
       <Name>BEE</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202208142143524_InitialCreate.resx">
+      <DependentUpon>202208142143524_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208151356007_ver1.resx">
+      <DependentUpon>202208151356007_ver1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

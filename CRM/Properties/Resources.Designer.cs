@@ -63,6 +63,56 @@ namespace CRM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Delete1 {
+            get {
+                object obj = ResourceManager.GetObject("Delete1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete2 {
+            get {
+                object obj = ResourceManager.GetObject("Delete2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete3 {
+            get {
+                object obj = ResourceManager.GetObject("Delete3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Error1 {
+            get {
+                object obj = ResourceManager.GetObject("Error1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Exit1 {
+            get {
+                object obj = ResourceManager.GetObject("Exit1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-96", resourceCulture);
@@ -76,6 +126,16 @@ namespace CRM.Properties {
         internal static System.Drawing.Bitmap icons8_back_to_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-back-to-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_change_18__ldpi_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-change-18(-ldpi)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +173,9 @@ namespace CRM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_delete_user_data_48 {
+        internal static System.Drawing.Bitmap icons8_edit_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8-delete-user-data-48", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8-edit-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +183,9 @@ namespace CRM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_edit_16 {
+        internal static System.Drawing.Bitmap icons8_forward_64 {
             get {
-                object obj = ResourceManager.GetObject("icons8-edit-16", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8-forward-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +223,9 @@ namespace CRM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_remove_64 {
+        internal static System.Drawing.Bitmap icons8_send_to_printer_96 {
             get {
-                object obj = ResourceManager.GetObject("icons8-remove-64", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8-send-to-printer-96", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +233,9 @@ namespace CRM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_send_to_printer_96 {
+        internal static System.Drawing.Bitmap Information1 {
             get {
-                object obj = ResourceManager.GetObject("icons8-send-to-printer-96", resourceCulture);
+                object obj = ResourceManager.GetObject("Information1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -217,6 +277,66 @@ namespace CRM.Properties {
             get {
                 object obj = ResourceManager.GetObject("IRANSansWeb_Persian_Light", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap message1 {
+            get {
+                object obj = ResourceManager.GetObject("message1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ok1 {
+            get {
+                object obj = ResourceManager.GetObject("Ok1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ok2 {
+            get {
+                object obj = ResourceManager.GetObject("Ok2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Question1 {
+            get {
+                object obj = ResourceManager.GetObject("Question1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Question2 {
+            get {
+                object obj = ResourceManager.GetObject("Question2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Warning1 {
+            get {
+                object obj = ResourceManager.GetObject("Warning1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
