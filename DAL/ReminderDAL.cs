@@ -25,7 +25,8 @@ namespace DAL
         public DataTable Read()
         {
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=CRMDB;Integrated Security=true");
-            SqlCommand com = new SqlCommand("dbo.ReadReminder");
+            SqlCommand com = new SqlCommand("dbo.ReadReminders");
+            //com.Parameters.AddWithValue("@SEARCH", s);
             com.Connection = con;
             com.CommandType = CommandType.StoredProcedure;
 
@@ -77,7 +78,14 @@ namespace DAL
         public void IsDone(int ID)
         {
             var q = DB.reminders.Where(c => c.ID == ID).SingleOrDefault();
-            q.IsDone = true;
+            if (q.IsDone==true)
+            {
+                q.IsDone=false;
+            }
+            else
+            {
+                q.IsDone = true;
+            }
             DB.SaveChanges();
         }
     }

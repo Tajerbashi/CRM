@@ -23,6 +23,5 @@ namespace BEE
         public Nullable<bool> IsDone { get; set; }
         public bool DeleteStatus { get; set; }
         public User Users { get; set; }
-
     }
 }

@@ -33,15 +33,15 @@
             this.InfoLblEN = new System.Windows.Forms.Label();
             this.InfoFALBL = new System.Windows.Forms.Label();
             this.TitleLbl = new System.Windows.Forms.Label();
-            this.line4 = new DevComponents.DotNetBar.Controls.Line();
-            this.line3 = new DevComponents.DotNetBar.Controls.Line();
-            this.line2 = new DevComponents.DotNetBar.Controls.Line();
-            this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.BackBtn = new XanderUI.XUIButton();
             this.ExitBtn = new XanderUI.XUIButton();
             this.OKBtn = new XanderUI.XUIButton();
             this.NOBtn = new XanderUI.XUIButton();
             this.YESBtn = new XanderUI.XUIButton();
+            this.line4 = new DevComponents.DotNetBar.Controls.Line();
+            this.line3 = new DevComponents.DotNetBar.Controls.Line();
+            this.line2 = new DevComponents.DotNetBar.Controls.Line();
+            this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.PIC = new System.Windows.Forms.PictureBox();
             this.BluePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PIC)).BeginInit();
@@ -110,42 +110,6 @@
             this.TitleLbl.Text = "موضوع پیام";
             this.TitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // line4
-            // 
-            this.line4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.line4.Location = new System.Drawing.Point(326, 204);
-            this.line4.Name = "line4";
-            this.line4.Size = new System.Drawing.Size(227, 10);
-            this.line4.TabIndex = 44;
-            this.line4.Text = "line4";
-            // 
-            // line3
-            // 
-            this.line3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.line3.Location = new System.Drawing.Point(125, 155);
-            this.line3.Name = "line3";
-            this.line3.Size = new System.Drawing.Size(227, 10);
-            this.line3.TabIndex = 43;
-            this.line3.Text = "line3";
-            // 
-            // line2
-            // 
-            this.line2.ForeColor = System.Drawing.Color.White;
-            this.line2.Location = new System.Drawing.Point(204, 204);
-            this.line2.Name = "line2";
-            this.line2.Size = new System.Drawing.Size(473, 10);
-            this.line2.TabIndex = 42;
-            this.line2.Text = "line2";
-            // 
-            // line1
-            // 
-            this.line1.ForeColor = System.Drawing.Color.White;
-            this.line1.Location = new System.Drawing.Point(3, 155);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(482, 10);
-            this.line1.TabIndex = 41;
-            this.line1.Text = "line1";
-            // 
             // BackBtn
             // 
             this.BackBtn.BackgroundColor = System.Drawing.Color.Transparent;
@@ -206,9 +170,9 @@
             this.OKBtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.OKBtn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.OKBtn.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.OKBtn.Location = new System.Drawing.Point(264, 237);
+            this.OKBtn.Location = new System.Drawing.Point(250, 224);
             this.OKBtn.Name = "OKBtn";
-            this.OKBtn.Size = new System.Drawing.Size(149, 55);
+            this.OKBtn.Size = new System.Drawing.Size(180, 50);
             this.OKBtn.TabIndex = 50;
             this.OKBtn.TextColor = System.Drawing.Color.White;
             this.OKBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -229,9 +193,9 @@
             this.NOBtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.NOBtn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.NOBtn.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.NOBtn.Location = new System.Drawing.Point(215, 226);
+            this.NOBtn.Location = new System.Drawing.Point(364, 220);
             this.NOBtn.Name = "NOBtn";
-            this.NOBtn.Size = new System.Drawing.Size(117, 41);
+            this.NOBtn.Size = new System.Drawing.Size(180, 50);
             this.NOBtn.TabIndex = 49;
             this.NOBtn.TextColor = System.Drawing.Color.White;
             this.NOBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -252,14 +216,50 @@
             this.YESBtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.YESBtn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.YESBtn.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.YESBtn.Location = new System.Drawing.Point(348, 226);
+            this.YESBtn.Location = new System.Drawing.Point(136, 220);
             this.YESBtn.Name = "YESBtn";
-            this.YESBtn.Size = new System.Drawing.Size(117, 41);
+            this.YESBtn.Size = new System.Drawing.Size(180, 50);
             this.YESBtn.TabIndex = 48;
             this.YESBtn.TextColor = System.Drawing.Color.White;
             this.YESBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.YESBtn.Visible = false;
             this.YESBtn.Click += new System.EventHandler(this.YESBtn_Click);
+            // 
+            // line4
+            // 
+            this.line4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.line4.Location = new System.Drawing.Point(326, 204);
+            this.line4.Name = "line4";
+            this.line4.Size = new System.Drawing.Size(227, 10);
+            this.line4.TabIndex = 44;
+            this.line4.Text = "line4";
+            // 
+            // line3
+            // 
+            this.line3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.line3.Location = new System.Drawing.Point(125, 155);
+            this.line3.Name = "line3";
+            this.line3.Size = new System.Drawing.Size(227, 10);
+            this.line3.TabIndex = 43;
+            this.line3.Text = "line3";
+            // 
+            // line2
+            // 
+            this.line2.ForeColor = System.Drawing.Color.White;
+            this.line2.Location = new System.Drawing.Point(204, 204);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(473, 10);
+            this.line2.TabIndex = 42;
+            this.line2.Text = "line2";
+            // 
+            // line1
+            // 
+            this.line1.ForeColor = System.Drawing.Color.White;
+            this.line1.Location = new System.Drawing.Point(3, 155);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(482, 10);
+            this.line1.TabIndex = 41;
+            this.line1.Text = "line1";
             // 
             // PIC
             // 

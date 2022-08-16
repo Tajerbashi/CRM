@@ -12,6 +12,3 @@ C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.csproj.CoreCom
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.dll
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.pdb
-C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.Migrations.InitialCreate.resources
-C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
-C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.Migrations.ver1.resources

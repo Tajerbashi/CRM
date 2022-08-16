@@ -132,8 +132,12 @@ namespace CRM
 
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bll.Delete(ID);
-            ShowDGV();
+            DialogResult Dr = MSG.ShowMSGBoxDialog("هشدار حذف اطلاعات","آیا میخواهید اطلاعات مورد نظر حذف شود؟","",2,1);
+            if (Dr==DialogResult.Yes)
+            {
+                bll.Delete(ID);
+                ShowDGV();
+            }
         }
 
         private void PriceTXT_TextChanged(object sender, EventArgs e)

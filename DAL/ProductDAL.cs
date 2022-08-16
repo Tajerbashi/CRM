@@ -40,7 +40,7 @@ namespace DAL
         {
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=CRMDB;Integrated Security=true");
             SqlCommand com = new SqlCommand("dbo.SearchProduct");
-            com.Parameters.AddWithValue("@search", s);
+            com.Parameters.AddWithValue("@Search", s);
             com.Connection = con;
             com.CommandType = CommandType.StoredProcedure;
 
