@@ -46,6 +46,10 @@ namespace DAL
         {
             return DB.users.Where(c => c.Name == Name).FirstOrDefault();
         }
+        public User ReadByUserName(String user)
+        {
+            return DB.users.Where(c => c.UserName == user).FirstOrDefault();
+        }
         public bool Update(User user, int id)
         {
             var q = DB.users.Where(c => c.ID == id).FirstOrDefault();
@@ -66,9 +70,13 @@ namespace DAL
             q.DeleteStatus = true;
             DB.SaveChanges();
         }
-        public List<string> ReadUserName()
+        public List<string> ReadUserbyName()
         {
-            return (DB.users.Select( i => i.Name).ToList());
-        } 
+            return (DB.users.Select(i => i.Name).ToList());
+        }
+        public List<string> ReadUserbyUserName()
+        {
+            return (DB.users.Select(i => i.UserName).ToList());
+        }
     }
 }

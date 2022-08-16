@@ -31,6 +31,11 @@ namespace BLL
         {
             return dal.ReadAll();
         }
+        public Customer ReadByPhone(String Phone)
+        {
+            return dal.ReadByPhone(Phone);
+
+        }
         public bool Update(Customer customer, int id)
         {
             return dal.Update(customer, id);
@@ -38,6 +43,10 @@ namespace BLL
         public void Delete(int id)
         {
             dal.Delete(id);
+        }
+        public List<string> ReadCustomerByPhone()
+        {
+            return (dal.ReadCustomerByPhone()).ToList();
         }
     }
 }

@@ -92,9 +92,9 @@
             // 
             this.InfoFALBL.Font = new System.Drawing.Font("IRANSansWeb(FaNum)", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InfoFALBL.ForeColor = System.Drawing.Color.Silver;
-            this.InfoFALBL.Location = new System.Drawing.Point(70, 98);
+            this.InfoFALBL.Location = new System.Drawing.Point(27, 75);
             this.InfoFALBL.Name = "InfoFALBL";
-            this.InfoFALBL.Size = new System.Drawing.Size(455, 33);
+            this.InfoFALBL.Size = new System.Drawing.Size(498, 77);
             this.InfoFALBL.TabIndex = 54;
             this.InfoFALBL.Text = "این یک عبارت تستی است";
             this.InfoFALBL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

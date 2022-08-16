@@ -50,7 +50,11 @@ namespace DAL
         }
         public Customer ReadByID(int id)
         {
-            return DB.customers.Where(c => c.ID==id).FirstOrDefault();
+            return DB.customers.Where(c => c.ID == id).FirstOrDefault();
+        }
+        public Customer ReadByPhone(String Phone)
+        {
+            return DB.customers.Where(c => c.Phone == Phone).FirstOrDefault();
         }
         public bool Update(Customer customer,int id)
         {
@@ -79,5 +83,10 @@ namespace DAL
             }
             return false;
         }
+        public List<string> ReadCustomerByPhone()
+        {
+            return (DB.customers.Select(i => i.Phone).ToList());
+        }
+
     }
 }

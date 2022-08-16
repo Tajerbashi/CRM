@@ -50,9 +50,17 @@ namespace BLL
         {
             return dal.ReadByName(Name);
         }
-        public List<string> ReadUserName()
+        public User ReadByUserName(String user)
         {
-            return (dal.ReadUserName()).ToList();
+            return dal.ReadByUserName(user);
+        }
+        public List<string> ReadUserByName()
+        {
+            return (dal.ReadUserbyName()).ToList();
+        }
+        public List<string> ReadUserbyUserName()
+        {
+            return (dal.ReadUserbyUserName()).ToList();
         }
         public bool Update(User user, int id)
         {

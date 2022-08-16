@@ -45,3 +45,4 @@ C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.csproj.CopyCom
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.exe
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.pdb
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.MSGBoxForm.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.SettingForm.resources

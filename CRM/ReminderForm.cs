@@ -58,7 +58,7 @@ namespace CRM
         private void ReminderForm_Load(object sender, EventArgs e)
         {
             AutoCompleteStringCollection names=new AutoCompleteStringCollection();
-            foreach( var i in UBLL.ReadUserName())
+            foreach( var i in UBLL.ReadUserbyUserName())
             {
                 names.Add(i);
             }

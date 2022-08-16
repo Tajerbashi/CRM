@@ -75,5 +75,10 @@ namespace CRM
             OpenWindow(f);
         }
 
+        private void TextBlock_MouseLeftButtonDown_7(object sender, MouseButtonEventArgs e)
+        {
+            SettingForm f = new SettingForm();
+            OpenWindow(f);
+        }
     }
 }

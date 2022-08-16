@@ -112,7 +112,7 @@
             <TextBlock Cursor="Hand" Grid.Row="9" Grid.ColumnSpan="3" Grid.Column="10" Text="مدیریت کاربران " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="94,44,0,0" Width="132" Grid.RowSpan="2" HorizontalAlignment="Left" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_6" />
             <Image Cursor="Hand" Source="/Image/UserSetting.png" Grid.Row="9" Grid.Column="12" Height="30" Width="30" Margin="2,45,74,55" Grid.RowSpan="2"/>
 
-            <TextBlock Cursor="Hand" Grid.Row="10" Grid.ColumnSpan="3" Grid.Column="10" Text="تنظیمات برنامه" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="100,38,0,0" Grid.RowSpan="2" Width="152" HorizontalAlignment="Left"/>
+            <TextBlock Cursor="Hand" Grid.Row="10" Grid.ColumnSpan="3" Grid.Column="10" Text="تنظیمات برنامه" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="100,38,0,0" Grid.RowSpan="2" Width="152" HorizontalAlignment="Left" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_7"/>
             <Image Cursor="Hand" Source="/Image/settings.png" Grid.Row="10" Grid.Column="12" Height="30" Width="30" Margin="7,38,69,62" Grid.RowSpan="2"/>
 
         </Grid>

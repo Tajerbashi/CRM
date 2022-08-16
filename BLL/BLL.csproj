@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityBLL.cs" />
+    <Compile Include="ActivityCategoryBLL.cs" />
     <Compile Include="BLL_Class.cs" />
     <Compile Include="CustomerBLL.cs" />
     <Compile Include="Functions.cs" />
