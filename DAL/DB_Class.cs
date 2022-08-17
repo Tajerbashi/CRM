@@ -9,10 +9,8 @@ namespace DAL
 {
     public class DB_Class : DbContext
     {
-        public DB_Class() : base("DBC")
-        {
+        public DB_Class() : base("DBC"){}
 
-        }
         public DbSet<User> users { get; set; }
         public DbSet<Customer> customers { get; set; }
         public DbSet<Product> products { get; set; }
@@ -20,5 +18,8 @@ namespace DAL
         public DbSet<Activity> activities { get; set; }
         public DbSet<ActivityCategory> activityCategories { get; set; }
         public DbSet<Reminder> reminders { get; set; }
+        public DbSet<UserGroup> userGroups { get; set; }
+        public DbSet<UserAccessRole> accessRoles { get; set; }
+
     }
 }

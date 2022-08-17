@@ -74,7 +74,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.حذفToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ویرایشToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.پرداختشدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xuiButton3 = new XanderUI.XUIButton();
             this.groupBox1.SuspendLayout();
@@ -211,8 +210,8 @@
             this.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("IRANSansWeb", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("IRANSansWeb", 11F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -674,11 +673,10 @@
             // 
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.حذفToolStripMenuItem1,
-            this.ویرایشToolStripMenuItem,
             this.پرداختشدToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip2.Size = new System.Drawing.Size(129, 82);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(129, 56);
             // 
             // حذفToolStripMenuItem1
             // 
@@ -688,14 +686,6 @@
             this.حذفToolStripMenuItem1.Size = new System.Drawing.Size(128, 26);
             this.حذفToolStripMenuItem1.Text = "حذف";
             this.حذفToolStripMenuItem1.Click += new System.EventHandler(this.حذفToolStripMenuItem1_Click);
-            // 
-            // ویرایشToolStripMenuItem
-            // 
-            this.ویرایشToolStripMenuItem.Image = global::CRM.Properties.Resources.icons8_edit_16;
-            this.ویرایشToolStripMenuItem.Name = "ویرایشToolStripMenuItem";
-            this.ویرایشToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
-            this.ویرایشToolStripMenuItem.Text = "ویرایش";
-            this.ویرایشToolStripMenuItem.Click += new System.EventHandler(this.ویرایشToolStripMenuItem_Click);
             // 
             // پرداختشدToolStripMenuItem
             // 
@@ -805,7 +795,6 @@
         private DevComponents.DotNetBar.Controls.CheckBoxX IsCheck;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LastFacLBL;
-        private System.Windows.Forms.ToolStripMenuItem ویرایشToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem پرداختشدToolStripMenuItem;
     }
 }

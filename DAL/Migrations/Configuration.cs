@@ -10,7 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "DAL.DB_Class";
         }
 
         protected override void Seed(DAL.DB_Class context)

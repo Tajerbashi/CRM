@@ -1,21 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="BEE.User">
-    <Position X="8.5" Y="3.25" Width="1.5" />
+  <Class Name="BEE.User" Collapsed="true">
+    <Position X="5.5" Y="4" Width="1.5" />
+    <AssociationLine Name="InVoices" Type="BEE.InVoice" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="4.562" />
+        <Point X="6.25" Y="6.117" />
+        <Point X="2.25" Y="6.117" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAACgIAEAAAAAAAAAAAAAAQAAAAAAAACAQAAAKAAAAA=</HashCode>
+      <HashCode>AAAAgIAEAIAAgAAAAAAAAAQAAAAAAAACARAAAKAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserGroup" />
+    </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Activities" />
-      <Property Name="InVoices" />
       <Property Name="Reminder" />
+      <Property Name="InVoices" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="BEE.Activity">
-    <Position X="8.5" Y="0.5" Width="1.5" />
+  <Class Name="BEE.Activity" Collapsed="true">
+    <Position X="0.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAABAAAAAEAAAAAAAAAAAAAAAAAAAQAAAGAAAQA=</HashCode>
+      <HashCode>AAAAAAABAAAAgEBAAAAACAAAAAAAAAAAARAAAGAAAQA=</HashCode>
       <FileName>Activity.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -24,10 +34,10 @@
       <Property Name="ActivityCategory" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="BEE.ActivityCategory">
-    <Position X="12" Y="1" Width="1.5" />
+  <Class Name="BEE.ActivityCategory" Collapsed="true">
+    <Position X="0.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAIAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAACAAAAAAABAAAIAAAAA=</HashCode>
       <FileName>ActivityCategory.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -35,9 +45,9 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="BEE.Customer" Collapsed="true">
-    <Position X="5.25" Y="0.5" Width="1.5" />
+    <Position X="0.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAIKAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAABAAIKAAAAA=</HashCode>
       <FileName>Customer.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -45,10 +55,10 @@
       <Property Name="Activities" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="BEE.InVoice">
-    <Position X="5.25" Y="2.25" Width="1.5" />
+  <Class Name="BEE.InVoice" Collapsed="true">
+    <Position X="0.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAABAAAAAAAAAgAAAAAAAAIAAAIAAAAABCAAAQA=</HashCode>
+      <HashCode>AAAAAAABAAAAgAAAEgAAAAAAAAIAAAIAABAABCAAAQA=</HashCode>
       <FileName>InVoice.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -59,25 +69,46 @@
       <Property Name="products" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="BEE.Product">
-    <Position X="5.25" Y="5.25" Width="1.5" />
+  <Class Name="BEE.Product" Collapsed="true">
+    <Position X="0.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAQAAAAAAAAAAAAQAgAAAAAAAAAAAACAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAgAAAAAAAAAQAgAAAAAAAABAAACAAAAA=</HashCode>
       <FileName>Product.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="InVoices" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="BEE.Reminder">
-    <Position X="12" Y="3.25" Width="1.5" />
+  <Class Name="BEE.Reminder" Collapsed="true">
+    <Position X="3" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIACACAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAACAAAAA=</HashCode>
+      <HashCode>AAAAACAAAAAAgEBAAAAAAAAAAAAAAIAAABAAACAAAAA=</HashCode>
       <FileName>Reminder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Users" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BEE.UserGroup" Collapsed="true">
+    <Position X="8" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAgAAAgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserGroup.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Users" />
+      <Property Name="UserAccessRoles" />
     </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BEE.UserAccessRole" Collapsed="true">
+    <Position X="8" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAABAAIAAgAAAAAAAAAAAAEAAAAAAAAABAIAAAAA=</HashCode>
+      <FileName>UserAccessRole.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserGroup" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

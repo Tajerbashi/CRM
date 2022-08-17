@@ -25,5 +25,6 @@ namespace BEE
         public List<Activity> Activities { get; set; } = new List<Activity>();
         public List<Reminder> Reminder { get; set; } = new List<Reminder>();
         public List<InVoice> InVoices { get; set; } = new List<InVoice>();
+        public UserGroup UserGroup { get; set; }
     }
 }

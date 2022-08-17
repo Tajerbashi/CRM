@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using BLL;
 using BEE;
+using Stimulsoft.Report;
+
 namespace CRM
 {
     public partial class InvoiceForm : Form
@@ -203,8 +205,6 @@ namespace CRM
             AddProduct();
         }
 
-       
-       
         private void DGV1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             IDDGV1 = DGV1.CurrentRow.Index;
@@ -232,7 +232,20 @@ namespace CRM
             }
             if (BLL.Create(inVoice,C,U,ProductsList))
             {
-                MSG.ShowMSGBoxDialog("ثبت اطلاعات","فاکتور با موفقیت ذخیره شد\nآیا میخواهید فاکتور چاپ شود?","",2,2);
+                DialogResult DR= MSG.ShowMSGBoxDialog("ثبت اطلاعات","فاکتور با موفقیت ذخیره شد\nآیا میخواهید فاکتور چاپ شود?","",2,2);
+                if (DR==DialogResult.Yes)
+                {
+                    StiReport sti = new StiReport();
+                    sti.Load(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\Report.mrt");
+                    sti.Dictionary.Variables["InvoiceNumber"].Value=LastFacLBL.Text;
+                    sti.Dictionary.Variables["Date"].Value=DateLBL.Text;
+                    sti.Dictionary.Variables["UserName"].Value=UserNameTXT.Text;
+                    sti.Dictionary.Variables["CustomerName"].Value=NameLBL.Text;
+                    sti.Dictionary.Variables["CustomerPhone"].Value=PhoneLBL.Text;
+                    sti.RegBusinessObject("Product",ProductsList);
+                    sti.Render();
+                    sti.Show();
+                }
             }
             else
             {
@@ -258,12 +271,6 @@ namespace CRM
         private void SearchTXT_TextChanged(object sender, EventArgs e)
         {
             DGVSearch();
-        }
-
-        private void ویرایشToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //  DGV2
-
         }
 
         private void پرداختشدToolStripMenuItem_Click(object sender, EventArgs e)

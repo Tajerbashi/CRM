@@ -46,3 +46,10 @@ C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.exe
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.pdb
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.MSGBoxForm.resources
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.SettingForm.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\FoxLearn.License.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\Stimulsoft.Report.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\Stimulsoft.Report.Win.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\Stimulsoft.Base.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\Stimulsoft.Data.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\Stimulsoft.Controls.Win.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\Stimulsoft.Controls.dll
