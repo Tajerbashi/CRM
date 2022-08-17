@@ -11,12 +11,14 @@ namespace BEE
         public InVoice()
         {
             DeleteStatus = false;
+            RegDate = DateTime.Now;
         }
         public int ID { get; set; }
-        public string InvoiceNumber { get; set; }
+        public int InvoiceNumber { get; set; }
         public DateTime RegDate { get; set; }
-        public DateTime CheckOutDate { get; set; }
+        public Nullable<DateTime> CheckOutDate { get; set; }
         public bool IsCheckout { get; set; } = false;
+        public Double inVoicePrice { get; set; }
         public Customer customer { get; set; }
         public User user { get; set; }
         public List<Product> products { get; set; } = new List<Product>();

@@ -82,6 +82,13 @@ namespace DAL
             }
             return false;
         }
-    
+        public List<string> ReadAllProductByName()
+        {
+            return (DB.products.Select(i => i.Name).ToList());
+        }
+        public Product ReadProductByName(String Name)
+        {
+            return DB.products.Where(i => i.Name==Name && !i.DeleteStatus).FirstOrDefault();
+        }
     }
 }

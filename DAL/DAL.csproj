@@ -68,6 +68,22 @@
     <Compile Include="Migrations\202208160316255_Mig_11.designer.cs">
       <DependentUpon>202208160316255_Mig_11.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202208161516006_Ver2.cs" />
+    <Compile Include="Migrations\202208161516006_Ver2.designer.cs">
+      <DependentUpon>202208161516006_Ver2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208162237158_Ver3.cs" />
+    <Compile Include="Migrations\202208162237158_Ver3.designer.cs">
+      <DependentUpon>202208162237158_Ver3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208162306390_Ver4.cs" />
+    <Compile Include="Migrations\202208162306390_Ver4.designer.cs">
+      <DependentUpon>202208162306390_Ver4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208162325566_Ver5.cs" />
+    <Compile Include="Migrations\202208162325566_Ver5.designer.cs">
+      <DependentUpon>202208162325566_Ver5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProductDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,6 +109,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202208160316255_Mig_11.resx">
       <DependentUpon>202208160316255_Mig_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208161516006_Ver2.resx">
+      <DependentUpon>202208161516006_Ver2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208162237158_Ver3.resx">
+      <DependentUpon>202208162237158_Ver3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208162306390_Ver4.resx">
+      <DependentUpon>202208162306390_Ver4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208162325566_Ver5.resx">
+      <DependentUpon>202208162325566_Ver5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

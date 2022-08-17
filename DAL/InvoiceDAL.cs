@@ -12,10 +12,16 @@ namespace DAL
     public class InvoiceDAL
     {
         DB_Class DB = new DB_Class();
-        public bool Create(InVoice inVoice)
+        public bool Create(InVoice inVoice,Customer c,User u,List<Product> p)
         {
             try
             {
+                inVoice.customer = DB.customers.Find(c.ID);
+                inVoice.user = DB.users.Find(u.ID);
+                foreach (var i in p)
+                {
+                    inVoice.products.Add(DB.products.Find(i.ID));
+                }
                 DB.inVoices.Add(inVoice);
                 DB.SaveChanges();
                 return true;
@@ -27,13 +33,15 @@ namespace DAL
         }
         public DataTable ReadAll()
         {
-            string cmd = "SELECT InvoiceNumber AS [شماره فاکتور], RegDate AS [تاریخ ثبت], CheckOutDate AS [تاریخ نمایش], IsCheckout AS وضعیت FROM dbo.InVoices WHERE (DeleteStatus = 0)";
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=CRMDB;Integrated Security=true");
-            var sqladapter = new SqlDataAdapter(cmd, con);
-            var commondbuilder = new SqlCommandBuilder(sqladapter);
+            SqlCommand com = new SqlCommand("dbo.ReadInvoice");
+            com.Connection = con;
+            com.CommandType = CommandType.StoredProcedure;
+
+            var sqladapter = new SqlDataAdapter();
+            sqladapter.SelectCommand = com;
             var ds = new DataSet();
             sqladapter.Fill(ds);
-
             return ds.Tables[0];
         }
         public DataTable ReadSearch(String s)
@@ -60,7 +68,6 @@ namespace DAL
             if (q != null)
             {
                 q.InvoiceNumber = inVoice.InvoiceNumber;
-                q.RegDate = inVoice.RegDate;
                 q.CheckOutDate = inVoice.CheckOutDate;
                 q.IsCheckout = inVoice.IsCheckout;
                 DB.SaveChanges();
@@ -83,5 +90,24 @@ namespace DAL
             }
             return false;
         }
+        
+        public int lastFactorNumber()
+        {
+            int q=DB.inVoices.Count();
+            if (q>0)
+            {
+                var N = DB.inVoices.Select(c => c.InvoiceNumber).Max();
+                return N + 1;
+            }
+            return 10001;
+        }
+        public void ChangeCheckIsDone(int ID)
+        {
+            var q = DB.inVoices.Where(c => c.ID == ID).FirstOrDefault();
+            q.CheckOutDate = DateTime.Now;
+            q.IsCheckout = true;
+            DB.SaveChanges();
+        }
+
     }
 }

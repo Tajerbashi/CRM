@@ -39,5 +39,13 @@ namespace BLL
         {
             dal.Delete(id);
         }
+        public List<string> ReadAllProductByName()
+        {
+            return dal.ReadAllProductByName().ToList();
+        }
+        public Product ReadProductByName(String Name)
+        {
+            return dal.ReadProductByName(Name);
+        }
     }
 }

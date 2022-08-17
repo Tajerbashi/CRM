@@ -16,3 +16,7 @@ C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.Migrations.Ini
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.Migrations.Mig_1.resources
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.Migrations.Mig_11.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.Migrations.Ver2.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.Migrations.Ver3.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.Migrations.Ver4.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\DAL\obj\Debug\DAL.Migrations.Ver5.resources

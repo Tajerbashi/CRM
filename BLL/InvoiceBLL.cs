@@ -14,33 +14,45 @@ namespace BLL
     {
         InvoiceDAL dal = new InvoiceDAL();
 
-        public bool Create(InVoice invoice)
+        public bool Create(InVoice inVoice, Customer c, User u, List<Product> p)
         {
-            //  check customer is Not in DB
-            if (!dal.ReadForCreate(invoice))
-            {
-                dal.Create(invoice);
-                return true;
-            }
-            return false;
+            return dal.Create(inVoice, c, u, p);
         }
-        public DataTable ReadSearch(String word)
-        {
-            return dal.ReadSearch(word);
-        }
-
         public DataTable ReadAll()
         {
             return dal.ReadAll();
         }
-        public bool Update(InVoice invoice, int id)
+        public DataTable ReadSearch(String s)
         {
-            return dal.Update(invoice, id);
+            return dal.ReadSearch(s);
+        }
+        public InVoice ReadByID(int id)
+        {
+            return dal.ReadByID(id);
+        }
+        public bool Update(InVoice inVoice, int id)
+        {
+            return dal.Update(inVoice, id);
         }
         public void Delete(int id)
         {
             dal.Delete(id);
         }
+        public bool ReadForCreate(InVoice inVoice)
+        {
+            return dal.ReadForCreate(inVoice);
+        }
+
+        public int lastFactorNumber()
+        {
+            return dal.lastFactorNumber();
+        }
+
+        public void ChangeCheckIsDone(int ID)
+        {
+            dal.ChangeCheckIsDone(ID);
+        }
+
 
     }
 }
