@@ -12,8 +12,17 @@ namespace DAL
         DB_Class DB = new DB_Class();
         public bool Create(UserGroup userGroup)
         {
-            DB.userGroups.Add(userGroup);
-            return true;
+            try
+            {
+                DB.userGroups.Add(userGroup);
+                DB.SaveChanges();
+
+                return true;
+            }
+            catch 
+            {
+                return false;
+            }
         }
     }
 }

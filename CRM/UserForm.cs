@@ -23,9 +23,21 @@ namespace CRM
         OpenFileDialog ofd = new OpenFileDialog();
         Image pic;
         UserBLL bll = new UserBLL();
+        UserGroupBLL BLLG=new UserGroupBLL();
         int ID=0;
         bool SW = true;
         MSGClass MSG = new MSGClass();
+
+        public UserAccessRole FillAccessRole(String Section,bool CanEnter,bool CanAdd,bool CanEdit,bool CanDel)
+        {
+            UserAccessRole role = new UserAccessRole();
+            role.Section = Section;
+            role.CanEnter = CanEnter;
+            role.CanCreate = CanAdd;
+            role.CanUpdate = CanEdit;
+            role.CanDelete = CanDel;
+            return role;
+        }
 
         private string SavePic(String Name)
         {
@@ -207,6 +219,147 @@ namespace CRM
         private void UserNameTXT_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void E0_CheckedChanged(object sender, EventArgs e)
+        {
+            if (E0.Checked)
+            {
+                E1.Checked = true;
+                E2.Checked = true;
+                E3.Checked = true;
+                E4.Checked = true;
+                E5.Checked = true;
+                E6.Checked = true;
+                E7.Checked = true;
+                E8.Checked = true;
+                E9.Checked = true;
+            }
+            else
+            {
+                E1.Checked = false;
+                E2.Checked = false;
+                E3.Checked = false;
+                E4.Checked = false;
+                E5.Checked = false;
+                E6.Checked = false;
+                E7.Checked = false;
+                E8.Checked = false;
+                E9.Checked = false;
+            }
+        }
+
+        private void A0_CheckedChanged(object sender, EventArgs e)
+        {
+            if (A0.Checked)
+            {
+                A1.Checked = true;
+                A2.Checked = true;
+                A3.Checked = true;
+                A4.Checked = true;
+                A5.Checked = true;
+                A6.Checked = true;
+                A7.Checked = true;
+                A8.Checked = true;
+                A9.Checked = true;
+            }
+            else
+            {
+                A1.Checked = false;
+                A2.Checked = false;
+                A3.Checked = false;
+                A4.Checked = false;
+                A5.Checked = false;
+                A6.Checked = false;
+                A7.Checked = false;
+                A8.Checked = false;
+                A9.Checked = false;
+            }
+        }
+
+        private void U0_CheckedChanged(object sender, EventArgs e)
+        {
+            if (U0.Checked)
+            {
+                U1.Checked = true;
+                U2.Checked = true;
+                U3.Checked = true;
+                U4.Checked = true;
+                U5.Checked = true;
+                U6.Checked = true;
+                U7.Checked = true;
+                U8.Checked = true;
+                U9.Checked = true;
+            }
+            else
+            {
+                U1.Checked = false;
+                U2.Checked = false;
+                U3.Checked = false;
+                U4.Checked = false;
+                U5.Checked = false;
+                U6.Checked = false;
+                U7.Checked = false;
+                U8.Checked = false;
+                U9.Checked = false;
+            }
+
+        }
+
+        private void D0_CheckedChanged(object sender, EventArgs e)
+        {
+            if (D0.Checked)
+            {
+                D1.Checked = true;
+                D2.Checked = true;
+                D3.Checked = true;
+                D4.Checked = true;
+                D5.Checked = true;
+                D6.Checked = true;
+                D7.Checked = true;
+                D8.Checked = true;
+                D9.Checked = true;
+            }
+            else
+            {
+                D1.Checked = false;
+                D2.Checked = false;
+                D3.Checked = false;
+                D4.Checked = false;
+                D5.Checked = false;
+                D6.Checked = false;
+                D7.Checked = false;
+                D8.Checked = false;
+                D9.Checked = false;
+            }
+        }
+
+        private void xuiButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void xuiButton1_Click(object sender, EventArgs e)
+        {
+            UserGroup Ug = new UserGroup();
+            Ug.Title = GroupTXT.Text;
+            Ug.UserAccessRoles.Add(FillAccessRole(L1.Text,E1.Checked,A1.Checked,U1.Checked,D1.Checked));
+            Ug.UserAccessRoles.Add(FillAccessRole(L2.Text,E2.Checked,A2.Checked,U2.Checked,D2.Checked));
+            Ug.UserAccessRoles.Add(FillAccessRole(L3.Text,E3.Checked,A3.Checked,U3.Checked,D3.Checked));
+            Ug.UserAccessRoles.Add(FillAccessRole(L4.Text,E4.Checked,A4.Checked,U4.Checked,D4.Checked));
+            Ug.UserAccessRoles.Add(FillAccessRole(L5.Text,E5.Checked,A5.Checked,U5.Checked,D5.Checked));
+            Ug.UserAccessRoles.Add(FillAccessRole(L6.Text,E6.Checked,A6.Checked,U6.Checked,D6.Checked));
+            Ug.UserAccessRoles.Add(FillAccessRole(L7.Text,E7.Checked,A7.Checked,U7.Checked,D7.Checked));
+            Ug.UserAccessRoles.Add(FillAccessRole(L8.Text,E8.Checked,A8.Checked,U8.Checked,D8.Checked));
+            Ug.UserAccessRoles.Add(FillAccessRole(L9.Text,E9.Checked,A9.Checked,U9.Checked,D9.Checked));
+            if (BLLG.Create(Ug))
+            {
+                MSG.ShowMSGBoxDialog("ثبت اطلاعات", "گروه کاربری با موفقیت ذخیره شد", "", 1, 2);
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("خطای در ثبت", "گروه کاربری ایجاد نشد", "", 3, 1);
+            }
         }
     }
 }

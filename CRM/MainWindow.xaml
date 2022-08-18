@@ -18,7 +18,8 @@
         AllowsTransparency="True"
         
         Title="MainWindow" Height="720" Width="1280">
-    <Border BorderBrush="#FF8ED3ED" BorderThickness="5" CornerRadius="10">
+    
+    <Border BorderBrush="#FF8ED3ED" BorderThickness="5" CornerRadius="10" Loaded="Border_Loaded">
         <Grid Background="#FF8ED3ED">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="106*"/>

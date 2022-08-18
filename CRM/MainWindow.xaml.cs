@@ -80,5 +80,11 @@ namespace CRM
             SettingForm f = new SettingForm();
             OpenWindow(f);
         }
+
+        private void Border_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoginForm f = new LoginForm();
+            OpenWindow(f);
+        }
     }
 }

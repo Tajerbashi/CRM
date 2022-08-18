@@ -53,3 +53,4 @@ C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\Stimulsoft.Base.dl
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\Stimulsoft.Data.dll
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\Stimulsoft.Controls.Win.dll
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\Stimulsoft.Controls.dll
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.LoginForm.resources
