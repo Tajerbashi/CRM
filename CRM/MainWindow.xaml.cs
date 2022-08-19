@@ -24,7 +24,8 @@ namespace CRM
             InitializeComponent();
         }
         public User UserAdmin = new User();
-
+        UserBLL userBLL = new UserBLL();
+        MSGClass MSG = new MSGClass();
         public void OpenWindow(Form F)
         {
             Window g = this.FindName("Main") as Window;
@@ -39,50 +40,107 @@ namespace CRM
 
         private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            InvoiceForm f = new InvoiceForm();
-            OpenWindow(f);
+            if (userBLL.Access(UserAdmin, "بخش فاکتور ها", 1))
+            {
+                InvoiceForm f = new InvoiceForm();
+                OpenWindow(f);
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
         }
 
         private void TextBlock_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
-            CustomerForm f = new CustomerForm();
-            OpenWindow(f);
+            if (userBLL.Access(UserAdmin, "بخش مشتریان", 1))
+            {
+                CustomerForm f = new CustomerForm();
+                OpenWindow(f);
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی","شما اجازه ورود به این بخش نرم افزار ندارید","",3,2);
+            }
         }
 
         private void TextBlock_MouseLeftButtonDown_2(object sender, MouseButtonEventArgs e)
         {
-            ProductForm f = new ProductForm();
-            OpenWindow(f);
+            if (userBLL.Access(UserAdmin, "بخش کالا ها", 1))
+            {
+                ProductForm f = new ProductForm();
+                OpenWindow(f);
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
         }
 
         private void TextBlock_MouseLeftButtonDown_3(object sender, MouseButtonEventArgs e)
         {
-            ActivityForm f = new ActivityForm();
-            OpenWindow(f);
+            if (userBLL.Access(UserAdmin, "بخش فعالیت ها", 1))
+            {
+                ActivityForm f = new ActivityForm();
+                OpenWindow(f);
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
         }
 
         private void TextBlock_MouseLeftButtonDown_4(object sender, MouseButtonEventArgs e)
         {
-            ReminderForm f = new ReminderForm();
-            OpenWindow(f);
+            if (userBLL.Access(UserAdmin, "بخش یاد آورها", 1))
+            {
+                ReminderForm f = new ReminderForm();
+                OpenWindow(f);
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
         }
 
         private void TextBlock_MouseLeftButtonDown_5(object sender, MouseButtonEventArgs e)
         {
-            SMSForm f = new SMSForm();
-            OpenWindow(f);
+            if (userBLL.Access(UserAdmin, "پنل پیامکی", 1))
+            {
+                SMSForm f = new SMSForm();
+                OpenWindow(f);
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
         }
 
         private void TextBlock_MouseLeftButtonDown_6(object sender, MouseButtonEventArgs e)
         {
-            UserForm f = new UserForm();
-            OpenWindow(f);
+            if (userBLL.Access(UserAdmin, "بخش کاربران", 1))
+            {
+                UserForm f = new UserForm();
+                OpenWindow(f);
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
         }
 
         private void TextBlock_MouseLeftButtonDown_7(object sender, MouseButtonEventArgs e)
         {
-            SettingForm f = new SettingForm();
-            OpenWindow(f);
+            if (userBLL.Access(UserAdmin, "بخش تنظیمات", 1))
+            {
+                SettingForm f = new SettingForm();
+                OpenWindow(f);
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
+            //بخش گزارشات
         }
 
         private void Border_Loaded(object sender, RoutedEventArgs e)

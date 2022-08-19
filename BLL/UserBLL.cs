@@ -75,10 +75,15 @@ namespace BLL
         {
             return dal.IsAdmin();
         }
-        public bool IsLogin(User user)
+        public User IsLogin(String username, String pass)
         {
-            user.Password = Encode(user.Password);
-            return dal.IsLogin(user);
+            pass = Encode(pass);
+            return dal.IsLogin(username,pass);
+        }
+        public bool Access(User user, String S, int a)
+        {
+            //  1 Can Enter            //  2 Can Create            //  3 Can Update            //  4 Can Delete
+            return dal.Access(user, S, a);
         }
     }
 }

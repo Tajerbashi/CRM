@@ -43,6 +43,7 @@ namespace CRM
 
         Customer C = new Customer();
         User U = new User();
+        User UserAdmin = new User();
 
         int IDDGV1 = 0;
         int IDDGV2 = 0;
@@ -133,6 +134,9 @@ namespace CRM
 
         private void InvoiceForm_Load(object sender, EventArgs e)
         {
+            MainWindow mainWindow = (MainWindow)System.Windows.Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            UserAdmin = mainWindow.UserAdmin;
+
             LastFacLBL.Text = Convert.ToString(BLL.lastFactorNumber());
             DateLBL.Text = DateTime.Now.ToString("yyyy/MM/dd");
             AutoCompleteStringCollection CustomersNames = new AutoCompleteStringCollection();
@@ -217,42 +221,52 @@ namespace CRM
 
         private void SavePrintBtn_Click(object sender, EventArgs e)
         {
-            InVoice inVoice = new InVoice();
-            inVoice.RegDate = DateTime.Now;
-            inVoice.InvoiceNumber = int.Parse(LastFacLBL.Text);
-            inVoice.inVoicePrice = Convert.ToDouble(TotalBuyPrice.Text);
-            if (IsCheck.Checked)
+            if (UserBLL.Access(UserAdmin, "بخش فاکتور ها", 2))
             {
-                inVoice.IsCheckout = true;
-                inVoice.CheckOutDate= DateTime.Now;
-            }
-            else
-            {
-                inVoice.IsCheckout = false;
-            }
-            if (BLL.Create(inVoice,C,U,ProductsList))
-            {
-                DialogResult DR= MSG.ShowMSGBoxDialog("ثبت اطلاعات","فاکتور با موفقیت ذخیره شد\nآیا میخواهید فاکتور چاپ شود?","",2,2);
-                if (DR==DialogResult.Yes)
+                #region Code
+                InVoice inVoice = new InVoice();
+                inVoice.RegDate = DateTime.Now;
+                inVoice.InvoiceNumber = int.Parse(LastFacLBL.Text);
+                inVoice.inVoicePrice = Convert.ToDouble(TotalBuyPrice.Text);
+                if (IsCheck.Checked)
                 {
-                    StiReport sti = new StiReport();
-                    sti.Load(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\Report.mrt");
-                    sti.Dictionary.Variables["InvoiceNumber"].Value=LastFacLBL.Text;
-                    sti.Dictionary.Variables["Date"].Value=DateLBL.Text;
-                    sti.Dictionary.Variables["UserName"].Value=UserNameTXT.Text;
-                    sti.Dictionary.Variables["CustomerName"].Value=NameLBL.Text;
-                    sti.Dictionary.Variables["CustomerPhone"].Value=PhoneLBL.Text;
-                    sti.RegBusinessObject("Product",ProductsList);
-                    sti.Render();
-                    sti.Show();
+                    inVoice.IsCheckout = true;
+                    inVoice.CheckOutDate = DateTime.Now;
                 }
+                else
+                {
+                    inVoice.IsCheckout = false;
+                }
+                if (BLL.Create(inVoice, C, U, ProductsList))
+                {
+                    DialogResult DR = MSG.ShowMSGBoxDialog("ثبت اطلاعات", "فاکتور با موفقیت ذخیره شد\nآیا میخواهید فاکتور چاپ شود?", "", 2, 2);
+                    if (DR == DialogResult.Yes)
+                    {
+                        StiReport sti = new StiReport();
+                        sti.Load(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\Report.mrt");
+                        sti.Dictionary.Variables["InvoiceNumber"].Value = LastFacLBL.Text;
+                        sti.Dictionary.Variables["Date"].Value = DateLBL.Text;
+                        sti.Dictionary.Variables["UserName"].Value = UserNameTXT.Text;
+                        sti.Dictionary.Variables["CustomerName"].Value = NameLBL.Text;
+                        sti.Dictionary.Variables["CustomerPhone"].Value = PhoneLBL.Text;
+                        sti.RegBusinessObject("Product", ProductsList);
+                        sti.Render();
+                        sti.Show();
+                    }
+                }
+                else
+                {
+                    MSG.ShowMSGBoxDialog("خطای ثبت اطلاعات", "فاکتور ذخیره نشد", "", 3, 1);
+                }
+                ShowDGV();
+                LastFacLBL.Text = Convert.ToString(BLL.lastFactorNumber());
+                #endregion
+
             }
             else
             {
-                MSG.ShowMSGBoxDialog("خطای ثبت اطلاعات", "فاکتور ذخیره نشد", "", 3, 1);
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
             }
-            ShowDGV();
-            LastFacLBL.Text = Convert.ToString(BLL.lastFactorNumber());
         }
 
         private void DGV2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -276,22 +290,42 @@ namespace CRM
         private void پرداختشدToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //  DGV2
-            DialogResult DR = MSG.ShowMSGBoxDialog("تغییر وضعیت","آیا میخواهید تایید پرداخت را فعال کنید؟","",2,2);
-            if (DR==DialogResult.Yes)
+            
+            if (UserBLL.Access(UserAdmin, "بخش فاکتور ها", 3))
             {
-                BLL.ChangeCheckIsDone(IDDGV2);
-                ShowDGV();
+                DialogResult DR = MSG.ShowMSGBoxDialog("تغییر وضعیت", "آیا میخواهید تایید پرداخت را فعال کنید؟", "", 2, 2);
+                if (DR == DialogResult.Yes)
+                {
+                    BLL.ChangeCheckIsDone(IDDGV2);
+                    ShowDGV();
+                }
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
             }
         }
         private void حذفToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             //  DGV2
-            DialogResult DR = MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید فاکتور مورد نظر را حذف کنید؟", "", 2, 1);
-            if (DR == DialogResult.Yes)
+            if (UserBLL.Access(UserAdmin, "بخش فاکتور ها", 4))
             {
-                BLL.Delete(IDDGV2);
-                ShowDGV();
+                DialogResult DR = MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید فاکتور مورد نظر را حذف کنید؟", "", 2, 1);
+                if (DR == DialogResult.Yes)
+                {
+                    BLL.Delete(IDDGV2);
+                    ShowDGV();
+                }
             }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

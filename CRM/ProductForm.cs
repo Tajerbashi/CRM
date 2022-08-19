@@ -39,6 +39,8 @@ namespace CRM
         ProductBLL bll = new ProductBLL();
         Functions Fun = new Functions();
         MSGClass MSG = new MSGClass();
+        User UserAdmin = new User();
+        UserBLL UserBLL = new UserBLL();
         bool sw = true;
         int ID = 0;
         public void ShowDGV()
@@ -57,86 +59,111 @@ namespace CRM
         private void ProductForm_Load(object sender, EventArgs e)
         {
             ShowDGV();
+            MainWindow mainWindow = (MainWindow)System.Windows.Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            UserAdmin = mainWindow.UserAdmin;
         }
 
         private void xuiButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void SaveBTN_Click(object sender, EventArgs e)
         {
-            Product product = new Product();
-            if (ProductTXT.Text.Trim().Length==0)
+            if (UserBLL.Access(UserAdmin, "بخش کالا ها", 2))
             {
-                MSG.ShowMSGBoxDialog("خطای فیلد خالی", "نام محصول را وارد کنید", "", 3, 2);
-                ProductTXT.Focus();
-            }
-            else if (PriceTXT.Text.Trim().Length == 0)
-            {
-                MSG.ShowMSGBoxDialog("خطای فیلد خالی", "قیمت محصول را وارد کنید", "", 3, 2);
-                PriceTXT.Focus();
-
-            }
-            else if (StockTXT.Text.Trim().Length == 0)
-            {
-                MSG.ShowMSGBoxDialog("خطای فیلد خالی", "تعداد موجودی را وارد کنید", "", 3, 2);
-                StockTXT.Focus();
-
-            }
-            else
-            {
-                product.Name = ProductTXT.Text;
-                product.Price = Convert.ToDouble(Fun.ChangeToEnglishNumber(PriceTXT.Text));
-                product.Stock = Convert.ToInt32(Fun.ChangeToEnglishNumber(StockTXT.Text));
-                if (sw)
+                #region Code
+                Product product = new Product();
+                if (ProductTXT.Text.Trim().Length == 0)
                 {
-                    if (bll.Create(product))
-                    {
-                        MSG.ShowMSGBoxDialog("ثبت اطلاعات", "محصول جدیدی ذخیره شد", "", 1, 2);
-                        ClearTextBox();
-                    }
-                    else
-                    {
-                        MSG.ShowMSGBoxDialog("خطای ثبت", "اطلاعات محصول ذخیره نشد", "", 2, 1);
-                    }
+                    MSG.ShowMSGBoxDialog("خطای فیلد خالی", "نام محصول را وارد کنید", "", 3, 2);
+                    ProductTXT.Focus();
+                }
+                else if (PriceTXT.Text.Trim().Length == 0)
+                {
+                    MSG.ShowMSGBoxDialog("خطای فیلد خالی", "قیمت محصول را وارد کنید", "", 3, 2);
+                    PriceTXT.Focus();
+
+                }
+                else if (StockTXT.Text.Trim().Length == 0)
+                {
+                    MSG.ShowMSGBoxDialog("خطای فیلد خالی", "تعداد موجودی را وارد کنید", "", 3, 2);
+                    StockTXT.Focus();
+
                 }
                 else
                 {
-                    if (bll.Update(product, ID))
+                    product.Name = ProductTXT.Text;
+                    product.Price = Convert.ToDouble(Fun.ChangeToEnglishNumber(PriceTXT.Text));
+                    product.Stock = Convert.ToInt32(Fun.ChangeToEnglishNumber(StockTXT.Text));
+                    if (sw)
                     {
-                        MSG.ShowMSGBoxDialog("ویرایش اطلاعات", "اطلاعات محصول ویرایش شد", "", 1, 2);
-                        sw = true;
-                        ClearTextBox();
-                        SaveBTN.ButtonText = "ثبت اطلاعات";
+                        if (bll.Create(product))
+                        {
+                            MSG.ShowMSGBoxDialog("ثبت اطلاعات", "محصول جدیدی ذخیره شد", "", 1, 2);
+                            ClearTextBox();
+                        }
+                        else
+                        {
+                            MSG.ShowMSGBoxDialog("خطای ثبت", "اطلاعات محصول ذخیره نشد", "", 2, 1);
+                        }
                     }
                     else
                     {
-                        MSG.ShowMSGBoxDialog("خطای ویرایش", "اطلاعات محصول ویرایش نشد", "", 2, 1);
+                        if (bll.Update(product, ID))
+                        {
+                            MSG.ShowMSGBoxDialog("ویرایش اطلاعات", "اطلاعات محصول ویرایش شد", "", 1, 2);
+                            sw = true;
+                            ClearTextBox();
+                            SaveBTN.ButtonText = "ثبت اطلاعات";
+                        }
+                        else
+                        {
+                            MSG.ShowMSGBoxDialog("خطای ویرایش", "اطلاعات محصول ویرایش نشد", "", 2, 1);
+                        }
                     }
+                    ShowDGV();
                 }
-                ShowDGV();
+
+                #endregion
             }
-
-
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
 
         }
 
         private void ویرایشToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            sw = false;
-            ProductTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["نام محصول"].Value);
-            PriceTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["قیمت محصول"].Value);
-            StockTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["موجودی"].Value);
+            if (UserBLL.Access(UserAdmin, "بخش کالا ها", 3))
+            {
+                sw = false;
+                ProductTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["نام محصول"].Value);
+                PriceTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["قیمت محصول"].Value);
+                StockTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["موجودی"].Value);
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
         }
 
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult Dr = MSG.ShowMSGBoxDialog("هشدار حذف اطلاعات","آیا میخواهید اطلاعات مورد نظر حذف شود؟","",2,1);
-            if (Dr==DialogResult.Yes)
+            if (UserBLL.Access(UserAdmin, "بخش کالا ها", 4))
             {
-                bll.Delete(ID);
-                ShowDGV();
+                DialogResult Dr = MSG.ShowMSGBoxDialog("هشدار حذف اطلاعات", "آیا میخواهید اطلاعات مورد نظر حذف شود؟", "", 2, 1);
+                if (Dr == DialogResult.Yes)
+                {
+                    bll.Delete(ID);
+                    ShowDGV();
+                }
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
             }
         }
 

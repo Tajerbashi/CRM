@@ -22,7 +22,8 @@ namespace CRM
         }
         OpenFileDialog ofd = new OpenFileDialog();
         Image pic;
-        UserBLL bll = new UserBLL();
+        User UserAdmin = new User();
+        UserBLL UserBLL = new UserBLL();
         UserGroupBLL BLLG=new UserGroupBLL();
         int ID=0;
         bool SW = true;
@@ -82,7 +83,7 @@ namespace CRM
         public void ShowDGV()
         {
             DGV.DataSource = null;
-            DGV.DataSource = bll.ReadAll();
+            DGV.DataSource = UserBLL.ReadAll();
             DGV.Columns["آیدی"].Visible = false;
             DGV.Columns["رمز کاربری"].Visible = false;
         }
@@ -116,80 +117,92 @@ namespace CRM
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            User u = new User();
-            if (NameTXT.Text.Trim().Length==0)
+            if (UserBLL.Access(UserAdmin, "بخش کاربران", 2))
             {
-                MSG.ShowMSGBoxDialog("خطای درج اطلاعات", "نام کامل را درج کنید", "", 1, 1);
-            }
-            else if (UserNameTXT.Text.Trim().Length == 0)
-            {
-                MSG.ShowMSGBoxDialog("خطای درج اطلاعات", "نام کاربری را درج کنید", "", 1, 1);
-            }
-            else if (PassTXT.Text.Trim().Length == 0)
-            {
-                MSG.ShowMSGBoxDialog("خطای درج اطلاعات", "کلمه عبور را درج کنید", "", 1, 1);
-            }
-            else if (RePassTXT.Text.Trim().Length == 0)
-            {
-                MSG.ShowMSGBoxDialog("خطای درج اطلاعات", "تکرار کلمه عبور را درج کنید", "", 1, 1);
+                #region Code
+                User u = new User();
+                if (NameTXT.Text.Trim().Length == 0)
+                {
+                    MSG.ShowMSGBoxDialog("خطای درج اطلاعات", "نام کامل را درج کنید", "", 1, 1);
+                }
+                else if (UserNameTXT.Text.Trim().Length == 0)
+                {
+                    MSG.ShowMSGBoxDialog("خطای درج اطلاعات", "نام کاربری را درج کنید", "", 1, 1);
+                }
+                else if (PassTXT.Text.Trim().Length == 0)
+                {
+                    MSG.ShowMSGBoxDialog("خطای درج اطلاعات", "کلمه عبور را درج کنید", "", 1, 1);
+                }
+                else if (RePassTXT.Text.Trim().Length == 0)
+                {
+                    MSG.ShowMSGBoxDialog("خطای درج اطلاعات", "تکرار کلمه عبور را درج کنید", "", 1, 1);
+                }
+                else
+                {
+                    #region SaveCode
+                    u.Name = NameTXT.Text;
+                    u.UserName = UserNameTXT.Text;
+                    if (PassTXT.Text == RePassTXT.Text)
+                    {
+                        u.Password = PassTXT.Text;
+                    }
+                    else
+                    {
+                        MSG.ShowMSGBoxDialog("خطای رمز کاربری", "کلمه عبور همخوانی ندارد", "", 3, 1);
+                    }
+
+                    if (SW)
+                    {
+                        u.Picture = SavePic(UserNameTXT.Text);
+                        u.RegDate = DateTime.Now;
+
+                        if (UserBLL.Create(u, ComboBox.Text))
+                        {
+                            MSG.ShowMSGBoxDialog("ثبت اطلاعات", "کاربر جدیدی ذخیره شد", "", 1, 2);
+                            ClearAllText(this);
+                            ShowDGV();
+                            ShowDGVUG();
+                        }
+                        else
+                        {
+                            MSG.ShowMSGBoxDialog("خطای در ثبت", "اطلاعات کاربر ذخیره نشد", "", 3, 1);
+                        }
+                    }
+                    else
+                    {
+                        u.Picture = SavePic(UserNameTXT.Text);
+                        if (UserBLL.Update(u, ID))
+                        {
+                            MSG.ShowMSGBoxDialog("ویرایش اطلاعات", "اطلاعات کاربر ویرایش شد", "", 1, 2);
+                            SW = true;
+                            ClearAllText(this);
+                            ShowDGV();
+                            ShowDGVUG();
+                            SaveBtn.ButtonText = "ثبت اطلاعات";
+                        }
+                        else
+                        {
+                            MSG.ShowMSGBoxDialog("خطای در ویرایش", "اطلاعات کاربر ویرایش نشد", "", 3, 1);
+                        }
+                    }
+                    #endregion
+                    ShowDGV();
+                    ShowDGVUG();
+                    FillComboBox();
+                }
+                #endregion
+
             }
             else
             {
-                #region SaveCode
-                u.Name = NameTXT.Text;
-                u.UserName = UserNameTXT.Text;
-                if (PassTXT.Text == RePassTXT.Text)
-                {
-                    u.Password = PassTXT.Text;
-                }
-                else
-                {
-                    MSG.ShowMSGBoxDialog("خطای رمز کاربری", "کلمه عبور همخوانی ندارد", "", 3, 1);
-                }
-
-                if (SW)
-                {
-                    u.Picture = SavePic(UserNameTXT.Text);
-                    u.RegDate = DateTime.Now;
-
-                    if (bll.Create(u,ComboBox.Text))
-                    {
-                        MSG.ShowMSGBoxDialog("ثبت اطلاعات","کاربر جدیدی ذخیره شد","",1,2);
-                        ClearAllText(this);
-                        ShowDGV();
-                        ShowDGVUG();
-                    }
-                    else
-                    {
-                        MSG.ShowMSGBoxDialog("خطای در ثبت", "اطلاعات کاربر ذخیره نشد", "", 3, 1);
-                    }
-                }
-                else
-                {
-                    u.Picture=SavePic(UserNameTXT.Text);
-                    if (bll.Update(u, ID))
-                    {
-                        MSG.ShowMSGBoxDialog("ویرایش اطلاعات", "اطلاعات کاربر ویرایش شد", "", 1, 2);
-                        SW = true;
-                        ClearAllText(this);
-                        ShowDGV();
-                        ShowDGVUG();
-                        SaveBtn.ButtonText = "ثبت اطلاعات";
-                    }
-                    else
-                    {
-                        MSG.ShowMSGBoxDialog("خطای در ویرایش", "اطلاعات کاربر ویرایش نشد", "", 3, 1);
-                    }
-                }
-                #endregion
-                ShowDGV();
-                ShowDGVUG();
-                FillComboBox();
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
             }
         }
 
         private void UserForm_Load(object sender, EventArgs e)
         {
+            MainWindow mainWindow = (MainWindow)System.Windows.Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            UserAdmin = mainWindow.UserAdmin;
             ShowDGV();
             ShowDGVUG();
             FillComboBox();
@@ -197,32 +210,47 @@ namespace CRM
 
         private void ویرایشToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SW = false;
-            NameTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["نام کامل"].Value);
-            UserNameTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["نام کاربری"].Value);
-            SaveBtn.ButtonText = "ویرایش اطلاعات";
-            User u=bll.ReadByID(ID);
-            if (u.Picture != null)
+            if (UserBLL.Access(UserAdmin, "بخش کاربران", 3))
             {
-                Pic.Image = Image.FromFile(u.Picture);
+                SW = false;
+                NameTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["نام کامل"].Value);
+                UserNameTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["نام کاربری"].Value);
+                SaveBtn.ButtonText = "ویرایش اطلاعات";
+                User u = UserBLL.ReadByID(ID);
+                if (u.Picture != null)
+                {
+                    Pic.Image = Image.FromFile(u.Picture);
+                }
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
             }
         }
 
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult D= MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید اطلاعات کاربر از سیستم پاک شود؟", "", 2, 1);
-            if (D==DialogResult.Yes)
+            if (UserBLL.Access(UserAdmin, "بخش کاربران", 4))
             {
-                if (bll.Delete(ID))
+                DialogResult D = MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید اطلاعات کاربر از سیستم پاک شود؟", "", 2, 1);
+                if (D == DialogResult.Yes)
                 {
-                    MSG.ShowMSGBoxDialog("حذف اطلاعات", "کاربر یا موفقیت حذف شد", "", 3, 1);
-                    ShowDGV();
-                    ShowDGVUG();
+                    if (UserBLL.Delete(ID))
+                    {
+                        MSG.ShowMSGBoxDialog("حذف اطلاعات", "کاربر یا موفقیت حذف شد", "", 3, 1);
+                        ShowDGV();
+                        ShowDGVUG();
+                    }
+                    else
+                    {
+                        MSG.ShowMSGBoxDialog("حذف اطلاعات", "کاربر حذف نشد", "", 3, 2);
+                    }
                 }
-                else
-                {
-                    MSG.ShowMSGBoxDialog("حذف اطلاعات", "کاربر حذف نشد", "", 3, 2);
-                }
+
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
             }
             
         }
@@ -230,7 +258,7 @@ namespace CRM
         private void DGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ID = Convert.ToInt32(DGV.Rows[DGV.CurrentRow.Index].Cells["آیدی"].Value);
-            User u = bll.ReadByID(ID);
+            User u = UserBLL.ReadByID(ID);
             if (u.Picture != null)
             {
                 Pic.Image = Image.FromFile(u.Picture);

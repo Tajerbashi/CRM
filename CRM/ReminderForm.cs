@@ -39,10 +39,11 @@ namespace CRM
         int ID;
         bool SW = true;
         ReminderBLL bll=new ReminderBLL();
-        UserBLL UBLL = new UserBLL();
         User U = new User();
         MSGClass MSG = new MSGClass();
-       
+        User UserAdmin = new User();
+        UserBLL UserBLL = new UserBLL();
+
         public void ShowDGV()
         {
             DGV.DataSource = null;
@@ -57,8 +58,11 @@ namespace CRM
         }
         private void ReminderForm_Load(object sender, EventArgs e)
         {
+            MainWindow mainWindow = (MainWindow)System.Windows.Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            UserAdmin = mainWindow.UserAdmin;
+
             AutoCompleteStringCollection names=new AutoCompleteStringCollection();
-            foreach( var i in UBLL.ReadUserbyUserName())
+            foreach( var i in UserBLL.ReadUserbyUserName())
             {
                 names.Add(i);
             }
@@ -74,43 +78,53 @@ namespace CRM
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            Reminder Rem = new Reminder();
-            Rem.Title=titleeTXT.Text;
-            Rem.ReminderInfo = InfoTxt.Text;
-            Rem.ReminderDate = dateTXt.Value;
-            Rem.RegDate = DateTime.Now;
-            if (SW)
+            if (UserBLL.Access(UserAdmin, "بخش یاد آورها", 2))
             {
-                if (bll.Create(Rem, U))
+                #region Code
+                Reminder Rem = new Reminder();
+                Rem.Title = titleeTXT.Text;
+                Rem.ReminderInfo = InfoTxt.Text;
+                Rem.ReminderDate = dateTXt.Value;
+                Rem.RegDate = DateTime.Now;
+                if (SW)
                 {
-                    MSG.ShowMSGBoxDialog("ثبت یادآور", "یاد آور جدیدی ذخیره شد", "", 1, 2);
+                    if (bll.Create(Rem, U))
+                    {
+                        MSG.ShowMSGBoxDialog("ثبت یادآور", "یاد آور جدیدی ذخیره شد", "", 1, 2);
+                    }
+                    else
+                    {
+                        MSG.ShowMSGBoxDialog("خطا در ثبت", "یاد آور ذخیره نشد", "", 3, 1);
+                    }
                 }
                 else
                 {
-                    MSG.ShowMSGBoxDialog("خطا در ثبت", "یاد آور ذخیره نشد", "", 3, 1);
+                    if (bll.Update(Rem, ID))
+                    {
+                        MSG.ShowMSGBoxDialog("ویرایش یادآور", "یاد آور با موفقیت ویرایش شد", "", 1, 2);
+                        SaveBtn.ButtonText = "ثبت اطلاعات";
+
+                        SW = true;
+                    }
+                    else
+                    {
+                        MSG.ShowMSGBoxDialog("خطا در ویرایش", "یاد آور ویرایش نشد", "", 3, 1);
+                    }
                 }
+                ShowDGV();
+                #endregion
+
             }
             else
             {
-                if (bll.Update(Rem,ID))
-                {
-                    MSG.ShowMSGBoxDialog("ویرایش یادآور", "یاد آور با موفقیت ویرایش شد", "", 1, 2);
-                    SaveBtn.ButtonText = "ثبت اطلاعات";
-
-                    SW = true;
-                }
-                else
-                {
-                    MSG.ShowMSGBoxDialog("خطا در ویرایش", "یاد آور ویرایش نشد", "", 3, 1);
-                }
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
             }
-            ShowDGV();
         }
 
         private void SaveUserBtn_Click(object sender, EventArgs e)
         {
             UsernameTXT.Enabled = false;
-            U=UBLL.ReadByName(UsernameTXT.Text);
+            U=UserBLL.ReadByName(UsernameTXT.Text);
         }
 
         private void SearchTXT_TextChanged(object sender, EventArgs e)
@@ -120,26 +134,48 @@ namespace CRM
 
         private void ویرایشToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SW = false;
-            SaveBtn.ButtonText = "ویرایش اطلاعات";
-            titleeTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["عنوان یادآور"].Value);
-            InfoTxt.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["توضیحات یادآور"].Value);
-            dateTXt.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["تاریخ یادآور"].Value);
+            if (UserBLL.Access(UserAdmin, "بخش یاد آورها", 3))
+            {
+                SW = false;
+                SaveBtn.ButtonText = "ویرایش اطلاعات";
+                titleeTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["عنوان یادآور"].Value);
+                InfoTxt.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["توضیحات یادآور"].Value);
+                dateTXt.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["تاریخ یادآور"].Value);
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
         }
 
         private void تغییروضعیتToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bll.IsDone(ID);
-            ShowDGV();
+            if (UserBLL.Access(UserAdmin, "بخش یاد آورها", 3))
+            {
+                bll.IsDone(ID);
+                ShowDGV();
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
         }
 
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MSG.ShowMSGBoxDialog("حذف اطلاعات","آیا میخواهید اطلاعات مورد نظر را حذف کنید؟","",2,1);
-            if (dr==DialogResult.Yes)
+            
+            if (UserBLL.Access(UserAdmin, "بخش یاد آورها", 4))
             {
-                bll.Delete(ID);
-                ShowDGV();
+                DialogResult dr = MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید اطلاعات مورد نظر را حذف کنید؟", "", 2, 1);
+                if (dr == DialogResult.Yes)
+                {
+                    bll.Delete(ID);
+                    ShowDGV();
+                }
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
             }
         }
 

@@ -97,12 +97,34 @@ namespace DAL
         {
             return DB.users.Count() > 0;
         }
-        public bool IsLogin(User user)
+        public User IsLogin(String username,String pass)
         {
-            var q = DB.users.Where(c => c.UserName == user.UserName && user.Password == c.Password && c.Status && !c.DeleteStatus).FirstOrDefault();
-            if (q != null)
+            return DB.users.Include("UserGroup").Where(c => c.UserName ==username && c.Password==pass && c.Status && !c.DeleteStatus).FirstOrDefault();
+        }
+
+        public bool Access(User user,String S,int a)
+        {
+            //  1 Can Enter            //  2 Can Create            //  3 Can Update            //  4 Can Delete
+            UserGroup ug = DB.userGroups.Include("UserAccessRoles").Where(i => i.ID == user.UserGroup.ID).FirstOrDefault();
+            UserAccessRole uar=ug.UserAccessRoles.Where(z => z.Section==S).FirstOrDefault();
+            switch (a)
             {
-                return true;
+                case 1:
+                    {
+                        return uar.CanEnter; 
+                    }
+                case 2:
+                    {
+                        return uar.CanCreate;
+                    }
+                case 3:
+                    {
+                        return uar.CanUpdate;
+                    }
+                case 4:
+                    {
+                        return uar.CanDelete;
+                    }
             }
             return false;
         }

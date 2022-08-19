@@ -162,10 +162,10 @@ namespace CRM
         {
             Ug.Title = "مدیریت";
             Ug.UserAccessRoles.Add(FillAccessRole("بخش مشتریان", true, true, true, true));
-            Ug.UserAccessRoles.Add(FillAccessRole("بخش کالاها", true, true, true, true));
+            Ug.UserAccessRoles.Add(FillAccessRole("بخش کالا ها", true, true, true, true));
             Ug.UserAccessRoles.Add(FillAccessRole("بخش فاکتور ها", true, true, true, true));
             Ug.UserAccessRoles.Add(FillAccessRole("بخش فعالیت ها", true, true, true, true));
-            Ug.UserAccessRoles.Add(FillAccessRole("بخش یادآور ها", true, true, true, true));
+            Ug.UserAccessRoles.Add(FillAccessRole("بخش یاد آورها", true, true, true, true));
             Ug.UserAccessRoles.Add(FillAccessRole("بخش کاربران", true, true, true, true));
             Ug.UserAccessRoles.Add(FillAccessRole("پنل پیامکی", true, true, true, true));
             Ug.UserAccessRoles.Add(FillAccessRole("بخش گزارشات", true, true, true, true));
@@ -192,12 +192,13 @@ namespace CRM
         private void EnterBtn_Click(object sender, EventArgs e)
         {
             //  ACtiv
+            String username, password;
+            username = UsernameTXT.Text;
+            password = PassTXTEnter.Text;
             User user = new User();
-            user.UserName = UsernameTXT.Text;
-            user.Password = PassTXTEnter.Text;
-            if (UserBLL.IsLogin(user))
+            user = UserBLL.IsLogin(username, password);
+            if (user != null)
             {
-                user = UserBLL.ReadByUserName(user.UserName);
                 MainWindow mainWindow = (MainWindow)System.Windows.Application.Current.MainWindow;
                 mainWindow.UserAdmin = user;
                 mainWindow.USERINFO.Content = user.Name;
@@ -207,7 +208,6 @@ namespace CRM
             {
                 MSG.ShowMSGBoxDialog("خطا در ورود","نام یا رمز کاربری اشتباه است","",3,2);
             }
-            LunchSQLProcdure();
         }
 
         private void ActiveBtnj_Click(object sender, EventArgs e)
@@ -263,6 +263,7 @@ namespace CRM
                     MSG.ShowMSGBoxDialog("ثبت اطلاعات", "ثبت اطلاعات با موفقیت ذخیره شد", "", 1, 2);
                     //LunchSQLProcdure();
                     Switch2();
+                    LunchSQLProcdure();
                 }
                 else
                 {

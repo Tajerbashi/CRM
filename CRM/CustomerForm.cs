@@ -34,10 +34,13 @@ namespace CRM
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
         CustomerBLL bll = new CustomerBLL();
+        UserBLL UserBLL = new UserBLL();
         Functions Fun = new Functions();
         MSGClass MSG = new MSGClass();
+        User UserAdmin = new User();
         int ID = 0;
         bool sw = true;
+        
         private void ShowDGV()
         {
             DGV.DataSource = null;
@@ -52,6 +55,8 @@ namespace CRM
         private void CustomerForm_Load(object sender, EventArgs e)
         {
             ShowDGV();
+            MainWindow mainWindow = (MainWindow)System.Windows.Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            UserAdmin = mainWindow.UserAdmin;
         }
 
         private void xuiButton1_Click(object sender, EventArgs e)
@@ -61,53 +66,61 @@ namespace CRM
 
         private void xuiButton2_Click(object sender, EventArgs e)
         {
-            Customer c = new Customer();
-            if (NameTXT.Text.Trim().Length==0)
+            if (UserBLL.Access(UserAdmin, "بخش مشتریان", 2))
             {
-                MSG.ShowMSGBoxDialog("خطای فیلد خالی", "نام مشتری را وارد کنید", "", 3, 2);
-            }
-            else if (PhoneTXT.Text.Trim().Length==0)
-            {
-                MSG.ShowMSGBoxDialog("خطای فیلد خالی", "تلفن مشتری را وارد کنید", "", 3, 2);
-            }
-            else
-            {
-                if (sw)
+                Customer c = new Customer();
+                if (NameTXT.Text.Trim().Length == 0)
                 {
-                    c.Name = NameTXT.Text;
-                    c.Phone = Fun.ChangeToEnglishNumber(PhoneTXT.Text);
-                    c.RegDate = DateTime.Now;
-                    if (bll.Create(c))
-                    {
-                        MSG.ShowMSGBoxDialog("ثبت اطلاعات", "مشتری جدید با موفقیت ذخیره شد", "", 1, 2);
-                        ClearTextBox();
-                    }
-                    else
-                    {
-                        MSG.ShowMSGBoxDialog("خطای در ثبت", "اطلاعات مشتری موجود است و ذخیره نشد", "", 3, 1);
-                    }
+                    MSG.ShowMSGBoxDialog("خطای فیلد خالی", "نام مشتری را وارد کنید", "", 3, 2);
+                }
+                else if (PhoneTXT.Text.Trim().Length == 0)
+                {
+                    MSG.ShowMSGBoxDialog("خطای فیلد خالی", "تلفن مشتری را وارد کنید", "", 3, 2);
                 }
                 else
                 {
-                    c.Name = NameTXT.Text;
-                    c.Phone = Fun.ChangeToEnglishNumber(PhoneTXT.Text);
-                    c.RegDate = DateTime.Now;
-                    if (bll.Update(c, ID))
+                    if (sw)
                     {
-                        MSG.ShowMSGBoxDialog("ویرایش اطلاعات", "اطلاعات مشتری با موفقیت ویرایش شد", "", 1, 2);
-                        SaveBtn.ButtonText = "ثبت اطلاعات";
-                        ClearTextBox();
-                        sw = true;
+                        c.Name = NameTXT.Text;
+                        c.Phone = Fun.ChangeToEnglishNumber(PhoneTXT.Text);
+                        c.RegDate = DateTime.Now;
+                        if (bll.Create(c))
+                        {
+                            MSG.ShowMSGBoxDialog("ثبت اطلاعات", "مشتری جدید با موفقیت ذخیره شد", "", 1, 2);
+                            ClearTextBox();
+                        }
+                        else
+                        {
+                            MSG.ShowMSGBoxDialog("خطای در ثبت", "اطلاعات مشتری موجود است و ذخیره نشد", "", 3, 1);
+                        }
                     }
                     else
                     {
-                        MSG.ShowMSGBoxDialog("خطا در ویرایش", "اطلاعات مشتری ویرایش نشد", "", 3, 1);
+                        c.Name = NameTXT.Text;
+                        c.Phone = Fun.ChangeToEnglishNumber(PhoneTXT.Text);
+                        c.RegDate = DateTime.Now;
+                        if (bll.Update(c, ID))
+                        {
+                            MSG.ShowMSGBoxDialog("ویرایش اطلاعات", "اطلاعات مشتری با موفقیت ویرایش شد", "", 1, 2);
+                            SaveBtn.ButtonText = "ثبت اطلاعات";
+                            ClearTextBox();
+                            sw = true;
+                        }
+                        else
+                        {
+                            MSG.ShowMSGBoxDialog("خطا در ویرایش", "اطلاعات مشتری ویرایش نشد", "", 3, 1);
+                        }
                     }
+
                 }
 
+                ShowDGV();
             }
-
-            ShowDGV();
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
+            
         }
 
         private void PhoneTXT_TextChanged(object sender, EventArgs e)
@@ -141,21 +154,37 @@ namespace CRM
 
         private void ویرایشToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NameTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["نام مشتری"].Value);
-            PhoneTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["شماره تماس"].Value);
-            sw = false;
-            SaveBtn.ButtonText = "ویرایش";
+            if (UserBLL.Access(UserAdmin, "بخش مشتریان", 3))
+            {
+                NameTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["نام مشتری"].Value);
+                PhoneTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["شماره تماس"].Value);
+                sw = false;
+                SaveBtn.ButtonText = "ویرایش";
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
+            
         }
 
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید اطلاعات مشتری مورد نظر حذف شود؟", "", 2,1);
-
-            if (DialogResult.Yes == dr)
+            if (UserBLL.Access(UserAdmin, "بخش مشتریان", 4))
             {
-                bll.Delete(ID);
+                DialogResult dr = MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید اطلاعات مشتری مورد نظر حذف شود؟", "", 2, 1);
+
+                if (DialogResult.Yes == dr)
+                {
+                    bll.Delete(ID);
+                }
+                ShowDGV();
             }
-            ShowDGV();
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
+
         }
     }
 }
