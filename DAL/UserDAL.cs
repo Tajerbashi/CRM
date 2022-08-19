@@ -15,8 +15,10 @@ namespace DAL
 
         DB_Class DB=new DB_Class();
 
-        public bool Create(User user)
+        public bool Create(User user,String NameUG)
         {
+            UserGroup user1=DB.userGroups.Where( c=> c.Title==NameUG).FirstOrDefault();
+            user.UserGroup=user1;
             var q = DB.users.Where(u => u.Name == user.Name && u.UserName == user.UserName);
             if (q.Count()==0)
             {
@@ -64,11 +66,24 @@ namespace DAL
             }
             return false;
         }
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            var q = DB.users.Where(c => c.ID == id).FirstOrDefault();
-            q.DeleteStatus = true;
-            DB.SaveChanges();
+            try
+            {
+                if (id>0)
+                {
+                    var q = DB.users.Where(c => c.ID == id).FirstOrDefault();
+                    q.DeleteStatus = true;
+                    DB.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch 
+            {
+                return false;
+            }
+
         }
         public List<string> ReadUserbyName()
         {
@@ -77,6 +92,19 @@ namespace DAL
         public List<string> ReadUserbyUserName()
         {
             return (DB.users.Select(i => i.UserName).ToList());
+        }
+        public bool IsAdmin()
+        {
+            return DB.users.Count() > 0;
+        }
+        public bool IsLogin(User user)
+        {
+            var q = DB.users.Where(c => c.UserName == user.UserName && user.Password == c.Password && c.Status && !c.DeleteStatus).FirstOrDefault();
+            if (q != null)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

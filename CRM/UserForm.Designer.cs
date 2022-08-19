@@ -103,6 +103,8 @@
             this.xuiButton1 = new XanderUI.XUIButton();
             this.GroupTXT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.xuiButton2 = new XanderUI.XUIButton();
+            this.ComboBox = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic)).BeginInit();
@@ -113,6 +115,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.ComboBox);
             this.groupBox1.Controls.Add(this.DGV);
             this.groupBox1.Controls.Add(this.Pic);
             this.groupBox1.Controls.Add(this.RePassTXT);
@@ -125,7 +129,7 @@
             this.groupBox1.Location = new System.Drawing.Point(761, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(477, 607);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "افزودن کاربر جدید";
             // 
@@ -150,7 +154,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -266,7 +270,7 @@
             this.SaveBtn.Location = new System.Drawing.Point(6, 210);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(173, 41);
-            this.SaveBtn.TabIndex = 4;
+            this.SaveBtn.TabIndex = 5;
             this.SaveBtn.TextColor = System.Drawing.Color.White;
             this.SaveBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
@@ -801,7 +805,7 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -988,6 +992,27 @@
             this.xuiButton2.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.xuiButton2.Click += new System.EventHandler(this.xuiButton2_Click);
             // 
+            // ComboBox
+            // 
+            this.ComboBox.DisplayMember = "Text";
+            this.ComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBox.FormattingEnabled = true;
+            this.ComboBox.ItemHeight = 28;
+            this.ComboBox.Location = new System.Drawing.Point(185, 212);
+            this.ComboBox.Name = "ComboBox";
+            this.ComboBox.Size = new System.Drawing.Size(188, 34);
+            this.ComboBox.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2000;
+            this.ComboBox.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(374, 215);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 27);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "گروه کاربری";
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1004,6 +1029,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.UserForm_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -1083,5 +1109,7 @@
         private System.Windows.Forms.CheckBox E0;
         private DevComponents.DotNetBar.Controls.Line line1;
         private XanderUI.XUIButton xuiButton2;
+        private System.Windows.Forms.Label label2;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx ComboBox;
     }
 }

@@ -28,15 +28,13 @@ namespace CRM
             InitializeComponent();
             DispatcherTimer Timer=new DispatcherTimer();
             Timer.Interval = TimeSpan.FromMilliseconds(500);
-            Timer.Tick +=new EventHandler(Timer_Tick);
+            Timer.Tick += new EventHandler(Timer_Tick);
             Timer.Start();
         }
-        
-        private void Timer_Tick(object sender,EventArgs e)
-        {
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
             clockTime.Text = (DateTime.Now).ToString("F");
-            //clockTime.Text = Functions.ConvertToPersian(DateTime.Now).ToString();
         }
     }
 }

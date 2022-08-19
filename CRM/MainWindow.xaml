@@ -18,7 +18,7 @@
         AllowsTransparency="True"
         
         Title="MainWindow" Height="720" Width="1280">
-    
+
     <Border BorderBrush="#FF8ED3ED" BorderThickness="5" CornerRadius="10" Loaded="Border_Loaded">
         <Grid Background="#FF8ED3ED">
             <Grid.ColumnDefinitions>
@@ -56,7 +56,7 @@
             <Image Grid.Column="11" Grid.ColumnSpan="2" Source="/Image/LOGO 1.png" Margin="29,12,28,12" Grid.RowSpan="2"/>
             <Image Grid.Column="0" Grid.ColumnSpan="1" Source="/Image/ShutDown.Png" Margin="16,15,57,15" Height="30" Grid.RowSpan="2"/>
             <Image Grid.Column="0" Source="/Image/User.ico" Margin="54,15,16,15" Height="30"  Grid.RowSpan="2"/>
-            <hc:SearchBar Grid.Column="3" Grid.RowSpan="2" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontFamily="IRANSansWeb" VerticalAlignment="Center" Width="295" />
+            <hc:SearchBar Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontFamily="IRANSansWeb" VerticalAlignment="Center" Width="249" />
             <Border Grid.ColumnSpan="3" Grid.Column="10" Grid.RowSpan="10" Grid.Row="2" Background="#FA5252" BorderBrush="#FA5252" BorderThickness="5" CornerRadius="10" Margin="10,10,10,10"/>
             <Border Grid.ColumnSpan="3" Grid.Column="4" Grid.RowSpan="3" Grid.Row="2" BorderBrush="#FFFFFF" BorderThickness="5" CornerRadius="10" Margin="11,10,10,10">
                 <Rectangle Cursor="Hand" Fill="#FFFFFF"  />
@@ -115,6 +115,7 @@
 
             <TextBlock Cursor="Hand" Grid.Row="10" Grid.ColumnSpan="3" Grid.Column="10" Text="تنظیمات برنامه" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="100,38,0,0" Grid.RowSpan="2" Width="152" HorizontalAlignment="Left" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_7"/>
             <Image Cursor="Hand" Source="/Image/settings.png" Grid.Row="10" Grid.Column="12" Height="30" Width="30" Margin="7,38,69,62" Grid.RowSpan="2"/>
+            <Label x:FieldModifier="public" x:Name="USERINFO" VerticalAlignment="Top" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="2" Content="اطلاعات کاربر ادمین" Width="170" Margin="0,14,0,0"/>
 
         </Grid>
     </Border>

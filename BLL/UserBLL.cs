@@ -33,10 +33,10 @@ namespace BLL
         }
         UserDAL dal = new UserDAL();
 
-        public bool Create(User user)
+        public bool Create(User user,String NameUg)
         {
             user.Password = Encode(user.Password);
-            return dal.Create(user);
+            return dal.Create(user, NameUg);
         }
         public DataTable ReadAll()
         {
@@ -67,9 +67,18 @@ namespace BLL
             user.Password = Encode(user.Password);
             return dal.Update(user, id);
         }
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            dal.Delete(id);
+            return dal.Delete(id);
+        }
+        public bool IsAdmin()
+        {
+            return dal.IsAdmin();
+        }
+        public bool IsLogin(User user)
+        {
+            user.Password = Encode(user.Password);
+            return dal.IsLogin(user);
         }
     }
 }

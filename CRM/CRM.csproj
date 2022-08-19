@@ -104,6 +104,12 @@
       <DependentUpon>MSGBoxForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MSGClass.cs" />
+    <Compile Include="RegisterUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RegisterUC.Designer.cs">
+      <DependentUpon>RegisterUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReminderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterUC.resx">
+      <DependentUpon>RegisterUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReminderForm.resx">
       <DependentUpon>ReminderForm.cs</DependentUpon>
@@ -374,6 +383,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-enter-key-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons8-Windows-8-Editing-Copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-copy-gradient-70.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

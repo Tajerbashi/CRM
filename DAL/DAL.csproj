@@ -56,6 +56,7 @@
     <Compile Include="CustomerDAL.cs" />
     <Compile Include="DB_Class.cs" />
     <Compile Include="InvoiceDAL.cs" />
+    <Compile Include="PROCDURE_DAL.cs" />
     <Compile Include="ProductDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReminderDAL.cs" />

@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.Windows.Media.Effects;
 using System.Data.SqlClient;
 using System.Data;
+using BEE;
+using BLL;
 
 namespace CRM
 {
@@ -21,6 +23,8 @@ namespace CRM
         {
             InitializeComponent();
         }
+        public User UserAdmin = new User();
+
         public void OpenWindow(Form F)
         {
             Window g = this.FindName("Main") as Window;
@@ -86,5 +90,6 @@ namespace CRM
             LoginForm f = new LoginForm();
             OpenWindow(f);
         }
+
     }
 }

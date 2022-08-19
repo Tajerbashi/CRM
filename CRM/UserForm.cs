@@ -86,7 +86,21 @@ namespace CRM
             DGV.Columns["آیدی"].Visible = false;
             DGV.Columns["رمز کاربری"].Visible = false;
         }
-        
+        public void ShowDGVUG()
+        {
+            DGV1.DataSource = null;
+            DGV1.DataSource = BLLG.Read();
+            DGV1.Columns["آیدی"].Visible = false;
+        }
+        public void FillComboBox()
+        {
+            ComboBox.Items.Clear();
+            var db = BLLG.Readtitles();
+            foreach (var i in db)
+            {
+                ComboBox.Items.Add(i);
+            }
+        }
         private void Pic_Click(object sender, EventArgs e)
         {
             ofd.Filter = "JPG(*.JPG)|*.JPG";
@@ -105,36 +119,32 @@ namespace CRM
             User u = new User();
             if (NameTXT.Text.Trim().Length==0)
             {
-                MessageBox.Show("نام کامل را درج کنید","خطای درج اطلاعات",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MSG.ShowMSGBoxDialog("خطای درج اطلاعات", "نام کامل را درج کنید", "", 1, 1);
             }
             else if (UserNameTXT.Text.Trim().Length == 0)
             {
-                MessageBox.Show("نام کاربری را درج کنید", "خطای درج اطلاعات", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MSG.ShowMSGBoxDialog("خطای درج اطلاعات", "نام کاربری را درج کنید", "", 1, 1);
             }
             else if (PassTXT.Text.Trim().Length == 0)
             {
-                MessageBox.Show("کلمه عبور را درج کنید", "خطای درج اطلاعات", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MSG.ShowMSGBoxDialog("خطای درج اطلاعات", "کلمه عبور را درج کنید", "", 1, 1);
             }
             else if (RePassTXT.Text.Trim().Length == 0)
             {
-                MessageBox.Show("تکرار کلمه عبور را درج کنید", "خطای درج اطلاعات", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MSG.ShowMSGBoxDialog("خطای درج اطلاعات", "تکرار کلمه عبور را درج کنید", "", 1, 1);
             }
             else
             {
                 #region SaveCode
                 u.Name = NameTXT.Text;
                 u.UserName = UserNameTXT.Text;
-
                 if (PassTXT.Text == RePassTXT.Text)
                 {
                     u.Password = PassTXT.Text;
                 }
                 else
                 {
-                    MessageBox.Show("رمز و تکرار همخوانی ندارد");
+                    MSG.ShowMSGBoxDialog("خطای رمز کاربری", "کلمه عبور همخوانی ندارد", "", 3, 1);
                 }
 
                 if (SW)
@@ -142,11 +152,12 @@ namespace CRM
                     u.Picture = SavePic(UserNameTXT.Text);
                     u.RegDate = DateTime.Now;
 
-                    if (bll.Create(u))
+                    if (bll.Create(u,ComboBox.Text))
                     {
                         MSG.ShowMSGBoxDialog("ثبت اطلاعات","کاربر جدیدی ذخیره شد","",1,2);
                         ClearAllText(this);
                         ShowDGV();
+                        ShowDGVUG();
                     }
                     else
                     {
@@ -162,6 +173,7 @@ namespace CRM
                         SW = true;
                         ClearAllText(this);
                         ShowDGV();
+                        ShowDGVUG();
                         SaveBtn.ButtonText = "ثبت اطلاعات";
                     }
                     else
@@ -170,13 +182,17 @@ namespace CRM
                     }
                 }
                 #endregion
-
+                ShowDGV();
+                ShowDGVUG();
+                FillComboBox();
             }
         }
 
         private void UserForm_Load(object sender, EventArgs e)
         {
             ShowDGV();
+            ShowDGVUG();
+            FillComboBox();
         }
 
         private void ویرایشToolStripMenuItem_Click(object sender, EventArgs e)
@@ -194,8 +210,21 @@ namespace CRM
 
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bll.Delete(ID);
-            ShowDGV();
+            DialogResult D= MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید اطلاعات کاربر از سیستم پاک شود؟", "", 2, 1);
+            if (D==DialogResult.Yes)
+            {
+                if (bll.Delete(ID))
+                {
+                    MSG.ShowMSGBoxDialog("حذف اطلاعات", "کاربر یا موفقیت حذف شد", "", 3, 1);
+                    ShowDGV();
+                    ShowDGVUG();
+                }
+                else
+                {
+                    MSG.ShowMSGBoxDialog("حذف اطلاعات", "کاربر حذف نشد", "", 3, 2);
+                }
+            }
+            
         }
 
         private void DGV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -355,6 +384,7 @@ namespace CRM
             if (BLLG.Create(Ug))
             {
                 MSG.ShowMSGBoxDialog("ثبت اطلاعات", "گروه کاربری با موفقیت ذخیره شد", "", 1, 2);
+                ShowDGVUG();
             }
             else
             {
