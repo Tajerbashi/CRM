@@ -46,10 +46,6 @@ namespace BLL
         { 
             return dal.ReadByID(id);
         }
-        public User ReadByName(String Name)
-        {
-            return dal.ReadByName(Name);
-        }
         public User ReadByUserName(String user)
         {
             return dal.ReadByUserName(user);

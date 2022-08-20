@@ -227,7 +227,7 @@
             this.UsernameTXT.TabIndex = 0;
             this.UsernameTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.UsernameTXT.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.UsernameTXT.WatermarkText = "جستجو کاربر بر اساس نام";
+            this.UsernameTXT.WatermarkText = "جستجو کاربر بر اساس نام کاربری";
             // 
             // groupBox2
             // 

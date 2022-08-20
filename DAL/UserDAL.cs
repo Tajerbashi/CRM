@@ -44,10 +44,6 @@ namespace DAL
         {
             return DB.users.Where(c => c.ID == id).FirstOrDefault();
         }
-        public User ReadByName(String Name)
-        {
-            return DB.users.Where(c => c.Name == Name).FirstOrDefault();
-        }
         public User ReadByUserName(String user)
         {
             return DB.users.Where(c => c.UserName == user).FirstOrDefault();

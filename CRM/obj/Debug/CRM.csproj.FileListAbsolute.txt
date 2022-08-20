@@ -55,3 +55,5 @@ C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\Stimulsoft.Control
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\Stimulsoft.Controls.dll
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.LoginForm.resources
 C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\CRM.RegisterUC.resources
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\UIUC.g.cs
+C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\obj\Debug\UIUC.baml

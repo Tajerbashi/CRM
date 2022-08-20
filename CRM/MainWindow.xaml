@@ -20,21 +20,21 @@
         Title="MainWindow" Height="720" Width="1280">
 
     <Border BorderBrush="#FF8ED3ED" BorderThickness="5" CornerRadius="10" Loaded="Border_Loaded">
-        <Grid Background="#FF8ED3ED">
+        <Grid Background="#FF8ED3ED" x:Name="MainGrid">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="106*"/>
-                <ColumnDefinition Width="49*"/>
-                <ColumnDefinition Width="57*"/>
-                <ColumnDefinition Width="106*"/>
-                <ColumnDefinition Width="106*"/>
-                <ColumnDefinition Width="106*"/>
-                <ColumnDefinition Width="106*"/>
-                <ColumnDefinition Width="106*"/>
-                <ColumnDefinition Width="106*"/>
-                <ColumnDefinition Width="106*"/>
-                <ColumnDefinition Width="106*"/>
-                <ColumnDefinition Width="106*"/>
-                <ColumnDefinition Width="106*"/>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="106"/>
+
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
@@ -50,72 +50,72 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Border Grid.ColumnSpan="13" Grid.RowSpan="2" BorderBrush="White" BorderThickness="5" CornerRadius="10" Margin="10,10,10,10">
+            <Border Grid.ColumnSpan="14" Grid.RowSpan="2" BorderBrush="White" BorderThickness="5" CornerRadius="10" Margin="10,10,10,10">
                 <Rectangle Fill="White"  />
             </Border>
-            <Image Grid.Column="11" Grid.ColumnSpan="2" Source="/Image/LOGO 1.png" Margin="29,12,28,12" Grid.RowSpan="2"/>
+            <Image Grid.Column="12" Grid.ColumnSpan="2" Source="/Image/LOGO 1.png" Margin="29,12,28,12" Grid.RowSpan="2"/>
             <Image Grid.Column="0" Grid.ColumnSpan="1" Source="/Image/ShutDown.Png" Margin="16,15,57,15" Height="30" Grid.RowSpan="2"/>
-            <Image Grid.Column="0" Source="/Image/User.ico" Margin="54,15,16,15" Height="30"  Grid.RowSpan="2"/>
-            <hc:SearchBar Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" FontFamily="IRANSansWeb" VerticalAlignment="Center" Width="249" />
-            <Border Grid.ColumnSpan="3" Grid.Column="10" Grid.RowSpan="10" Grid.Row="2" Background="#FA5252" BorderBrush="#FA5252" BorderThickness="5" CornerRadius="10" Margin="10,10,10,10"/>
-            <Border Grid.ColumnSpan="3" Grid.Column="4" Grid.RowSpan="3" Grid.Row="2" BorderBrush="#FFFFFF" BorderThickness="5" CornerRadius="10" Margin="11,10,10,10">
+            <hc:SearchBar Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="2" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" FontFamily="IRANSansWeb" VerticalAlignment="Center" Width="249" Margin="10,0,0,0" />
+            <Border Grid.Column="9" Grid.RowSpan="10" Grid.Row="2" Background="#FA5252" BorderBrush="#FA5252" BorderThickness="5" CornerRadius="10" Margin="11,15,21,5" Grid.ColumnSpan="3"/>
+            <Border Grid.ColumnSpan="3" Grid.Column="3" Grid.RowSpan="3" Grid.Row="2" BorderBrush="#FFFFFF" BorderThickness="5" CornerRadius="10" Margin="10,10,10,10">
                 <Rectangle Cursor="Hand" Fill="#FFFFFF"  />
             </Border>
-            <Border Grid.ColumnSpan="3" Grid.Column="7" Grid.RowSpan="3" Grid.Row="2" BorderBrush="#02115D" BorderThickness="5" CornerRadius="10" Margin="10,10,10,10">
+            <Border Grid.ColumnSpan="3" Grid.Column="6" Grid.RowSpan="3" Grid.Row="2" BorderBrush="#02115D" BorderThickness="5" CornerRadius="10" Margin="10,10,11,10">
                 <Rectangle Cursor="Hand" Fill="#02115D"  />
             </Border>
-            <Border Grid.ColumnSpan="4" Grid.Column="0" Grid.RowSpan="3" Grid.Row="2" BorderBrush="#FFFFFF" BorderThickness="5" CornerRadius="10" Margin="10,10,9,10">
+            <Border Grid.ColumnSpan="3" Grid.Column="0" Grid.RowSpan="3" Grid.Row="2" BorderBrush="#FFFFFF" BorderThickness="5" CornerRadius="10" Margin="10,10,10,10">
                 <Rectangle Cursor="Hand" Fill="#FFFFFF"  />
             </Border>
-            <Border Grid.ColumnSpan="3" Background="#FFFFFF" Margin="10,10,10,10" Grid.Column="7" Grid.RowSpan="6" Grid.Row="5" BorderBrush="#FFFFFF" BorderThickness="5" CornerRadius="10" />
-            <Border Grid.ColumnSpan="3" Grid.Column="7" Grid.RowSpan="1" Grid.Row="11" BorderBrush="#FFFFFF" BorderThickness="5" CornerRadius="10" Margin="10,10,10,10">
+            <Image Source="/Image/User.ico" Margin="7,31,34,20"  Grid.RowSpan="2" Grid.Row="2" Grid.Column="2"/>
+            <Border Grid.ColumnSpan="3" Background="#FFFFFF" Margin="10,10,11,10" Grid.Column="6" Grid.RowSpan="6" Grid.Row="5" BorderBrush="#FFFFFF" BorderThickness="5" CornerRadius="10" />
+            <Border Grid.ColumnSpan="3" Grid.Column="6" Grid.RowSpan="1" Grid.Row="11" BorderBrush="#FFFFFF" BorderThickness="5" CornerRadius="10" Margin="8,10,13,10">
                 <Rectangle Fill="#FFFFFF"  />
             </Border>
-            <Border Cursor="Hand" Grid.ColumnSpan="7" Grid.Column="0" Grid.RowSpan="7" Grid.Row="5" BorderBrush="#02115D" Background="#02115D" BorderThickness="5" CornerRadius="10" Margin="10,10,10,10" />
-            <hc:PersianCalendar Cursor="Hand" Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="3" Grid.RowSpan="6" Margin="8,0,8,0"/>
-            <local:ClockMainWindow  Grid.ColumnSpan="3" Grid.Column="7" Grid.Row="11"/>
+            <Border Cursor="Hand" Grid.ColumnSpan="6" Grid.Column="0" Grid.RowSpan="7" Grid.Row="5" BorderBrush="#02115D" Background="#02115D" BorderThickness="5" CornerRadius="10" Margin="10,10,10,10" />
+            <hc:PersianCalendar Cursor="Hand" Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="3" Grid.RowSpan="6" Margin="8,0,9,0"/>
+            <local:ClockMainWindow  Grid.ColumnSpan="3" Grid.Column="6" Grid.Row="11"/>
 
-            <TextBlock Grid.RowSpan="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="7" Text="تعداد مشتریان" FontSize="35" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#EBEBEB" Margin="0,16,0,0"/>
-            <TextBlock Grid.RowSpan="2" Grid.Row="3" Grid.Column="7" Height="100" Width="150" Text="5001" TextAlignment="Center" HorizontalAlignment="Left" FontSize="72" FontWeight="Bold" FontFamily="B Davat" Foreground="#EBEBEB" Grid.ColumnSpan="2" Margin="23,4,0,0"/>
-            <Image Cursor="Hand" Grid.RowSpan="2" Grid.Row="3" Grid.Column="8" Grid.ColumnSpan="2" Height="100" Width="100" Source="/Image/Users.png" Margin="67,2,44,28" />
+            <TextBlock Grid.RowSpan="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="6" Text="تعداد مشتریان" FontSize="35" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#EBEBEB" Margin="65,20,0,0" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="CustomerCounts" Grid.RowSpan="2" Grid.Row="3" Grid.Column="6" Height="100" Width="150" Text="5001" TextAlignment="Center" HorizontalAlignment="Left" FontSize="72" FontWeight="Bold" FontFamily="B Davat" Foreground="#EBEBEB" Grid.ColumnSpan="2" Margin="24,4,0,0"/>
+            <Image Cursor="Hand" Grid.RowSpan="2" Grid.Row="3" Grid.Column="7" Grid.ColumnSpan="2" Height="100" Width="100" Source="/Image/Users.png" Margin="87,2,25,28" />
 
-            <TextBlock Grid.RowSpan="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="4" Text="فروش های امروز" FontSize="35" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#02115D" Margin="0,16,0,0"/>
-            <TextBlock Grid.RowSpan="2" Grid.Row="3" Grid.Column="4" Height="100" Width="150" Text="105" TextAlignment="Center" HorizontalAlignment="Left" FontSize="72" FontWeight="Bold" FontFamily="B Davat" Foreground="#02115D" Grid.ColumnSpan="2" Margin="23,4,0,0"/>
-            <Image Cursor="Hand" Grid.RowSpan="2" Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="2" Height="100" Width="100" Source="/Image/Dollor Icon.png" Margin="67,2,45,28" />
+            <TextBlock Grid.RowSpan="2" Grid.Row="2" Grid.Column="3" Text="فروش های امروز" FontSize="35" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#02115D" Margin="53,11,0,0" Grid.ColumnSpan="3" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="sellCountTXT" Grid.RowSpan="2" Grid.Row="3" Grid.Column="3" Height="100" Width="150" Text="105" TextAlignment="Center" HorizontalAlignment="Left" FontSize="72" FontWeight="Bold" FontFamily="B Davat" Foreground="#02115D" Grid.ColumnSpan="2" Margin="31,2,0,0"/>
+            <Image Cursor="Hand" Grid.RowSpan="2" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" Height="100" Width="100" Source="/Image/Dollor Icon.png" Margin="80,2,32,28" />
 
-            <TextBlock Grid.RowSpan="2" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" Text="یاد آور" HorizontalAlignment="Left" FontSize="35" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#02115D" Margin="10,16,0,0"/>
-            <TextBlock Grid.RowSpan="2" Grid.Row="3" Grid.Column="0" Height="100" Width="150" Text="50" TextAlignment="Center" HorizontalAlignment="Left" FontSize="72" FontWeight="Bold" FontFamily="B Davat" Foreground="#02115D" Grid.ColumnSpan="3" Margin="23,4,0,0"/>
-            <Image Cursor="Hand" Grid.RowSpan="2" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Height="100" Width="100" Source="/Image/Reminder icon.png" Margin="18,2,44,28" />
+            <TextBlock Grid.Row="4" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#02115D" Margin="59,9,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="2" Width="130" Height="33"><Run FlowDirection="RightToLeft" Language="fa-ir" Text="یاد آور های امروز"/><LineBreak/><Run FlowDirection="RightToLeft" Language="fa-ir"/></TextBlock>
+            <TextBlock x:Name="ReminderLBL" x:FieldModifier="public" Grid.Row="4" Grid.Column="0" Height="45" Width="62" Text="0" TextAlignment="Center" FontSize="35" FontWeight="Bold" FontFamily="B Davat" Foreground="#02115D" Grid.ColumnSpan="2"/>
 
-            <TextBlock Grid.Row="2" Grid.Column="10" Grid.ColumnSpan="3" Text="مدیریت ارتباط با مشتریان " FontSize="25" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="0,36,0,0" Grid.RowSpan="2"/>
+            <TextBlock Grid.Row="2" Grid.Column="9" Text="مدیریت ارتباط با مشتریان " FontSize="25" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="29,39,0,0" Grid.ColumnSpan="3" HorizontalAlignment="Left" Grid.RowSpan="2"/>
 
-            <TextBlock Cursor="Hand" Grid.Column="10" Grid.Row="4" Text="مدیریت مشتریان" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Width="140" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_1" VerticalAlignment="Center" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="86,0,0,0"/>
-            <Image Cursor="Hand" Grid.Column="12" Grid.Row="4" Source="/Image/User1.png" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="50" />
+            <TextBlock Cursor="Hand" Grid.Column="9" Grid.Row="4" Grid.ColumnSpan="3" Text="مدیریت مشتریان" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Width="140" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_1" VerticalAlignment="Center"/>
+            <Image Cursor="Hand" Grid.Column="11" Grid.Row="4" Source="/Image/User1.png" Margin="21,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="40" />
 
-            <TextBlock Cursor="Hand" Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="11" Text="مدیریت کالا ها" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="1,3,0,0" HorizontalAlignment="Left" Width="152" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_2"/>
-            <Image Cursor="Hand" Source="/Image/invoce.png" Grid.Row="5" Grid.Column="12" Height="30" Width="30" Margin="11,56,65,44" Grid.RowSpan="2"/>
+            <TextBlock Cursor="Hand" Grid.Row="5" Grid.ColumnSpan="3" Grid.Column="9" Text="مدیریت کالا ها" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Width="118" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_2"/>
+            <Image Cursor="Hand" Source="/Image/invoce.png" Grid.Row="5" Grid.Column="11" Height="30" Width="30" Margin="21,44,55,56" Grid.RowSpan="2"/>
 
-            <TextBlock Cursor="Hand" Grid.Row="5" Grid.ColumnSpan="3" Grid.Column="10" Text="لیست فاکتور ها " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="98,55,0,34" VerticalAlignment="Stretch" HorizontalAlignment="Left" Grid.RowSpan="2" Width="126" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"/>
-            <Image Cursor="Hand" Source="/Image/Activity.png" Grid.Row="6" Grid.Column="11" Height="30" Width="30" Margin="101,43,81,57" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+            <TextBlock Cursor="Hand" Grid.Row="5" Grid.Column="9" Grid.ColumnSpan="3" Text="لیست فاکتور ها " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="0,44,0,46" VerticalAlignment="Stretch" Width="126" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" Grid.RowSpan="2"/>
+            <Image Cursor="Hand" Source="/Image/Activity.png" Grid.Row="6" Grid.Column="11" Height="30" Width="30" Margin="21,20,55,15"/>
 
-            <TextBlock Cursor="Hand" Grid.Row="6" Grid.Column="11" Text="فعالیت ها " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="15,41,0,0" Grid.RowSpan="2" Width="87" HorizontalAlignment="Left" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_3"/>
-            <Image Cursor="Hand" Source="/Image/sell.png" Grid.Row="5" Grid.Column="12" Height="30" Width="30" Margin="13,4,63,31"/>
+            <TextBlock Cursor="Hand" Grid.Row="6" Grid.Column="10" Text="فعالیت ها " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Width="88" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_3" VerticalAlignment="Center"/>
+            <Image Cursor="Hand" Source="/Image/sell.png" Grid.Row="5" Grid.Column="11" Height="30" Width="30" Margin="21,0,55,35"/>
 
-            <TextBlock Cursor="Hand" Grid.Row="7" Grid.Column="11" Text="یاد آور ها " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="16,29,0,0" Width="107" Grid.ColumnSpan="2" HorizontalAlignment="Left" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_4"/>
-            <Image Cursor="Hand" Source="/Image/Alarm.png" Grid.Row="7" Grid.Column="11" Height="30" Width="30" Margin="91,31,91,4" Grid.ColumnSpan="2"/>
+            <TextBlock Cursor="Hand" Grid.Row="6" Grid.Column="10" Text="یاد آور ها " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Width="80" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_4" Margin="0,59,0,0" Grid.RowSpan="2"/>
+            <Image Cursor="Hand" Source="/Image/Alarm.png" Grid.Row="6" Grid.Column="11" Height="30" Width="30" Margin="19,62,57,38" Grid.RowSpan="2"/>
 
-            <TextBlock Cursor="Hand" Grid.Row="8" Grid.Column="11" Text="پنل پیامکی " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="9,0,0,0" Width="120" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_5"/>
-            <Image Cursor="Hand" Source="/Image/Chat.png" Grid.Row="8" Grid.Column="11" Height="30" Width="30" Margin="99,14,83,21" Grid.ColumnSpan="2"/>
+            <TextBlock Cursor="Hand" Grid.Row="7" Grid.Column="10" Text="پنل پیامکی " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Width="94" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_5" Margin="0,34,0,0" Grid.RowSpan="2"/>
+            <Image Cursor="Hand" Source="/Image/Chat.png" Grid.Row="7" Grid.Column="11" Height="30" Width="30" Margin="20,38,56,62" Grid.RowSpan="2"/>
 
-            <TextBlock Cursor="Hand" Grid.Row="9" Grid.Column="11" Text="گزارشات " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="20,1,0,0" Width="96" Grid.ColumnSpan="2" HorizontalAlignment="Left"/>
-            <Image Cursor="Hand" Source="/Image/invoice.png" Grid.Row="9" Grid.Column="11" Height="30" Width="30" Margin="86,1,96,34" Grid.ColumnSpan="2"/>
+            <TextBlock Cursor="Hand" Grid.Row="8" Grid.Column="10" Text="گزارشات " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="0,14,0,0" Width="68"/>
+            <Image Cursor="Hand" Source="/Image/invoice.png" Grid.Row="8" Grid.Column="11" Height="30" Width="30" Margin="19,11,57,24"/>
 
-            <TextBlock Cursor="Hand" Grid.Row="9" Grid.ColumnSpan="3" Grid.Column="10" Text="مدیریت کاربران " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="94,44,0,0" Width="132" Grid.RowSpan="2" HorizontalAlignment="Left" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_6" />
-            <Image Cursor="Hand" Source="/Image/UserSetting.png" Grid.Row="9" Grid.Column="12" Height="30" Width="30" Margin="2,45,74,55" Grid.RowSpan="2"/>
+            <TextBlock Cursor="Hand" Grid.Row="9" Grid.Column="9" Text="مدیریت کاربران " FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="101,0,0,0" Width="120" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_6" Grid.ColumnSpan="3" HorizontalAlignment="Left" />
+            <Image Cursor="Hand" Source="/Image/UserSetting.png" Grid.Row="8" Grid.Column="11" Height="30" Width="30" Margin="18,64,58,36" Grid.RowSpan="2"/>
 
-            <TextBlock Cursor="Hand" Grid.Row="10" Grid.ColumnSpan="3" Grid.Column="10" Text="تنظیمات برنامه" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="100,38,0,0" Grid.RowSpan="2" Width="152" HorizontalAlignment="Left" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_7"/>
-            <Image Cursor="Hand" Source="/Image/settings.png" Grid.Row="10" Grid.Column="12" Height="30" Width="30" Margin="7,38,69,62" Grid.RowSpan="2"/>
-            <Label x:FieldModifier="public" x:Name="USERINFO" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="2" Content="اطلاعات کاربر ادمین" Width="170"/>
+            <TextBlock Cursor="Hand" Grid.Row="10" Grid.Column="9" Text="تنظیمات برنامه" FontSize="20" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#FFFFFF" Margin="101,27,0,0" Width="122" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_7" Grid.ColumnSpan="3" HorizontalAlignment="Left"/>
+            <Image Cursor="Hand" Source="/Image/settings.png" Grid.Row="10" Grid.Column="11" Height="30" Width="30" Margin="11,25,65,10"/>
+            <TextBlock x:FieldModifier="public" x:Name="UsernameLBL" TextAlignment="Center" Grid.Row="2" Text="اطلاعات کاربری" FontSize="25" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#02115D" Margin="33,28,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Left"/>
+            <TextBlock x:FieldModifier="public" x:Name="FullNameLBL" TextAlignment="Center" Grid.Row="3" Text="اطلاعات کاربری" FontSize="25" FontWeight="Bold" FontFamily="IRANSansWeb Light" Foreground="#02115D" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
 
         </Grid>
     </Border>

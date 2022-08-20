@@ -11,6 +11,9 @@ using System.Data.SqlClient;
 using System.Data;
 using BEE;
 using BLL;
+using Stimulsoft.Report.Helpers;
+using System.Windows.Controls;
+using Grid = System.Windows.Controls.Grid;
 
 namespace CRM
 {
@@ -24,8 +27,36 @@ namespace CRM
             InitializeComponent();
         }
         public User UserAdmin = new User();
+
         UserBLL userBLL = new UserBLL();
         MSGClass MSG = new MSGClass();
+        DashBourdBLL dashBLL = new DashBourdBLL();
+
+
+        public void RefresPage()
+        {
+            UsernameLBL.Text = UserAdmin.UserName;
+            FullNameLBL.Text = UserAdmin.Name;
+            ReminderLBL.Text = dashBLL.UserReminderCount(UserAdmin);
+            CustomerCounts.Text = dashBLL.CustomerCounts();
+            sellCountTXT.Text = dashBLL.SellCount();
+            int a = 0;
+            foreach (var i in dashBLL.GetUserReminders(UserAdmin))
+            {
+                if (a<7)
+                {
+                    UIUC UC = new UIUC();
+                    UC.TitleRe.Text=i.Title;
+                    UC.InfoRe.Text = i.ReminderInfo;
+                    Grid.SetRow(UC, 5 + a);
+                    Grid.SetColumnSpan(UC, 6);
+                    MainGrid.Children.Add(UC);
+                    a++;
+                }
+            }
+            
+
+        }
         public void OpenWindow(Form F)
         {
             Window g = this.FindName("Main") as Window;
@@ -44,6 +75,7 @@ namespace CRM
             {
                 InvoiceForm f = new InvoiceForm();
                 OpenWindow(f);
+                RefresPage();
             }
             else
             {
@@ -57,6 +89,7 @@ namespace CRM
             {
                 CustomerForm f = new CustomerForm();
                 OpenWindow(f);
+                RefresPage();
             }
             else
             {
@@ -70,6 +103,7 @@ namespace CRM
             {
                 ProductForm f = new ProductForm();
                 OpenWindow(f);
+                RefresPage();
             }
             else
             {
@@ -83,6 +117,7 @@ namespace CRM
             {
                 ActivityForm f = new ActivityForm();
                 OpenWindow(f);
+                RefresPage();
             }
             else
             {
@@ -96,6 +131,7 @@ namespace CRM
             {
                 ReminderForm f = new ReminderForm();
                 OpenWindow(f);
+                RefresPage();
             }
             else
             {
@@ -109,6 +145,7 @@ namespace CRM
             {
                 SMSForm f = new SMSForm();
                 OpenWindow(f);
+                RefresPage();
             }
             else
             {
@@ -122,6 +159,7 @@ namespace CRM
             {
                 UserForm f = new UserForm();
                 OpenWindow(f);
+                RefresPage();
             }
             else
             {
@@ -135,6 +173,7 @@ namespace CRM
             {
                 SettingForm f = new SettingForm();
                 OpenWindow(f);
+                RefresPage();
             }
             else
             {
@@ -147,6 +186,7 @@ namespace CRM
         {
             LoginForm f = new LoginForm();
             OpenWindow(f);
+            RefresPage();
         }
 
     }

@@ -33,6 +33,7 @@ namespace CRM
         UserGroup Ug = new UserGroup();
         PROCDURE_BLL ProBL = new PROCDURE_BLL();
         Image pic;
+        DashBourdBLL DashBourdBLL = new DashBourdBLL();
 
         Timer timer1 = new Timer();
         Timer timer2 = new Timer();
@@ -201,8 +202,12 @@ namespace CRM
             {
                 MainWindow mainWindow = (MainWindow)System.Windows.Application.Current.MainWindow;
                 mainWindow.UserAdmin = user;
-                mainWindow.USERINFO.Content = user.Name;
+
+                mainWindow.RefresPage();
+
+                mainWindow.ReminderLBL.Text = DashBourdBLL.UserReminderCount(user);
                 ((LoginForm)Application.OpenForms["LoginForm"]).Close();
+
             }
             else
             {

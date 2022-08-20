@@ -54,6 +54,7 @@
     <Compile Include="ActivityCategoryDAL.cs" />
     <Compile Include="ActivityDAL.cs" />
     <Compile Include="CustomerDAL.cs" />
+    <Compile Include="DashBourdDAL.cs" />
     <Compile Include="DB_Class.cs" />
     <Compile Include="InvoiceDAL.cs" />
     <Compile Include="PROCDURE_DAL.cs" />

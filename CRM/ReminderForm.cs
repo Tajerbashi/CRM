@@ -39,11 +39,11 @@ namespace CRM
         int ID;
         bool SW = true;
         ReminderBLL bll=new ReminderBLL();
-        User U = new User();
         MSGClass MSG = new MSGClass();
         User UserAdmin = new User();
         UserBLL UserBLL = new UserBLL();
-
+        User USER = new User();
+        MainWindow mainWindow = new MainWindow();
         public void ShowDGV()
         {
             DGV.DataSource = null;
@@ -58,7 +58,7 @@ namespace CRM
         }
         private void ReminderForm_Load(object sender, EventArgs e)
         {
-            MainWindow mainWindow = (MainWindow)System.Windows.Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            mainWindow = (MainWindow)System.Windows.Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
             UserAdmin = mainWindow.UserAdmin;
 
             AutoCompleteStringCollection names=new AutoCompleteStringCollection();
@@ -86,32 +86,39 @@ namespace CRM
                 Rem.ReminderInfo = InfoTxt.Text;
                 Rem.ReminderDate = dateTXt.Value;
                 Rem.RegDate = DateTime.Now;
-                if (SW)
+                if (!UsernameTXT.Enabled)
                 {
-                    if (bll.Create(Rem, U))
+                    if (SW)
                     {
-                        MSG.ShowMSGBoxDialog("ثبت یادآور", "یاد آور جدیدی ذخیره شد", "", 1, 2);
+                        if (bll.Create(Rem, USER))
+                        {
+                            MSG.ShowMSGBoxDialog("ثبت یادآور", "یاد آور جدیدی ذخیره شد", "", 1, 2);
+                        }
+                        else
+                        {
+                            MSG.ShowMSGBoxDialog("خطا در ثبت", "یاد آور ذخیره نشد", "", 3, 1);
+                        }
                     }
                     else
                     {
-                        MSG.ShowMSGBoxDialog("خطا در ثبت", "یاد آور ذخیره نشد", "", 3, 1);
+                        if (bll.Update(Rem, ID))
+                        {
+                            MSG.ShowMSGBoxDialog("ویرایش یادآور", "یاد آور با موفقیت ویرایش شد", "", 1, 2);
+                            SaveBtn.ButtonText = "ثبت اطلاعات";
+
+                            SW = true;
+                        }
+                        else
+                        {
+                            MSG.ShowMSGBoxDialog("خطا در ویرایش", "یاد آور ویرایش نشد", "", 3, 1);
+                        }
                     }
+                    ShowDGV();
                 }
                 else
                 {
-                    if (bll.Update(Rem, ID))
-                    {
-                        MSG.ShowMSGBoxDialog("ویرایش یادآور", "یاد آور با موفقیت ویرایش شد", "", 1, 2);
-                        SaveBtn.ButtonText = "ثبت اطلاعات";
-
-                        SW = true;
-                    }
-                    else
-                    {
-                        MSG.ShowMSGBoxDialog("خطا در ویرایش", "یاد آور ویرایش نشد", "", 3, 1);
-                    }
+                    MSG.ShowMSGBoxDialog("تایید ادمین", "کلید تایید ادمین فشرده نشده است", "", 3, 1);
                 }
-                ShowDGV();
                 #endregion
 
             }
@@ -123,8 +130,15 @@ namespace CRM
 
         private void SaveUserBtn_Click(object sender, EventArgs e)
         {
-            UsernameTXT.Enabled = false;
-            U=UserBLL.ReadByName(UsernameTXT.Text);
+            USER = UserBLL.ReadByUserName(UsernameTXT.Text);
+            if (USER != null)
+            {
+                UsernameTXT.Enabled = false;
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("خطای کاربری", "ادمین انتخاب نشد و اطلاعات اشتباه وارد شده است", "", 3, 2);
+            }
         }
 
         private void SearchTXT_TextChanged(object sender, EventArgs e)

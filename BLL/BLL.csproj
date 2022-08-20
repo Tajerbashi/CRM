@@ -45,6 +45,7 @@
     <Compile Include="ActivityCategoryBLL.cs" />
     <Compile Include="BLL_Class.cs" />
     <Compile Include="CustomerBLL.cs" />
+    <Compile Include="DashBourdBLL.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="InvoiceBLL.cs" />
     <Compile Include="PROCDURE_BLL.cs" />
