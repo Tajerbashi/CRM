@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.R5 = new System.Windows.Forms.RadioButton();
             this.R4 = new System.Windows.Forms.RadioButton();
@@ -427,6 +427,7 @@
             this.GraphPoint.TabIndex = 4;
             this.GraphPoint.TextColor = System.Drawing.Color.White;
             this.GraphPoint.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.GraphPoint.Click += new System.EventHandler(this.GraphPoint_Click);
             // 
             // GraphColumn
             // 
@@ -449,6 +450,7 @@
             this.GraphColumn.TabIndex = 3;
             this.GraphColumn.TextColor = System.Drawing.Color.White;
             this.GraphColumn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.GraphColumn.Click += new System.EventHandler(this.GraphColumn_Click);
             // 
             // GraphLine
             // 
@@ -471,6 +473,7 @@
             this.GraphLine.TabIndex = 2;
             this.GraphLine.TextColor = System.Drawing.Color.White;
             this.GraphLine.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.GraphLine.Click += new System.EventHandler(this.GraphLine_Click);
             // 
             // Close
             // 
@@ -509,32 +512,32 @@
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(146)))), ((int)(((byte)(204)))));
-            chartArea4.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
-            chartArea4.Area3DStyle.Enable3D = true;
-            chartArea4.Area3DStyle.Inclination = 10;
-            chartArea4.Area3DStyle.IsRightAngleAxes = false;
-            chartArea4.Area3DStyle.Perspective = 10;
-            chartArea4.Area3DStyle.PointDepth = 50;
-            chartArea4.Area3DStyle.PointGapDepth = 50;
-            chartArea4.Area3DStyle.Rotation = -20;
-            chartArea4.Area3DStyle.WallWidth = 15;
-            chartArea4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            chartArea4.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            chartArea4.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(146)))), ((int)(((byte)(204)))));
-            chartArea4.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(146)))), ((int)(((byte)(204)))));
-            chartArea4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(146)))), ((int)(((byte)(204)))));
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
+            chartArea3.AlignmentOrientation = ((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations)((System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Vertical | System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal)));
+            chartArea3.Area3DStyle.Enable3D = true;
+            chartArea3.Area3DStyle.Inclination = 10;
+            chartArea3.Area3DStyle.IsRightAngleAxes = false;
+            chartArea3.Area3DStyle.Perspective = 10;
+            chartArea3.Area3DStyle.PointDepth = 50;
+            chartArea3.Area3DStyle.PointGapDepth = 50;
+            chartArea3.Area3DStyle.Rotation = -20;
+            chartArea3.Area3DStyle.WallWidth = 15;
+            chartArea3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            chartArea3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            chartArea3.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(146)))), ((int)(((byte)(204)))));
+            chartArea3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(146)))), ((int)(((byte)(204)))));
+            chartArea3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(146)))), ((int)(((byte)(204)))));
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.Location = new System.Drawing.Point(12, 72);
             this.chart1.Name = "chart1";
-            series4.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series4.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            series4.BorderWidth = 0;
-            series4.ChartArea = "ChartArea1";
-            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series4.Name = "Series1";
-            series4.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            this.chart1.Series.Add(series4);
+            series3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series3.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series3.BorderWidth = 0;
+            series3.ChartArea = "ChartArea1";
+            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series3.Name = "Series1";
+            series3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(716, 530);
             this.chart1.TabIndex = 9;
             this.chart1.Text = "chart1";

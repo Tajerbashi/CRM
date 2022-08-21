@@ -175,23 +175,33 @@ namespace CRM
             }
             else if (RR2.Checked)
             {
-                List<User> ListName = new List<User>();
-                foreach (var item in reportationBLL.UserActivities())
-                {
-                    if (item.RegDate.Date >= DateStart.Value.Date && item.RegDate.Date <= DateEnd.Value.Date)
-                    {
-                        ListName.Add(item);
-                    }
-                }
                 StiReport sti = new StiReport();
-                sti.Load(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\CustomerReports2.mrt");
-                sti.RegBusinessObject("Customer", ListName);
+
+                sti.Dictionary.DataStore.Clear();
+                sti.Load(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\ActivityReports2.mrt");
+
+                sti["@Start"] = DateStart.Value;
+                sti["@End"] = DateEnd.Value;
+
+                //sti.Dictionary.Variables["Start"].Value = (DateStart.Value.Date);
+
                 sti.Render();
                 sti.Show();
             }
             else if (RR3.Checked)
             {
+                StiReport sti = new StiReport();
 
+                sti.Dictionary.DataStore.Clear();
+                sti.Load(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\UserInvoicePriceReports.mrt");
+
+                sti["@Start"] = DateStart.Value;
+                sti["@End"] = DateEnd.Value;
+
+                //sti.Dictionary.Variables["Start"].Value = (DateStart.Value.Date);
+
+                sti.Render();
+                sti.Show();
             }
             else if (RR4.Checked)
             {
@@ -203,6 +213,71 @@ namespace CRM
             {
                 MSG.ShowMSGBoxDialog("خطای کاربری", "هنوز هیچ گزینه ای انتخاب نشده است", "", 3, 2);
             }
+        }
+        int i = 0;
+        private void GraphLine_Click(object sender, EventArgs e)
+        {
+            if (i==1)
+            {
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            }
+            else if(i==2)
+            {
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            }
+            else if(i==3)
+            {
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            }else
+            {
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                i = 0;
+            }
+            i++;
+        }
+
+        private void GraphColumn_Click(object sender, EventArgs e)
+        {
+            if (i == 1)
+            {
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            }
+            else if (i == 2)
+            {
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.RangeColumn;
+            }
+            else if (i == 3)
+            {
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            }
+            else
+            {
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn100;
+                i = 0;
+            }
+            i++;
+        }
+
+        private void GraphPoint_Click(object sender, EventArgs e)
+        {
+            if (i == 1)
+            {
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            }
+            else if (i == 2)
+            {
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.PointAndFigure;
+            }
+            else if (i == 3)
+            {
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Polar;
+            }
+            else
+            {
+                chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+                i = 0;
+            }
+            i++;
         }
     }
 }
