@@ -265,7 +265,7 @@
             this.UserNameTXT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.UserNameTXT.Font = new System.Drawing.Font("IRANSansWeb", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserNameTXT.Location = new System.Drawing.Point(185, 71);
-            this.UserNameTXT.MaxLength = 11;
+            this.UserNameTXT.MaxLength = 20;
             this.UserNameTXT.Name = "UserNameTXT";
             this.UserNameTXT.PreventEnterBeep = true;
             this.UserNameTXT.Size = new System.Drawing.Size(286, 40);
@@ -273,7 +273,6 @@
             this.UserNameTXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.UserNameTXT.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.UserNameTXT.WatermarkText = "نام کاربری";
-            this.UserNameTXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserNameTXT_KeyPress);
             // 
             // SaveBtn
             // 

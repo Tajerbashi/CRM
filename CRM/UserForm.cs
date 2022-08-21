@@ -275,7 +275,6 @@ namespace CRM
 
         private void UserNameTXT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
         private void E0_CheckedChanged(object sender, EventArgs e)
@@ -413,6 +412,7 @@ namespace CRM
             {
                 MSG.ShowMSGBoxDialog("ثبت اطلاعات", "گروه کاربری با موفقیت ذخیره شد", "", 1, 2);
                 ShowDGVUG();
+                FillComboBox();
             }
             else
             {

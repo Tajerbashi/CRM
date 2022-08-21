@@ -41,6 +41,7 @@
     <ApplicationIcon>Binassmax-Pry-Frente-Black-Special-2-Ok.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.Charts, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar.Schedule, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -69,6 +70,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -104,6 +106,11 @@
       <DependentUpon>MSGBoxForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MSGClass.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegisterUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +122,12 @@
     </Compile>
     <Compile Include="ReminderForm.Designer.cs">
       <DependentUpon>ReminderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SettingForm.cs">
       <SubType>Form</SubType>
@@ -188,11 +201,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -225,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReminderForm.resx">
       <DependentUpon>ReminderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
@@ -309,9 +320,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\User1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-checkmark-384.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-checkmark-480.png" />
@@ -405,6 +413,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-report-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-report-641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-graph-643.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

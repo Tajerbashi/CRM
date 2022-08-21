@@ -81,5 +81,9 @@ namespace BLL
             //  1 Can Enter            //  2 Can Create            //  3 Can Update            //  4 Can Delete
             return dal.Access(user, S, a);
         }
+        public List<User> ReadUserInvoiceReport()
+        {
+            return dal.ReadUserInvoiceReport();
+        }
     }
 }

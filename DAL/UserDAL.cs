@@ -124,5 +124,10 @@ namespace DAL
             }
             return false;
         }
+
+        public List<User> ReadUserInvoiceReport()
+        {
+            return DB.users.Include("InVoices").Where(i => i.DeleteStatus == false).ToList();
+        }
     }
 }

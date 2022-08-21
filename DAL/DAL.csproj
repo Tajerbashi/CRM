@@ -61,6 +61,7 @@
     <Compile Include="ProductDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReminderDAL.cs" />
+    <Compile Include="ReportationDAL.cs" />
     <Compile Include="UserDAL.cs" />
     <Compile Include="UserGroupDAL.cs" />
   </ItemGroup>

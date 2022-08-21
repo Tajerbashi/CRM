@@ -189,5 +189,18 @@ namespace CRM
             RefresPage();
         }
 
+        private void TextBlock_MouseLeftButtonDown_8(object sender, MouseButtonEventArgs e)
+        {
+            if (userBLL.Access(UserAdmin, "بخش گزارشات", 1))
+            {
+                ReportForm f = new ReportForm();
+                OpenWindow(f);
+                RefresPage();
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
+        }
     }
 }
