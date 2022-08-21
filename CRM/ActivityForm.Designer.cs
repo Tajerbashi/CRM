@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActivityForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SaveBtn3 = new XanderUI.XUIButton();
             this.ActivityTXT = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -90,7 +91,8 @@
             this.groupBox1.Size = new System.Drawing.Size(1220, 225);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "افزودن فاکتور جدید";
+            this.groupBox1.Text = "افزودن فعالیت جدید";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // SaveBtn3
             // 
@@ -349,7 +351,7 @@
             this.groupBox2.Size = new System.Drawing.Size(1220, 377);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "افزودن فاکتور جدید";
+            this.groupBox2.Text = "جستجو و نمایش فعالیت ها";
             // 
             // checkBoxX2
             // 
@@ -438,14 +440,14 @@
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("IRANSansWeb", 11F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("IRANSansWeb", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DGV.GridColor = System.Drawing.Color.White;
+            this.DGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.DGV.Location = new System.Drawing.Point(6, 83);
             this.DGV.Name = "DGV";
             this.DGV.RowHeadersVisible = false;
@@ -516,11 +518,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("IRANSansWeb(FaNum) UltraLight", 12.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(953, 614);
+            this.label5.Location = new System.Drawing.Point(951, 614);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(274, 28);
+            this.label5.Size = new System.Drawing.Size(280, 28);
             this.label5.TabIndex = 31;
-            this.label5.Text = "موجودی کل محصولات تا این لحظه";
+            this.label5.Text = "موجودی کل فعالیت ها تا این لحظه";
             // 
             // label10
             // 
@@ -615,6 +617,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ActivityForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

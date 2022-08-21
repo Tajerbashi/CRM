@@ -10,7 +10,6 @@ namespace CRM
 {
     public class MSGClass
     {
-
         public DialogResult ShowMSGBoxDialog(String title,String Fa,String En,int type,int Status)
         {
             MSGBoxForm MSG = new MSGBoxForm();
@@ -88,7 +87,6 @@ namespace CRM
                 MSG.BluePanel.Style.BackColor2.Color = Color.FromArgb(190, 100, 14);
                 MSG.PIC.Image = Properties.Resources.Exit1;
             }
-
             MSG.ShowDialog();
             return MSG.DialogResult;
         }

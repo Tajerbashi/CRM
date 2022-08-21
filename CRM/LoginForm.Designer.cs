@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.LodingLBL = new System.Windows.Forms.Label();
             this.WelcomeLBL = new System.Windows.Forms.Label();
             this.progressBarX1 = new DevComponents.DotNetBar.Controls.ProgressBarX();
@@ -135,6 +136,7 @@
             this.Controls.Add(this.WelcomeLBL);
             this.Controls.Add(this.progressBarX1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

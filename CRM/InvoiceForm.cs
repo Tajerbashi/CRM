@@ -50,11 +50,25 @@ namespace CRM
 
         public List<Product> ProductsList = new List<Product>();
         
+        private void NewInvoice()
+        {
+            SaveBtn0.Enabled = true;
+            SaveBtn1.Enabled = true;
+            
+            UserNameTXT.Enabled = true;
+            UserNameTXT.Text = "";
+
+            CustomerPhoneTXT.Enabled = true;
+            CustomerPhoneTXT.Text = "";
+        }
         public void ShowDGV()
         {
             DGV2.DataSource = null;
             DGV2.DataSource = BLL.ReadAll();
             DGV2.Columns["آیدی"].Visible = false;
+            int count = DGV2.RowCount;
+            label18.Text = count.ToString();
+            NewInvoice();   
         }
         public void DGVSearch()
         {
@@ -167,9 +181,16 @@ namespace CRM
             try
             {
                 U = UserBLL.ReadByUserName(UserNameTXT.Text);
-                UserNameTXT.Text = U.Name;
-                UserNameTXT.Enabled = false;
-                SaveBtn0.Enabled = false;
+                if (U != null)
+                {
+                    UserNameTXT.Text = U.Name;
+                    UserNameTXT.Enabled = false;
+                    SaveBtn0.Enabled = false;
+                }
+                else
+                {
+                    MSG.ShowMSGBoxDialog("خطای کاربری", "اطلاعات درستی وارد نشده است", "", 3, 1);
+                }
             }
             catch 
             {
@@ -179,9 +200,16 @@ namespace CRM
         private void SaveBtn1_Click(object sender, EventArgs e)
         {
             C = customerBLL.ReadByPhone(CustomerPhoneTXT.Text);
-            NameLBL.Text = C.Name;
-            PhoneLBL.Text = C.Phone; ;
-            CustomerPhoneTXT.Enabled = false;
+            if (C != null)
+            {
+                NameLBL.Text = C.Name;
+                PhoneLBL.Text = C.Phone; ;
+                CustomerPhoneTXT.Enabled = false;
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("خطای کاربری", "اطلاعات درستی وارد نشده است", "", 3, 1);
+            }
         }
 
         private void PercentTXT_TextChanged(object sender, EventArgs e)
@@ -223,44 +251,52 @@ namespace CRM
         {
             if (UserBLL.Access(UserAdmin, "بخش فاکتور ها", 2))
             {
-                #region Code
-                InVoice inVoice = new InVoice();
-                inVoice.RegDate = DateTime.Now;
-                inVoice.InvoiceNumber = int.Parse(LastFacLBL.Text);
-                inVoice.inVoicePrice = Convert.ToDouble(TotalBuyPrice.Text);
-                if (IsCheck.Checked)
+                if (!UserNameTXT.Enabled && !CustomerPhoneTXT.Enabled && DGV1.RowCount>0)
                 {
-                    inVoice.IsCheckout = true;
-                    inVoice.CheckOutDate = DateTime.Now;
-                }
-                else
-                {
-                    inVoice.IsCheckout = false;
-                }
-                if (BLL.Create(inVoice, C, U, ProductsList))
-                {
-                    DialogResult DR = MSG.ShowMSGBoxDialog("ثبت اطلاعات", "فاکتور با موفقیت ذخیره شد\nآیا میخواهید فاکتور چاپ شود?", "", 2, 2);
-                    if (DR == DialogResult.Yes)
+                    #region Code
+                    InVoice inVoice = new InVoice();
+                    inVoice.RegDate = DateTime.Now;
+                    inVoice.InvoiceNumber = int.Parse(LastFacLBL.Text);
+                    inVoice.inVoicePrice = Convert.ToDouble(TotalBuyPrice.Text);
+                    if (IsCheck.Checked)
                     {
-                        StiReport sti = new StiReport();
-                        sti.Load(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\Report.mrt");
-                        sti.Dictionary.Variables["InvoiceNumber"].Value = LastFacLBL.Text;
-                        sti.Dictionary.Variables["Date"].Value = DateLBL.Text;
-                        sti.Dictionary.Variables["UserName"].Value = UserNameTXT.Text;
-                        sti.Dictionary.Variables["CustomerName"].Value = NameLBL.Text;
-                        sti.Dictionary.Variables["CustomerPhone"].Value = PhoneLBL.Text;
-                        sti.RegBusinessObject("Product", ProductsList);
-                        sti.Render();
-                        sti.Show();
+                        inVoice.IsCheckout = true;
+                        inVoice.CheckOutDate = DateTime.Now;
                     }
+                    else
+                    {
+                        inVoice.IsCheckout = false;
+                    }
+                    if (BLL.Create(inVoice, C, U, ProductsList))
+                    {
+                        DialogResult DR = MSG.ShowMSGBoxDialog("ثبت اطلاعات", "فاکتور با موفقیت ذخیره شد\nآیا میخواهید فاکتور چاپ شود?", "", 2, 2);
+                        if (DR == DialogResult.Yes)
+                        {
+                            StiReport sti = new StiReport();
+                            sti.Load(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\Report.mrt");
+                            sti.Dictionary.Variables["InvoiceNumber"].Value = LastFacLBL.Text;
+                            sti.Dictionary.Variables["Date"].Value = DateLBL.Text;
+                            sti.Dictionary.Variables["UserName"].Value = UserNameTXT.Text;
+                            sti.Dictionary.Variables["CustomerName"].Value = NameLBL.Text;
+                            sti.Dictionary.Variables["CustomerPhone"].Value = PhoneLBL.Text;
+                            sti.RegBusinessObject("Product", ProductsList);
+                            sti.Render();
+                            sti.Show();
+                        }
+                    }
+                    else
+                    {
+                        MSG.ShowMSGBoxDialog("خطای ثبت اطلاعات", "فاکتور ذخیره نشد", "", 3, 1);
+                    }
+                    ShowDGV();
+                    LastFacLBL.Text = Convert.ToString(BLL.lastFactorNumber());
+                    #endregion
+
                 }
                 else
                 {
-                    MSG.ShowMSGBoxDialog("خطای ثبت اطلاعات", "فاکتور ذخیره نشد", "", 3, 1);
+                    MSG.ShowMSGBoxDialog("خطای کاربری", "اطلاعات تایید نشده است و یا اشتباه وارد شده اند", "", 3, 2);
                 }
-                ShowDGV();
-                LastFacLBL.Text = Convert.ToString(BLL.lastFactorNumber());
-                #endregion
 
             }
             else
@@ -290,14 +326,21 @@ namespace CRM
         private void پرداختشدToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //  DGV2
-            
+
             if (UserBLL.Access(UserAdmin, "بخش فاکتور ها", 3))
             {
-                DialogResult DR = MSG.ShowMSGBoxDialog("تغییر وضعیت", "آیا میخواهید تایید پرداخت را فعال کنید؟", "", 2, 2);
-                if (DR == DialogResult.Yes)
+                if (IDDGV2 != 0)
                 {
-                    BLL.ChangeCheckIsDone(IDDGV2);
-                    ShowDGV();
+                    DialogResult DR = MSG.ShowMSGBoxDialog("تغییر وضعیت", "آیا میخواهید تایید پرداخت را فعال کنید؟", "", 2, 2);
+                    if (DR == DialogResult.Yes)
+                    {
+                        BLL.ChangeCheckIsDone(IDDGV2);
+                        ShowDGV();
+                    }
+                }
+                else
+                {
+                    MSG.ShowMSGBoxDialog("اشتباه کاربری", "هنوز ردیف مورد نظر را کلیک نکرده اید!", "", 3, 2);
                 }
             }
             else
@@ -310,11 +353,19 @@ namespace CRM
             //  DGV2
             if (UserBLL.Access(UserAdmin, "بخش فاکتور ها", 4))
             {
-                DialogResult DR = MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید فاکتور مورد نظر را حذف کنید؟", "", 2, 1);
-                if (DR == DialogResult.Yes)
+                if (IDDGV2 != 0)
                 {
-                    BLL.Delete(IDDGV2);
-                    ShowDGV();
+                    DialogResult DR = MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید فاکتور مورد نظر را حذف کنید؟", "", 2, 1);
+                    if (DR == DialogResult.Yes)
+                    {
+                        BLL.Delete(IDDGV2);
+                        ShowDGV();
+                    }
+
+                }
+                else
+                {
+                    MSG.ShowMSGBoxDialog("اشتباه کاربری", "هنوز ردیف مورد نظر را کلیک نکرده اید!", "", 3, 2);
                 }
             }
             else

@@ -85,7 +85,7 @@
             this.LicPanel.Style.BorderWidth = 0;
             this.LicPanel.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.LicPanel.Style.GradientAngle = 90;
-            this.LicPanel.TabIndex = 1;
+            this.LicPanel.TabIndex = 0;
             // 
             // progressBarX1
             // 
@@ -125,7 +125,7 @@
             this.ActiveBtnj.Location = new System.Drawing.Point(8, 378);
             this.ActiveBtnj.Name = "ActiveBtnj";
             this.ActiveBtnj.Size = new System.Drawing.Size(35, 32);
-            this.ActiveBtnj.TabIndex = 28;
+            this.ActiveBtnj.TabIndex = 2;
             this.ActiveBtnj.TextColor = System.Drawing.Color.DodgerBlue;
             this.ActiveBtnj.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.ActiveBtnj.Click += new System.EventHandler(this.ActiveBtnj_Click);
@@ -146,7 +146,7 @@
             this.CopyBTN.Location = new System.Drawing.Point(9, 330);
             this.CopyBTN.Name = "CopyBTN";
             this.CopyBTN.Size = new System.Drawing.Size(35, 32);
-            this.CopyBTN.TabIndex = 27;
+            this.CopyBTN.TabIndex = 0;
             this.CopyBTN.TextColor = System.Drawing.Color.DodgerBlue;
             this.CopyBTN.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.CopyBTN.Click += new System.EventHandler(this.CopyBTN_Click);
@@ -217,7 +217,7 @@
             this.ActiveBtn.SelectedTextColor = System.Drawing.Color.White;
             this.ActiveBtn.Size = new System.Drawing.Size(139, 40);
             this.ActiveBtn.SuperSelected = false;
-            this.ActiveBtn.TabIndex = 2;
+            this.ActiveBtn.TabIndex = 3;
             this.ActiveBtn.TextColor = System.Drawing.Color.White;
             this.ActiveBtn.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.ActiveBtn.Visible = false;
@@ -282,7 +282,7 @@
             this.AdduserPanel.Style.BorderWidth = 0;
             this.AdduserPanel.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.AdduserPanel.Style.GradientAngle = 90;
-            this.AdduserPanel.TabIndex = 30;
+            this.AdduserPanel.TabIndex = 0;
             // 
             // symbolBox1
             // 

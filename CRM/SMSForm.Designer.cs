@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SMSForm));
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.xuiButton2 = new XanderUI.XUIButton();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -71,7 +71,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("IRANSansWeb(FaNum) UltraLight", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(678, 619);
+            this.label7.Location = new System.Drawing.Point(676, 621);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 28);
             this.label7.TabIndex = 33;
@@ -82,7 +82,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("IRANSansWeb(FaNum) UltraLight", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(824, 621);
+            this.label6.Location = new System.Drawing.Point(943, 620);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(20, 28);
             this.label6.TabIndex = 32;
@@ -93,11 +93,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("IRANSansWeb(FaNum) UltraLight", 12.75F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(882, 621);
+            this.label5.Location = new System.Drawing.Point(997, 620);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(353, 28);
+            this.label5.Size = new System.Drawing.Size(228, 28);
             this.label5.TabIndex = 31;
-            this.label5.Text = "تعداد کل یاد آور های انجام شده در این لحظه";
+            this.label5.Text = "تعاد کل پیام های ارسال شده";
             // 
             // xuiButton1
             // 
@@ -126,7 +126,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("IRANSansWeb(FaNum) UltraLight", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(646, 619);
+            this.label10.Location = new System.Drawing.Point(645, 621);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(20, 28);
             this.label10.TabIndex = 36;
@@ -137,7 +137,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("IRANSansWeb(FaNum) UltraLight", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(614, 619);
+            this.label9.Location = new System.Drawing.Point(611, 621);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(23, 28);
             this.label9.TabIndex = 35;
@@ -161,32 +161,12 @@
             this.dataGridViewX1.Size = new System.Drawing.Size(1220, 239);
             this.dataGridViewX1.TabIndex = 29;
             // 
-            // xuiButton2
-            // 
-            this.xuiButton2.BackgroundColor = System.Drawing.Color.Transparent;
-            this.xuiButton2.ButtonImage = global::CRM.Properties.Resources.icons8_checkmark_480;
-            this.xuiButton2.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
-            this.xuiButton2.ButtonText = "ثبت یادآور";
-            this.xuiButton2.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton2.ClickTextColor = System.Drawing.Color.Blue;
-            this.xuiButton2.CornerRadius = 5;
-            this.xuiButton2.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton2.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.xuiButton2.HoverTextColor = System.Drawing.Color.Black;
-            this.xuiButton2.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton2.Location = new System.Drawing.Point(142, 254);
-            this.xuiButton2.Name = "xuiButton2";
-            this.xuiButton2.Size = new System.Drawing.Size(120, 41);
-            this.xuiButton2.TabIndex = 2;
-            this.xuiButton2.TextColor = System.Drawing.Color.White;
-            this.xuiButton2.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("IRANSansWeb(FaNum) UltraLight", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(575, 620);
+            this.label11.Location = new System.Drawing.Point(580, 621);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(20, 28);
             this.label11.TabIndex = 37;
@@ -203,14 +183,13 @@
             this.groupBox1.Size = new System.Drawing.Size(1220, 355);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "افزودن یادآور جدید";
+            this.groupBox1.Text = "پیام جدید";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.listBox1);
             this.groupBox3.Controls.Add(this.xuiButton4);
             this.groupBox3.Controls.Add(this.textBoxX1);
-            this.groupBox3.Controls.Add(this.xuiButton2);
             this.groupBox3.Controls.Add(this.textBoxX2);
             this.groupBox3.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
@@ -219,7 +198,7 @@
             this.groupBox3.Size = new System.Drawing.Size(819, 316);
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "افزودن یادآور جدید";
+            this.groupBox3.Text = "افزودن پیام گروهی";
             // 
             // listBox1
             // 
@@ -243,7 +222,7 @@
             this.xuiButton4.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.xuiButton4.HoverTextColor = System.Drawing.Color.Black;
             this.xuiButton4.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton4.Location = new System.Drawing.Point(6, 254);
+            this.xuiButton4.Location = new System.Drawing.Point(6, 269);
             this.xuiButton4.Name = "xuiButton4";
             this.xuiButton4.Size = new System.Drawing.Size(120, 41);
             this.xuiButton4.TabIndex = 29;
@@ -299,7 +278,7 @@
             this.groupBox2.Size = new System.Drawing.Size(383, 316);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "افزودن یادآور جدید";
+            this.groupBox2.Text = "افزودن پیام تکی";
             // 
             // xuiButton3
             // 
@@ -375,6 +354,7 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SMSForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -397,7 +377,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
-        private XanderUI.XUIButton xuiButton2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;

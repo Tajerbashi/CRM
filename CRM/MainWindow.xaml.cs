@@ -14,6 +14,7 @@ using BLL;
 using Stimulsoft.Report.Helpers;
 using System.Windows.Controls;
 using Grid = System.Windows.Controls.Grid;
+using System.Drawing;
 
 namespace CRM
 {
@@ -57,7 +58,7 @@ namespace CRM
             
 
         }
-        public void OpenWindow(Form F)
+        public DialogResult OpenWindow(Form F)
         {
             Window g = this.FindName("Main") as Window;
             BlurBitmapEffect blurBitmapEffect = new BlurBitmapEffect();
@@ -67,6 +68,7 @@ namespace CRM
             F.ShowDialog();
             blurBitmapEffect.Radius = 0;
             g.BitmapEffect = blurBitmapEffect;
+            return F.DialogResult;
         }
 
         private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -200,6 +202,45 @@ namespace CRM
             else
             {
                 MSG.ShowMSGBoxDialog("محدودیت دسترسی", "شما اجازه ورود به این بخش نرم افزار ندارید", "", 3, 2);
+            }
+        }
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MSGBoxForm MSG = new MSGBoxForm();
+            MSG.ExitBtn.Visible = true;
+            MSG.BackBtn.Visible = true;
+            MSG.BluePanel.Style.BackColor1.Color = Color.FromArgb(192, 0, 0);
+            MSG.BluePanel.Style.BackColor2.Color = Color.FromArgb(190, 100, 14);
+            MSG.PIC.Visible = true;
+            MSG.PIC.Image = Properties.Resources.Exit1;
+            MSG.TitleLbl.Text = "خروج از برنامه";
+            MSG.InfoFALBL.Text = "آیا میخواهید از برنامه خارج شوید؟";
+            MSG.InfoLblEN.Visible = false;
+
+            OpenWindow(MSG);
+
+            //MSG.ShowMSGBoxDialog("خروج از برنامه", "آیا میخواهید از برنامه خارج شوید", "", 4, 0);
+        }
+
+        private void Image_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        {
+            MSGBoxForm MSG = new MSGBoxForm();
+            MSG.YESBtn.Visible = true;
+            MSG.NOBtn.Visible = true;
+            MSG.BluePanel.Style.BackColor1.Color = Color.FromArgb(192, 0, 0);
+            MSG.BluePanel.Style.BackColor2.Color = Color.FromArgb(190, 100, 14);
+            MSG.PIC.Visible = true;
+            MSG.PIC.Image = Properties.Resources.Question1;
+            MSG.TitleLbl.Text = "قفل کردن";
+            MSG.InfoFALBL.Text = "آیا میخواهید برنامه قفل شود؟";
+            MSG.InfoLblEN.Visible = false;
+
+            DialogResult Dr= OpenWindow(MSG);
+            if (Dr==System.Windows.Forms.DialogResult.Yes)
+            {
+                LoginForm f = new LoginForm();
+                OpenWindow(f);
+                RefresPage();
             }
         }
     }

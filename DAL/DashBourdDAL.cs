@@ -13,8 +13,15 @@ namespace DAL
         
         public String UserReminderCount(User user)
         {
-            var q = DB.users.Include("Reminder").Where(i => i.ID == user.ID).FirstOrDefault();
-            return q.Reminder.Where(c => c.ReminderDate==DateTime.Now.Date).Count().ToString();
+            try
+            {
+                var q = DB.users.Include("Reminder").Where(i => i.ID == user.ID).FirstOrDefault();
+                return q.Reminder.Where(c => c.ReminderDate == DateTime.Now.Date).Count().ToString();
+            }
+            catch 
+            {
+                return " ";
+            }
         }
         public String CustomerCounts()
         {

@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoiceForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SaveBtn0 = new XanderUI.XUIButton();
             this.UserNameTXT = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -526,9 +527,9 @@
             // 
             this.groupBox2.Controls.Add(this.DGV2);
             this.groupBox2.Controls.Add(this.SearchTXT);
-            this.groupBox2.Font = new System.Drawing.Font("IRANSansWeb", 9.75F);
+            this.groupBox2.Font = new System.Drawing.Font("IRANSansWeb", 12F);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(12, 293);
+            this.groupBox2.Location = new System.Drawing.Point(12, 295);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1220, 311);
             this.groupBox2.TabIndex = 1;
@@ -548,7 +549,7 @@
             this.DGV2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("IRANSansWeb", 9.75F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("IRANSansWeb", 12F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -557,7 +558,7 @@
             this.DGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("IRANSansWeb", 9.75F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("IRANSansWeb", 12F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
@@ -565,11 +566,11 @@
             this.DGV2.DefaultCellStyle = dataGridViewCellStyle4;
             this.DGV2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DGV2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.DGV2.Location = new System.Drawing.Point(6, 70);
+            this.DGV2.Location = new System.Drawing.Point(6, 74);
             this.DGV2.Name = "DGV2";
             this.DGV2.RowHeadersVisible = false;
             this.DGV2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV2.Size = new System.Drawing.Size(1208, 235);
+            this.DGV2.Size = new System.Drawing.Size(1208, 231);
             this.DGV2.TabIndex = 1;
             this.DGV2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV2_CellClick);
             this.DGV2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV2_CellMouseClick);
@@ -584,7 +585,7 @@
             this.SearchTXT.Border.Class = "TextBoxBorder";
             this.SearchTXT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.SearchTXT.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTXT.Location = new System.Drawing.Point(6, 22);
+            this.SearchTXT.Location = new System.Drawing.Point(6, 26);
             this.SearchTXT.Name = "SearchTXT";
             this.SearchTXT.PreventEnterBeep = true;
             this.SearchTXT.Size = new System.Drawing.Size(1208, 42);
@@ -664,11 +665,11 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("IRANSansWeb(FaNum) UltraLight", 12.75F, System.Drawing.FontStyle.Bold);
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(1032, 618);
+            this.label19.Location = new System.Drawing.Point(1027, 623);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(199, 28);
+            this.label19.Size = new System.Drawing.Size(204, 28);
             this.label19.TabIndex = 22;
-            this.label19.Text = "کل مشتریان تا این لحظه";
+            this.label19.Text = "کل فاکتور ها تا این لحظه";
             // 
             // contextMenuStrip2
             // 
@@ -710,7 +711,7 @@
             this.xuiButton3.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.xuiButton3.HoverTextColor = System.Drawing.Color.Black;
             this.xuiButton3.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton3.Location = new System.Drawing.Point(12, 610);
+            this.xuiButton3.Location = new System.Drawing.Point(12, 611);
             this.xuiButton3.Name = "xuiButton3";
             this.xuiButton3.Size = new System.Drawing.Size(216, 41);
             this.xuiButton3.TabIndex = 2;
@@ -735,6 +736,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InvoiceForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

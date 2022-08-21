@@ -48,6 +48,8 @@ namespace CRM
             DGV.DataSource = null;
             DGV.DataSource = bll.ReadAll();
             DGV.Columns["آیدی"].Visible = false;
+            int count = DGV.RowCount;
+            label6.Text = count.ToString();
         }
         private void ClearTextBox()
         {
@@ -140,9 +142,16 @@ namespace CRM
             if (UserBLL.Access(UserAdmin, "بخش کالا ها", 3))
             {
                 sw = false;
-                ProductTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["نام محصول"].Value);
-                PriceTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["قیمت محصول"].Value);
-                StockTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["موجودی"].Value);
+                if (ID != 0)
+                {
+                    ProductTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["نام محصول"].Value);
+                    PriceTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["قیمت محصول"].Value);
+                    StockTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["موجودی"].Value);
+                }
+                else
+                {
+                    MSG.ShowMSGBoxDialog("اشتباه کاربری", "هنوز ردیف مورد نظر را کلیک نکرده اید!", "", 3, 2);
+                }
             }
             else
             {
@@ -154,11 +163,18 @@ namespace CRM
         {
             if (UserBLL.Access(UserAdmin, "بخش کالا ها", 4))
             {
-                DialogResult Dr = MSG.ShowMSGBoxDialog("هشدار حذف اطلاعات", "آیا میخواهید اطلاعات مورد نظر حذف شود؟", "", 2, 1);
-                if (Dr == DialogResult.Yes)
+                if (ID != 0)
                 {
-                    bll.Delete(ID);
-                    ShowDGV();
+                    DialogResult Dr = MSG.ShowMSGBoxDialog("هشدار حذف اطلاعات", "آیا میخواهید اطلاعات مورد نظر حذف شود؟", "", 2, 1);
+                    if (Dr == DialogResult.Yes)
+                    {
+                        bll.Delete(ID);
+                        ShowDGV();
+                    }
+                }
+                else
+                {
+                    MSG.ShowMSGBoxDialog("اشتباه کاربری", "هنوز ردیف مورد نظر را کلیک نکرده اید!", "", 3, 2);
                 }
             }
             else

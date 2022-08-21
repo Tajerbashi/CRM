@@ -44,11 +44,30 @@ namespace CRM
         UserBLL UserBLL = new UserBLL();
         User USER = new User();
         MainWindow mainWindow = new MainWindow();
+
+        private void NewReminder()
+        {
+            UsernameTXT.Enabled = true;
+            UsernameTXT.Text = "";
+
+            SaveUserBtn.Enabled = true;
+
+            titleeTXT.Enabled = true;
+            titleeTXT.Text = "";
+
+            InfoTxt.Enabled = true;
+            InfoTxt.Text = "";
+
+        }
+
         public void ShowDGV()
         {
             DGV.DataSource = null;
             DGV.DataSource = bll.Read();
             DGV.Columns["آیدی"].Visible = false;
+            int count = DGV.RowCount;
+            label6.Text = count.ToString();
+            NewReminder();
         }
         public void DGVSearch()
         {
@@ -93,6 +112,8 @@ namespace CRM
                         if (bll.Create(Rem, USER))
                         {
                             MSG.ShowMSGBoxDialog("ثبت یادآور", "یاد آور جدیدی ذخیره شد", "", 1, 2);
+                            ShowDGV();
+
                         }
                         else
                         {
@@ -107,13 +128,14 @@ namespace CRM
                             SaveBtn.ButtonText = "ثبت اطلاعات";
 
                             SW = true;
+                            ShowDGV();
+
                         }
                         else
                         {
                             MSG.ShowMSGBoxDialog("خطا در ویرایش", "یاد آور ویرایش نشد", "", 3, 1);
                         }
                     }
-                    ShowDGV();
                 }
                 else
                 {
@@ -150,11 +172,18 @@ namespace CRM
         {
             if (UserBLL.Access(UserAdmin, "بخش یاد آورها", 3))
             {
-                SW = false;
-                SaveBtn.ButtonText = "ویرایش اطلاعات";
-                titleeTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["عنوان یادآور"].Value);
-                InfoTxt.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["توضیحات یادآور"].Value);
-                dateTXt.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["تاریخ یادآور"].Value);
+                if (ID != 0)
+                {
+                    SW = false;
+                    SaveBtn.ButtonText = "ویرایش اطلاعات";
+                    titleeTXT.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["عنوان یادآور"].Value);
+                    InfoTxt.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["توضیحات یادآور"].Value);
+                    dateTXt.Text = Convert.ToString(DGV.Rows[DGV.CurrentRow.Index].Cells["تاریخ یادآور"].Value);
+                }
+                else
+                {
+                    MSG.ShowMSGBoxDialog("اشتباه کاربری", "هنوز ردیف مورد نظر را کلیک نکرده اید!", "", 3, 2);
+                }
             }
             else
             {
@@ -166,8 +195,15 @@ namespace CRM
         {
             if (UserBLL.Access(UserAdmin, "بخش یاد آورها", 3))
             {
-                bll.IsDone(ID);
-                ShowDGV();
+                if (ID != 0)
+                {
+                    bll.IsDone(ID);
+                    ShowDGV();
+                }
+                else
+                {
+                    MSG.ShowMSGBoxDialog("اشتباه کاربری", "هنوز ردیف مورد نظر را کلیک نکرده اید!", "", 3, 2);
+                }
             }
             else
             {
@@ -180,11 +216,18 @@ namespace CRM
             
             if (UserBLL.Access(UserAdmin, "بخش یاد آورها", 4))
             {
-                DialogResult dr = MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید اطلاعات مورد نظر را حذف کنید؟", "", 2, 1);
-                if (dr == DialogResult.Yes)
+                if (ID != 0)
                 {
-                    bll.Delete(ID);
-                    ShowDGV();
+                    DialogResult dr = MSG.ShowMSGBoxDialog("حذف اطلاعات", "آیا میخواهید اطلاعات مورد نظر را حذف کنید؟", "", 2, 1);
+                    if (dr == DialogResult.Yes)
+                    {
+                        bll.Delete(ID);
+                        ShowDGV();
+                    }
+                }
+                else
+                {
+                    MSG.ShowMSGBoxDialog("اشتباه کاربری", "هنوز ردیف مورد نظر را کلیک نکرده اید!", "", 3, 2);
                 }
             }
             else

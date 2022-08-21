@@ -9,7 +9,7 @@ namespace DAL
 {
     public class DB_Class : DbContext
     {
-        public DB_Class() : base("DBC"){}
+        public DB_Class() : base("name=DBC"){}
 
         public DbSet<User> users { get; set; }
         public DbSet<Customer> customers { get; set; }

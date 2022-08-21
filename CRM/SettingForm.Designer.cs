@@ -77,10 +77,10 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(700, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(536, 286);
+            this.groupBox1.Size = new System.Drawing.Size(536, 647);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "افزودن فاکتور جدید";
+            this.groupBox1.Text = "ایجاد فعالیت";
             // 
             // DGV
             // 
@@ -110,7 +110,7 @@
             this.DGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.DGV.Location = new System.Drawing.Point(6, 76);
+            this.DGV.Location = new System.Drawing.Point(6, 86);
             this.DGV.Name = "DGV";
             this.DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -124,7 +124,7 @@
             this.DGV.RowHeadersVisible = false;
             this.DGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV.Size = new System.Drawing.Size(522, 204);
+            this.DGV.Size = new System.Drawing.Size(522, 555);
             this.DGV.TabIndex = 12;
             this.DGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
             this.DGV.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_CellMouseClick);
@@ -142,7 +142,7 @@
             this.SaveBtn.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.SaveBtn.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.SaveBtn.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.SaveBtn.Location = new System.Drawing.Point(6, 26);
+            this.SaveBtn.Location = new System.Drawing.Point(6, 40);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(149, 40);
             this.SaveBtn.TabIndex = 0;
@@ -160,7 +160,7 @@
             this.NameAcTxt.Border.Class = "TextBoxBorder";
             this.NameAcTxt.Border.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
             this.NameAcTxt.Font = new System.Drawing.Font("IRANSansWeb", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameAcTxt.Location = new System.Drawing.Point(161, 28);
+            this.NameAcTxt.Location = new System.Drawing.Point(161, 39);
             this.NameAcTxt.Name = "NameAcTxt";
             this.NameAcTxt.PreventEnterBeep = true;
             this.NameAcTxt.Size = new System.Drawing.Size(367, 42);
