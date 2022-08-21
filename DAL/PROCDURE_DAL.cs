@@ -35,11 +35,7 @@ namespace DAL
             String InvoiceMonthReports = "Create PROCEDURE InvoiceMonthReports AS BEGIN DECLARE @StartOfCurrentMonth Datetime Set @StartOfCurrentMonth = DATEADD(MONTH,DATEDIFF(MONTH,0,CURRENT_TIMESTAMP),0) SELECT dbo.Users.Name AS [نام فروشنده], dbo.InVoices.InvoiceNumber AS [شماره فاکتور], dbo.Customers.Name AS [نام مشتری], dbo.Customers.Phone AS [تلفن مشتری], dbo.InVoices.inVoicePrice AS [قیمت فاکتور], dbo.InVoices.RegDate AS [تاریخ ثبت] FROM dbo.Users INNER JOIN  dbo.InVoices ON dbo.Users.ID = dbo.InVoices.user_ID INNER JOIN  dbo.Customers ON dbo.InVoices.customer_ID = dbo.Customers.ID WHERE (dbo.InVoices.DeleteStatus = 0) AND (dbo.InVoices.RegDate >=DATEADD(month, DATEDIFF(month, 0, @StartOfCurrentMonth), 0)) END";
             String InvoiceWeekReports = "CREATE PROCEDURE InvoiceWeekReports AS BEGIN DECLARE @FirstCurrentDay Datetime Set @FirstCurrentDay = DATEADD(wk, 0, DATEADD(DAY, 1-DATEPART(WEEKDAY, GETDATE()+1), DATEDIFF(dd, 0, GETDATE()))) DECLARE @FirstpreviousDay Datetime Set @FirstpreviousDay =DATEADD(wk, -1, DATEADD(DAY, 1-DATEPART(WEEKDAY, GETDATE()+1), DATEDIFF(dd, 0, GETDATE()))) SELECT dbo.Users.Name AS [نام فروشنده], dbo.InVoices.InvoiceNumber AS [شماره فاکتور], dbo.Customers.Name AS [نام مشتری], dbo.Customers.Phone AS [تلفن مشتری], dbo.InVoices.inVoicePrice AS [قیمت فاکتور], dbo.InVoices.RegDate AS [تاریخ ثبت] FROM dbo.Users INNER JOIN  dbo.InVoices ON dbo.Users.ID = dbo.InVoices.user_ID INNER JOIN  dbo.Customers ON dbo.InVoices.customer_ID = dbo.Customers.ID WHERE (dbo.InVoices.DeleteStatus = 0) AND (dbo.InVoices.RegDate between @FirstpreviousDay AND @FirstCurrentDay) END";
             String InvoiceYearReports = "CREATE PROCEDURE InvoiceYearReports AS BEGIN DECLARE @FIRST DATE set @FIRST=DATEADD(yy, DATEDIFF(yy, 0, GETDATE())-1, 0) DECLARE @END DATE set @END=DATEADD(yy, DATEDIFF(yy, 0, GETDATE()), 0) SELECT dbo.Users.Name AS [نام فروشنده], dbo.InVoices.InvoiceNumber AS [شماره فاکتور], dbo.Customers.Name AS [نام مشتری], dbo.Customers.Phone AS [تلفن مشتری], dbo.InVoices.inVoicePrice AS [قیمت فاکتور],  dbo.InVoices.RegDate AS [تاریخ ثبت] FROM dbo.Users INNER JOIN  dbo.InVoices ON dbo.Users.ID = dbo.InVoices.user_ID INNER JOIN  dbo.Customers ON dbo.InVoices.customer_ID = dbo.Customers.ID WHERE (dbo.InVoices.DeleteStatus = 0) AND (dbo.InVoices.RegDate BETWEEN @FIRST AND @END ) END";
-
-            //String CustomerReport = "CREATE PROCEDURE CustomerReports AS BEGIN SELECT Name AS [نام مشتری], Phone AS [شماره تماس], RegDate AS [تاریخ ثبت سیستم] FROM dbo.Customers WHERE (DeleteStatus = 0) END GO";
-            //String CustomerReport = "CREATE PROCEDURE CustomerReports AS BEGIN SELECT Name AS [نام مشتری], Phone AS [شماره تماس], RegDate AS [تاریخ ثبت سیستم] FROM dbo.Customers WHERE (DeleteStatus = 0) END GO";
-            //String CustomerReport = "CREATE PROCEDURE CustomerReports AS BEGIN SELECT Name AS [نام مشتری], Phone AS [شماره تماس], RegDate AS [تاریخ ثبت سیستم] FROM dbo.Customers WHERE (DeleteStatus = 0) END GO";
-            //String CustomerReport = "CREATE PROCEDURE CustomerReports AS BEGIN SELECT Name AS [نام مشتری], Phone AS [شماره تماس], RegDate AS [تاریخ ثبت سیستم] FROM dbo.Customers WHERE (DeleteStatus = 0) END GO";
+            String ReadStockReports = "CREATE PROCEDURE ReadStockReports AS BEGIN SELECT Name AS [نام محصول], Price AS [قیمت محصول], Stock AS [تعداد موجود] FROM dbo.Products WHERE (DeleteStatus = 0) END GO";
 
             if (con.State == ConnectionState.Closed)
             {
@@ -73,6 +69,8 @@ namespace DAL
             Com.CommandText = InvoiceWeekReports;
             Com.ExecuteNonQuery();
             Com.CommandText = InvoiceYearReports;
+            Com.ExecuteNonQuery();
+            Com.CommandText = ReadStockReports;
             Com.ExecuteNonQuery();
             con.Close();
         }

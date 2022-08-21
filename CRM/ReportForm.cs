@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using BLL;
 using BEE;
 using System.Windows.Forms.DataVisualization.Charting;
+using static HandyControl.Tools.Interop.InteropValues;
 
 namespace CRM
 {
@@ -147,6 +148,60 @@ namespace CRM
                 {
                     chart1.Series["Series1"].Points.AddXY(listName[i], listNumber[i]);
                 }
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("خطای کاربری", "هنوز هیچ گزینه ای انتخاب نشده است", "", 3, 2);
+            }
+        }
+
+        private void PrintReport2_Click(object sender, EventArgs e)
+        {
+            if (RR1.Checked)
+            {
+                List<Customer> ListName = new List<Customer>();
+                foreach (var item in reportationBLL.CustomerReportaionInvoices())
+                {
+                    if (item.RegDate.Date >= DateStart.Value.Date && item.RegDate.Date <= DateEnd.Value.Date)
+                    {
+                        ListName.Add(item);
+                    }
+                }
+                StiReport sti = new StiReport();
+                sti.Load(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\CustomerReports2.mrt");
+                sti.RegBusinessObject("Customer", ListName);
+                sti.Render();
+                sti.Show();
+            }
+            else if (RR2.Checked)
+            {
+                List<User> ListName = new List<User>();
+                foreach (var item in reportationBLL.UserActivities())
+                {
+                    if (item.RegDate.Date >= DateStart.Value.Date && item.RegDate.Date <= DateEnd.Value.Date)
+                    {
+                        ListName.Add(item);
+                    }
+                }
+                StiReport sti = new StiReport();
+                sti.Load(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\CustomerReports2.mrt");
+                sti.RegBusinessObject("Customer", ListName);
+                sti.Render();
+                sti.Show();
+            }
+            else if (RR3.Checked)
+            {
+
+            }
+            else if (RR4.Checked)
+            {
+                sti.Load(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\ReadStockReports.mrt");
+                sti.Render();
+                sti.Show();
+            }
+            else
+            {
+                MSG.ShowMSGBoxDialog("خطای کاربری", "هنوز هیچ گزینه ای انتخاب نشده است", "", 3, 2);
             }
         }
     }

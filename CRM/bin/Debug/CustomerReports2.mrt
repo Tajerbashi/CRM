@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="1">
+      <Customer Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObject" isKey="true">
+        <Alias>Customer</Alias>
+        <BusinessObjects isList="true" count="0" />
+        <Category />
+        <Columns isList="true" count="4">
+          <value>DeleteStatus,System.Boolean</value>
+          <value>Name,System.String</value>
+          <value>Phone,System.String</value>
+          <value>RegDate,System.DateTime</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Guid>0419098437e54b519ceb0ba7abe34f79</Guid>
+        <Name>Customer</Name>
+      </Customer>
+    </BusinessObjects>
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="0" />
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>cfa5a0e01bd74190bb41163fc5361965</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="2">
+        <Panel1 Ref="4" type="Panel" isKey="true">
+          <Brush>[151:72:6]</Brush>
+          <ClientRectangle>0.1,0.1,7.4,0.9</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="5" type="Text" isKey="true">
+              <Border>None;[255:255:255];1;Solid;False;4;Black</Border>
+              <Brush>[151:72:6]</Brush>
+              <ClientRectangle>2.6,0.3,2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>B Mitra,23</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>گزارش مشتریان</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>Panel1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </Panel1>
+        <Panel2 Ref="6" type="Panel" isKey="true">
+          <Brush>[216:216:216]</Brush>
+          <ClientRectangle>0.1,1.1,7.4,9</ClientRectangle>
+          <Components isList="true" count="3">
+            <Header Ref="7" type="HeaderBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.2,7.4,0.3</ClientRectangle>
+              <Components isList="true" count="3">
+                <HeaderCustomer_RegDate Ref="8" type="Text" isKey="true">
+                  <Border>Top, Left, Bottom;[155:36:0];1;Solid;False;4;Black;True</Border>
+                  <Brush>[255:136:94]</Brush>
+                  <ClientRectangle>0,0,2.5,0.3</ClientRectangle>
+                  <ComponentStyle>Style26_Header1</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8,Bold</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>HeaderCustomer_RegDate</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="7" />
+                  <Text>تاریخ ثبت</Text>
+                  <TextBrush>[55:0:0]</TextBrush>
+                  <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+                  <VertAlignment>Center</VertAlignment>
+                </HeaderCustomer_RegDate>
+                <HeaderCustomer_Phone Ref="9" type="Text" isKey="true">
+                  <Border>Top, Bottom;[155:36:0];1;Solid;False;4;Black;True</Border>
+                  <Brush>[255:136:94]</Brush>
+                  <ClientRectangle>2.5,0,2.5,0.3</ClientRectangle>
+                  <ComponentStyle>Style26_Header1</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8,Bold</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>HeaderCustomer_Phone</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="7" />
+                  <Text>شماره تماس</Text>
+                  <TextBrush>[55:0:0]</TextBrush>
+                  <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+                  <VertAlignment>Center</VertAlignment>
+                </HeaderCustomer_Phone>
+                <HeaderCustomer_Name Ref="10" type="Text" isKey="true">
+                  <Border>Top, Right, Bottom;[155:36:0];1;Solid;False;4;Black;True</Border>
+                  <Brush>[255:136:94]</Brush>
+                  <ClientRectangle>5,0,2.4,0.3</ClientRectangle>
+                  <ComponentStyle>Style26_Header1</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8,Bold</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>HeaderCustomer_Name</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="7" />
+                  <Text>نام مشتری</Text>
+                  <TextBrush>[55:0:0]</TextBrush>
+                  <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+                  <VertAlignment>Center</VertAlignment>
+                </HeaderCustomer_Name>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Name>Header</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+            </Header>
+            <Data Ref="11" type="DataBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <BusinessObjectGuid>0419098437e54b519ceb0ba7abe34f79</BusinessObjectGuid>
+              <ClientRectangle>0,0.9,7.4,0.3</ClientRectangle>
+              <Components isList="true" count="3">
+                <DataCustomer_RegDate Ref="12" type="Text" isKey="true">
+                  <Border>Top, Left, Bottom;[155:36:0];1;Solid;False;4;Black;True</Border>
+                  <Brush>Transparent</Brush>
+                  <CanGrow>True</CanGrow>
+                  <ClientRectangle>0,0,2.5,0.3</ClientRectangle>
+                  <ComponentStyle>Style26_Data1</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>DataCustomer_RegDate</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="11" />
+                  <Text>{Customer.RegDate}</Text>
+                  <TextBrush>[55:0:0]</TextBrush>
+                  <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+                  <VertAlignment>Center</VertAlignment>
+                </DataCustomer_RegDate>
+                <DataCustomer_Phone Ref="13" type="Text" isKey="true">
+                  <Border>Top, Bottom;[155:36:0];1;Solid;False;4;Black;True</Border>
+                  <Brush>Transparent</Brush>
+                  <CanGrow>True</CanGrow>
+                  <ClientRectangle>2.5,0,2.5,0.3</ClientRectangle>
+                  <ComponentStyle>Style26_Data1</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>DataCustomer_Phone</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="11" />
+                  <Text>{Customer.Phone}</Text>
+                  <TextBrush>[55:0:0]</TextBrush>
+                  <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+                  <VertAlignment>Center</VertAlignment>
+                </DataCustomer_Phone>
+                <DataCustomer_Name Ref="14" type="Text" isKey="true">
+                  <Border>Top, Right, Bottom;[155:36:0];1;Solid;False;4;Black;True</Border>
+                  <Brush>Transparent</Brush>
+                  <CanGrow>True</CanGrow>
+                  <ClientRectangle>5,0,2.4,0.3</ClientRectangle>
+                  <ComponentStyle>Style26_Data1</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>DataCustomer_Name</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="11" />
+                  <Text>{Customer.Name}</Text>
+                  <TextBrush>[55:0:0]</TextBrush>
+                  <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+                  <VertAlignment>Center</VertAlignment>
+                </DataCustomer_Name>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <DataSourceName isNull="true" />
+              <EvenStyle>Style26_Data1_Even Style</EvenStyle>
+              <Expressions isList="true" count="0" />
+              <Filters isList="true" count="0" />
+              <Name>Data</Name>
+              <OddStyle>Style26_Data1_Odd Style</OddStyle>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+              <Sort isList="true" count="0" />
+            </Data>
+            <Footer Ref="15" type="FooterBand" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.6,7.4,0.3</ClientRectangle>
+              <Components isList="true" count="3">
+                <FooterCustomer_RegDate Ref="16" type="Text" isKey="true">
+                  <Border>Top, Left, Bottom;[155:36:0];1;Solid;False;4;Black;True</Border>
+                  <Brush>[255:156:114]</Brush>
+                  <ClientRectangle>0,0,2.5,0.3</ClientRectangle>
+                  <ComponentStyle>Style26_Footer1</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>FooterCustomer_RegDate</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="15" />
+                  <TextBrush>[55:0:0]</TextBrush>
+                  <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+                  <VertAlignment>Center</VertAlignment>
+                </FooterCustomer_RegDate>
+                <FooterCustomer_Phone Ref="17" type="Text" isKey="true">
+                  <Border>Top, Bottom;[155:36:0];1;Solid;False;4;Black;True</Border>
+                  <Brush>[255:156:114]</Brush>
+                  <ClientRectangle>2.5,0,2.5,0.3</ClientRectangle>
+                  <ComponentStyle>Style26_Footer1</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>FooterCustomer_Phone</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="15" />
+                  <TextBrush>[55:0:0]</TextBrush>
+                  <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+                  <VertAlignment>Center</VertAlignment>
+                </FooterCustomer_Phone>
+                <FooterCustomer_Name Ref="18" type="Text" isKey="true">
+                  <Border>Top, Right, Bottom;[155:36:0];1;Solid;False;4;Black;True</Border>
+                  <Brush>[255:156:114]</Brush>
+                  <ClientRectangle>5,0,2.4,0.3</ClientRectangle>
+                  <ComponentStyle>Style26_Footer1</ComponentStyle>
+                  <Conditions isList="true" count="0" />
+                  <Expressions isList="true" count="0" />
+                  <Font>Arial,8</Font>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>FooterCustomer_Name</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="15" />
+                  <TextBrush>[55:0:0]</TextBrush>
+                  <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+                  <VertAlignment>Center</VertAlignment>
+                </FooterCustomer_Name>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Name>Footer</Name>
+              <Page isRef="3" />
+              <Parent isRef="6" />
+            </Footer>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>Panel2</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </Panel2>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Expressions isList="true" count="0" />
+      <Guid>d56b377c35664c89810fa47d54dce28b</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <PageHeight>11</PageHeight>
+      <PageWidth>8.5</PageWidth>
+      <PaperSize>Letter</PaperSize>
+      <Report isRef="0" />
+    </Page1>
+  </Pages>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/21/2022 7:18:37 AM</ReportChanged>
+  <ReportCreated>8/21/2022 7:05:05 AM</ReportCreated>
+  <ReportFile>C:\Users\HP 250 G7\Desktop\Visual Studio\C#\CRM\CRM\bin\Debug\CustomerReports2.mrt</ReportFile>
+  <ReportGuid>fee90f98aece4cc1807d09060d06866a</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2022.1.1.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="13">
+    <Style26_Report_Title1 Ref="19" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:36:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item19 Ref="20" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <Placement>ReportTitle</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item19>
+      </Conditions>
+      <Font>Arial,14,Bold</Font>
+      <Name>Style26_Report_Title1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[55:0:0]</TextBrush>
+    </Style26_Report_Title1>
+    <Style26_Report_Title2 Ref="21" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:36:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item21 Ref="22" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>ReportTitle</Placement>
+          <PlacementNestedLevel>2</PlacementNestedLevel>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item21>
+      </Conditions>
+      <Font>Arial,10,Bold</Font>
+      <Name>Style26_Report_Title2</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[55:0:0]</TextBrush>
+    </Style26_Report_Title2>
+    <Style26_Report_Summary1 Ref="23" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:36:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item23 Ref="24" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <Placement>ReportSummary</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item23>
+      </Conditions>
+      <Font>Arial,12,Bold</Font>
+      <Name>Style26_Report_Summary1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[55:0:0]</TextBrush>
+    </Style26_Report_Summary1>
+    <Style26_Report_Summary2 Ref="25" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:36:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item25 Ref="26" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>ReportSummary</Placement>
+          <PlacementNestedLevel>2</PlacementNestedLevel>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item25>
+      </Conditions>
+      <Font>Arial,10,Bold</Font>
+      <Name>Style26_Report_Summary2</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[55:0:0]</TextBrush>
+    </Style26_Report_Summary2>
+    <Style26_Page_Header Ref="27" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:36:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item27 Ref="28" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <Placement>PageHeader</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item27>
+      </Conditions>
+      <Font>Arial,10</Font>
+      <Name>Style26_Page_Header</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[55:0:0]</TextBrush>
+    </Style26_Page_Header>
+    <Style26_Page_Footer Ref="29" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:36:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item29 Ref="30" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <Placement>PageFooter</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item29>
+      </Conditions>
+      <Font>Arial,10</Font>
+      <Name>Style26_Page_Footer</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[55:0:0]</TextBrush>
+    </Style26_Page_Footer>
+    <Style26_Group_Header1 Ref="31" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[155:36:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item31 Ref="32" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>GroupHeader</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item31>
+      </Conditions>
+      <Font>Arial,13,Bold</Font>
+      <Name>Style26_Group_Header1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[105:0:0]</TextBrush>
+    </Style26_Group_Header1>
+    <Style26_Group_Footer1 Ref="33" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[155:36:0];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item33 Ref="34" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <Placement>GroupFooter</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item33>
+      </Conditions>
+      <Font>Arial,13,Bold</Font>
+      <Name>Style26_Group_Footer1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[105:0:0]</TextBrush>
+    </Style26_Group_Footer1>
+    <Style26_Header1 Ref="35" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[155:36:0];1;Solid;False;4;Black;True</Border>
+      <Brush>[255:136:94]</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item35 Ref="36" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>Header</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item35>
+      </Conditions>
+      <Font>Arial,8,Bold</Font>
+      <Name>Style26_Header1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[55:0:0]</TextBrush>
+    </Style26_Header1>
+    <Style26_Data1 Ref="37" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[155:36:0];1;Solid;False;4;Black;True</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item37 Ref="38" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>Data</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item37>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Style26_Data1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[55:0:0]</TextBrush>
+    </Style26_Data1>
+    <Style26_Data1_Odd_x0020_Style Ref="39" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[155:36:0];1;Solid;False;4;Black;True</Border>
+      <Brush>[255:255:244]</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item39 Ref="40" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>DataOddStyle</Placement>
+          <Type>Placement, PlacementNestedLevel</Type>
+        </Item39>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Style26_Data1_Odd Style</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[55:0:0]</TextBrush>
+    </Style26_Data1_Odd_x0020_Style>
+    <Style26_Data1_Even_x0020_Style Ref="41" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[155:36:0];1;Solid;False;4;Black;True</Border>
+      <Brush>[255:211:169]</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item41 Ref="42" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>DataEvenStyle</Placement>
+          <Type>Placement, PlacementNestedLevel</Type>
+        </Item41>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Style26_Data1_Even Style</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[55:0:0]</TextBrush>
+    </Style26_Data1_Even_x0020_Style>
+    <Style26_Footer1 Ref="43" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderSidesFromLocation>True</AllowUseBorderSidesFromLocation>
+      <Border>None;[155:36:0];1;Solid;False;4;Black;True</Border>
+      <Brush>[255:156:114]</Brush>
+      <CollectionName>Style26</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item43 Ref="44" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <Placement>Footer</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item43>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Style26_Footer1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[55:0:0]</TextBrush>
+    </Style26_Footer1>
+  </Styles>
+</StiSerializer>
