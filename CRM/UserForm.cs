@@ -257,12 +257,21 @@ namespace CRM
 
         private void DGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            ID = Convert.ToInt32(DGV.Rows[DGV.CurrentRow.Index].Cells["آیدی"].Value);
-            User u = UserBLL.ReadByID(ID);
-            if (u.Picture != null)
+            try
             {
-                Pic.Image = Image.FromFile(u.Picture);
+                ID = Convert.ToInt32(DGV.Rows[DGV.CurrentRow.Index].Cells["آیدی"].Value);
+                User u = UserBLL.ReadByID(ID);
+                if (u.Picture != null)
+                {
+                    Pic.Image = Image.FromFile(u.Picture);
+                }
             }
+            catch 
+            {
+
+                throw;
+            }
+            
         }
 
         private void DGV_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
